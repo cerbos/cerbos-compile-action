@@ -1,0 +1,13 @@
+name: "Cerbos Compile Action"
+description: "Compiles given cerbos policies and fails if there are any compilation errors"
+author: "Cerbos"
+
+inputs:
+  dir:
+    description: "Policies directory"
+    required: true
+    default: "/policies"
+
+runs:
+  using: "node12"
+  main: "dist/index.js"
