@@ -11,11 +11,10 @@ Cerbos helps you super-charge your authorization implementation by writing conte
 
 ## Usage
 
-Use the [cerbos-setup-action](https://github.com/cerbos/cerbos-setup-action) to install Cerbos binaries. Then use this action to validate and test your Cerbos policies.
+Use the [cerbos-setup-action](https://github.com/cerbos/cerbos-setup-action) to install Cerbos binaries. Then use this action to validate and test your Cerbos policies. See the [documentation](https://docs.cerbos.dev/cerbos/latest/policies/compile.html) for more information about how to compile policies and author policy tests. 
 
 
-```
----
+```yaml
 - uses: actions/checkout@v2
 
 - name: Setup Cerbos
