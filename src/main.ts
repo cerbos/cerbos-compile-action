@@ -29,7 +29,7 @@ async function run(): Promise<void> {
   let enableTests = true
 
   if (testDir === '') {
-    // testsDir not provided
+    // testDir not provided
     enableTests = false
     core.info('testDir not provided, skipping tests.')
   }
