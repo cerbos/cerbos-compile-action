@@ -1,3 +1,6 @@
+// Copyright 2021 Zenauth Ltd.
+// SPDX-License-Identifier: Apache-2.0
+
 import * as child from 'child_process'
 import * as core from '@actions/core'
 

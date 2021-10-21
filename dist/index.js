@@ -6,6 +6,8 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 
 "use strict";
 
+// Copyright 2021 Zenauth Ltd.
+// SPDX-License-Identifier: Apache-2.0
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -59,6 +61,8 @@ exports.default = cerbosCompile;
 
 "use strict";
 
+// Copyright 2021 Zenauth Ltd.
+// SPDX-License-Identifier: Apache-2.0
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.asError = exports.isError = void 0;
 // If the given object is type of Error, returns true
@@ -79,6 +83,8 @@ exports.asError = asError;
 
 "use strict";
 
+// Copyright 2021 Zenauth Ltd.
+// SPDX-License-Identifier: Apache-2.0
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -130,6 +136,8 @@ exports.default = getPathToBinary;
 
 "use strict";
 
+// Copyright 2021 Zenauth Ltd.
+// SPDX-License-Identifier: Apache-2.0
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
