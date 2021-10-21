@@ -6,13 +6,26 @@ export interface Error {
   message: string
 }
 
-// If the given object is type of Error, returns true
 export function isError(object: any): boolean {
   return (object as Error).message !== undefined
 }
 
 export function asError(object: any): Error {
   return object as Error
+}
+
+interface ExecSyncException {
+  status: number
+  stdout: Buffer | string
+  stderr: Buffer | string
+}
+
+export function isExecSyncException(object: any): boolean {
+  return (object as ExecSyncException).status !== undefined
+}
+
+export function asExecSyncException(object: any): ExecSyncException {
+  return object as ExecSyncException
 }
 
 export default Error

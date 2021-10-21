@@ -40,6 +40,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const child = __importStar(__nccwpck_require__(129));
 const core = __importStar(__nccwpck_require__(186));
 const path = __importStar(__nccwpck_require__(622));
+const error_1 = __nccwpck_require__(751);
 const workspaceEnvKey = 'GITHUB_WORKSPACE';
 function cerbosCompileAndTest(binaryPath, policyDir, testDir, enableTests) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -54,7 +55,18 @@ function cerbosCompileAndTest(binaryPath, policyDir, testDir, enableTests) {
             child.execSync(command);
         }
         catch (error) {
-            core.setFailed(`Compilation errors detected: ${error}`);
+            const execSyncError = (0, error_1.asExecSyncException)(error);
+            switch (execSyncError.status) {
+                case 1: // returns 1 if there are compilation errors
+                    core.setFailed(`Compilation errors detected: ${error}`);
+                    break;
+                case 2: // returns 2 if flags are passed incorrectly
+                    core.setFailed(`Check flags for errors: ${error}`);
+                    break;
+                default:
+                    core.setFailed(`Compilation errors detected: ${error}`);
+                    break;
+            }
         }
     });
 }
@@ -71,8 +83,7 @@ exports.default = cerbosCompileAndTest;
 // Copyright 2021 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.asError = exports.isError = void 0;
-// If the given object is type of Error, returns true
+exports.asExecSyncException = exports.isExecSyncException = exports.asError = exports.isError = void 0;
 function isError(object) {
     return object.message !== undefined;
 }
@@ -81,6 +92,14 @@ function asError(object) {
     return object;
 }
 exports.asError = asError;
+function isExecSyncException(object) {
+    return object.status !== undefined;
+}
+exports.isExecSyncException = isExecSyncException;
+function asExecSyncException(object) {
+    return object;
+}
+exports.asExecSyncException = asExecSyncException;
 
 
 /***/ }),
