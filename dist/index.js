@@ -39,13 +39,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const child = __importStar(__nccwpck_require__(129));
 const core = __importStar(__nccwpck_require__(186));
+const path = __importStar(__nccwpck_require__(622));
 const workspaceEnvKey = 'GITHUB_WORKSPACE';
 function cerbosCompileAndTest(binaryPath, policyDir, testDir, enableTests) {
     return __awaiter(this, void 0, void 0, function* () {
         const workspaceDir = process.env[workspaceEnvKey];
-        let command = `${binaryPath} compile ${workspaceDir}${policyDir}`;
+        const policyDirAbs = path.join(workspaceDir, policyDir);
+        const testDirAbs = path.join(workspaceDir, testDir);
+        let command = `${binaryPath} compile ${policyDirAbs}`;
         if (enableTests) {
-            command += ` --tests ${workspaceDir}${testDir}`;
+            command += ` --tests ${testDirAbs}`;
         }
         try {
             child.execSync(command);
@@ -192,7 +195,7 @@ function run() {
         const testDir = core.getInput('testDir');
         let enableTests = true;
         if (testDir === '') {
-            // testsDir not provided
+            // testDir not provided
             enableTests = false;
             core.info('testDir not provided, skipping tests.');
         }

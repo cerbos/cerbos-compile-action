@@ -3,6 +3,7 @@
 
 import * as child from 'child_process'
 import * as core from '@actions/core'
+import * as path from 'path'
 
 const workspaceEnvKey = 'GITHUB_WORKSPACE'
 
@@ -13,11 +14,13 @@ async function cerbosCompileAndTest(
   enableTests: boolean
 ): Promise<void> {
   const workspaceDir = process.env[workspaceEnvKey]
+  const policyDirAbs = path.join(workspaceDir as string, policyDir)
+  const testDirAbs = path.join(workspaceDir as string, testDir)
 
-  let command = `${binaryPath} compile ${workspaceDir}${policyDir}`
+  let command = `${binaryPath} compile ${policyDirAbs}`
 
   if (enableTests) {
-    command += ` --tests ${workspaceDir}${testDir}`
+    command += ` --tests ${testDirAbs}`
   }
 
   try {
