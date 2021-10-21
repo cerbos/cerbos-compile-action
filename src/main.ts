@@ -3,7 +3,7 @@
 
 import * as core from '@actions/core'
 import {asError, isError} from './error'
-import cerbosCompile from './cerbos-compile'
+import cerbosCompileAndTest from './cerbos-compile-and-test'
 import getPathToBinary from './get-path-to-binary'
 
 async function run(): Promise<void> {
@@ -22,11 +22,21 @@ async function run(): Promise<void> {
   core.info(`Succesfully got path to the cerbos binary: ${pathToBinary}`)
 
   // Directory to policies folder
-  const dir = core.getInput('dir')
+  const policyDir = core.getInput('policyDir')
+  // Directory to tests folder
+  const testDir = core.getInput('testDir')
+
+  let enableTests = true
+
+  if (testDir === '') {
+    // testsDir not provided
+    enableTests = false
+    core.info('testDir not provided, skipping tests.')
+  }
 
   core.info('Running cerbos compile process.')
 
-  cerbosCompile(pathToBinary as string, dir)
+  cerbosCompileAndTest(pathToBinary as string, policyDir, testDir, enableTests)
 
   core.info('Cerbos compile process is done.')
 }

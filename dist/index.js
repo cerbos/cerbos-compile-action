@@ -1,7 +1,7 @@
 require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 200:
+/***/ 730:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -40,18 +40,22 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const child = __importStar(__nccwpck_require__(129));
 const core = __importStar(__nccwpck_require__(186));
 const workspaceEnvKey = 'GITHUB_WORKSPACE';
-function cerbosCompile(binaryPath, directoryToPolicies) {
+function cerbosCompileAndTest(binaryPath, policyDir, testDir, enableTests) {
     return __awaiter(this, void 0, void 0, function* () {
         const workspaceDir = process.env[workspaceEnvKey];
+        let command = `${binaryPath} compile ${workspaceDir}${policyDir}`;
+        if (enableTests) {
+            command += ` --tests ${workspaceDir}${testDir}`;
+        }
         try {
-            child.execSync(`${binaryPath} compile ${workspaceDir}${directoryToPolicies}`);
+            child.execSync(command);
         }
         catch (error) {
             core.setFailed(`Compilation errors detected: ${error}`);
         }
     });
 }
-exports.default = cerbosCompile;
+exports.default = cerbosCompileAndTest;
 
 
 /***/ }),
@@ -172,7 +176,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(186));
 const error_1 = __nccwpck_require__(751);
-const cerbos_compile_1 = __importDefault(__nccwpck_require__(200));
+const cerbos_compile_and_test_1 = __importDefault(__nccwpck_require__(730));
 const get_path_to_binary_1 = __importDefault(__nccwpck_require__(28));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -183,9 +187,17 @@ function run() {
         }
         core.info(`Succesfully got path to the cerbos binary: ${pathToBinary}`);
         // Directory to policies folder
-        const dir = core.getInput('dir');
+        const policyDir = core.getInput('policyDir');
+        // Directory to tests folder
+        const testDir = core.getInput('testDir');
+        let enableTests = true;
+        if (testDir === '') {
+            // testsDir not provided
+            enableTests = false;
+            core.info('testDir not provided, skipping tests.');
+        }
         core.info('Running cerbos compile process.');
-        (0, cerbos_compile_1.default)(pathToBinary, dir);
+        (0, cerbos_compile_and_test_1.default)(pathToBinary, policyDir, testDir, enableTests);
         core.info('Cerbos compile process is done.');
     });
 }

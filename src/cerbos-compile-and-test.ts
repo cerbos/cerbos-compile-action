@@ -6,19 +6,25 @@ import * as core from '@actions/core'
 
 const workspaceEnvKey = 'GITHUB_WORKSPACE'
 
-async function cerbosCompile(
+async function cerbosCompileAndTest(
   binaryPath: string,
-  directoryToPolicies: string
+  policyDir: string,
+  testDir: string,
+  enableTests: boolean
 ): Promise<void> {
   const workspaceDir = process.env[workspaceEnvKey]
 
+  let command = `${binaryPath} compile ${workspaceDir}${policyDir}`
+
+  if (enableTests) {
+    command += ` --tests ${workspaceDir}${testDir}`
+  }
+
   try {
-    child.execSync(
-      `${binaryPath} compile ${workspaceDir}${directoryToPolicies}`
-    )
+    child.execSync(command)
   } catch (error) {
     core.setFailed(`Compilation errors detected: ${error}`)
   }
 }
 
-export default cerbosCompile
+export default cerbosCompileAndTest

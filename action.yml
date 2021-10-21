@@ -1,13 +1,16 @@
-name: "Cerbos Compile Action"
-description: "Compiles given cerbos policies and fails if there are any compilation errors"
-author: "Cerbos"
+name: 'Cerbos Compile Action'
+description: 'Compiles given cerbos policies and fails if there are any compilation errors'
+author: 'Cerbos'
 
 inputs:
-  dir:
-    description: "Policies directory"
+  policyDir:
+    description: 'Policy directory'
     required: true
-    default: "/policies"
+    default: '/policies'
+
+  testDir:
+    description: 'Test directory'
 
 runs:
-  using: "node12"
-  main: "dist/index.js"
+  using: 'node12'
+  main: 'dist/index.js'
