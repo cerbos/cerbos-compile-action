@@ -1,4 +1,4 @@
-# Building cerbos-setup-action
+# Building cerbos-compile-action
 
 
 ```
