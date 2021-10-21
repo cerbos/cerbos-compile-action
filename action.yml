@@ -1,5 +1,5 @@
 name: 'Cerbos Compile Action'
-description: 'Compiles given cerbos policies and fails if there are any compilation errors'
+description: 'Compile and test Cerbos policies'
 author: 'Cerbos'
 
 inputs:
