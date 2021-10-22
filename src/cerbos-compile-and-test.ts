@@ -4,6 +4,7 @@
 import * as child from 'child_process'
 import * as core from '@actions/core'
 import * as path from 'path'
+import {asExecSyncException} from './error'
 
 const workspaceEnvKey = 'GITHUB_WORKSPACE'
 
@@ -26,7 +27,16 @@ async function cerbosCompileAndTest(
   try {
     child.execSync(command)
   } catch (error) {
-    core.setFailed(`Compilation errors detected: ${error}`)
+    const execSyncError = asExecSyncException(error)
+
+    switch (execSyncError.status) {
+      case 1: // returns 1 if there are compilation errors
+        core.setFailed(`Compilation errors detected: ${error}`)
+        break
+      default:
+        core.setFailed(`Failed to launch Cerbos: ${error}`)
+        break
+    }
   }
 }
 
