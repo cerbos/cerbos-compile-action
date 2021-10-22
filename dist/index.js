@@ -60,11 +60,8 @@ function cerbosCompileAndTest(binaryPath, policyDir, testDir, enableTests) {
                 case 1: // returns 1 if there are compilation errors
                     core.setFailed(`Compilation errors detected: ${error}`);
                     break;
-                case 2: // returns 2 if flags are passed incorrectly
-                    core.setFailed(`Check flags for errors: ${error}`);
-                    break;
                 default:
-                    core.setFailed(`Compilation errors detected: ${error}`);
+                    core.setFailed(`Failed to launch Cerbos: ${error}`);
                     break;
             }
         }
