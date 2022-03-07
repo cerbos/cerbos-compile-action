@@ -47,10 +47,14 @@ function cerbosCompileAndTest(binaryPath, policyDir, testDir, enableTests) {
         const workspaceDir = process.env[workspaceEnvKey];
         const policyDirAbs = path.join(workspaceDir, policyDir);
         const testDirAbs = path.join(workspaceDir, testDir);
+        core.info(`Configured policy directory: ${policyDirAbs}`);
+        core.info(`Configured test directory: ${testDirAbs}`);
         let command = `${binaryPath} compile ${policyDirAbs}`;
         if (enableTests) {
             command += ` --tests ${testDirAbs}`;
+            core.info('Added --tests flag to the command as tests are enabled');
         }
+        core.info(`Command to run: ${command}`);
         try {
             child.execSync(command);
         }

@@ -18,11 +18,16 @@ async function cerbosCompileAndTest(
   const policyDirAbs = path.join(workspaceDir as string, policyDir)
   const testDirAbs = path.join(workspaceDir as string, testDir)
 
-  let command = `${binaryPath} compile ${policyDirAbs}`
+  core.info(`Configured policy directory: ${policyDirAbs}`)
+  core.info(`Configured test directory: ${testDirAbs}`)
 
+  let command = `${binaryPath} compile ${policyDirAbs}`
   if (enableTests) {
     command += ` --tests ${testDirAbs}`
+    core.info('Added --tests flag to the command as tests are enabled')
   }
+
+  core.info(`Command to run: ${command}`)
 
   try {
     child.execSync(command)
