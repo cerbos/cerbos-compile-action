@@ -26,7 +26,8 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@actions/core": "^1.6.0",
-    "@actions/tool-cache": "^1.7.1"
+    "@actions/tool-cache": "^1.7.1",
+    "ansi-styles": "^6.1.0"
   },
   "devDependencies": {
     "@types/node": "^16.10.5",

@@ -4,6 +4,7 @@
 import * as child from 'child_process'
 import * as core from '@actions/core'
 import * as path from 'path'
+import * as styles from 'ansi-styles'
 import {asExecSyncException} from './error'
 
 const workspaceEnvKey = 'GITHUB_WORKSPACE'
@@ -29,8 +30,12 @@ async function cerbosCompileAndTest(
 
   core.info(`Command to run: ${command}`)
 
+  core.startGroup('cerbos compile results')
+  let stdout = ''
   try {
-    child.execSync(command)
+    stdout = child.execSync(command, {
+      encoding: 'utf8'
+    })
   } catch (error) {
     const execSyncError = asExecSyncException(error)
 
@@ -42,6 +47,13 @@ async function cerbosCompileAndTest(
         core.setFailed(`Failed to launch Cerbos: ${error}`)
         break
     }
+  } finally {
+    core.info(
+      `${styles.default.color.ansi16m(
+        ...styles.default.hexToRgb('#00ff00')
+      )}${stdout}${styles.default.color.close}`
+    )
+    core.endGroup()
   }
 }
 
