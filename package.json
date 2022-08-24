@@ -1,6 +1,6 @@
 {
   "name": "cerbos-compile-action",
-  "version": "0.0.1",
+  "version": "v1.0.3",
   "private": true,
   "description": "Cerbos Compile Action",
   "main": "lib/main.js",
