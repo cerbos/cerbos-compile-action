@@ -1,0 +1,60 @@
+name: SomeResourceTestSuite
+
+principals:
+  user_1:
+    id: '1'
+    roles:
+      - USER
+
+  user_2:
+    id: '2'
+    roles:
+      - USER
+
+resources:
+  some_resource_1:
+    id: '1'
+    kind: some_resource
+    attr:
+      ownerId: '1'
+
+  some_resource_2:
+    id: '2'
+    kind: some_resource
+    attr:
+      ownerId: '5'
+      usersWithGetAccess:
+        - '1'
+
+tests:
+  - name: Get some_resource_1
+    input:
+      principals:
+        - user_1
+        - user_2
+      resources:
+        - some_resource_1
+        - some_resource_2
+      actions:
+        - get
+
+    expected:
+      - principal: user_1
+        resource: some_resource_1
+        actions:
+          get: EFFECT_ALLOW
+
+      - principal: user_1
+        resource: some_resource_2
+        actions:
+          get: EFFECT_ALLOW
+
+      - principal: user_2
+        resource: some_resource_1
+        actions:
+          get: EFFECT_ALLOW
+
+      - principal: user_2
+        resource: some_resource_2
+        actions:
+          get: EFFECT_DENY
