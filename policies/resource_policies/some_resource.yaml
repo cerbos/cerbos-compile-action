@@ -1,0 +1,21 @@
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: some_resource
+  importDerivedRoles:
+    - common
+  rules:
+    - actions:
+        - get
+      effect: EFFECT_ALLOW
+      derivedRoles:
+        - OWNER
+
+    - actions:
+        - get
+      effect: EFFECT_ALLOW
+      roles:
+        - USER
+      condition:
+        match:
+          expr: P.id in R.attr.usersWithGetAccess
