@@ -6,7 +6,7 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 
 "use strict";
 
-// Copyright 2021 Zenauth Ltd.
+// Copyright 2021-2023 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -94,7 +94,7 @@ exports["default"] = cerbosCompileAndTest;
 
 "use strict";
 
-// Copyright 2021 Zenauth Ltd.
+// Copyright 2021-2023 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.asExecSyncException = exports.isExecSyncException = exports.asError = exports.isError = void 0;
@@ -123,7 +123,7 @@ exports.asExecSyncException = asExecSyncException;
 
 "use strict";
 
-// Copyright 2021 Zenauth Ltd.
+// Copyright 2021-2023 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -180,7 +180,7 @@ exports["default"] = getPathToBinary;
 
 "use strict";
 
-// Copyright 2021 Zenauth Ltd.
+// Copyright 2021-2023 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
