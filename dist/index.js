@@ -41,10 +41,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const child = __importStar(__nccwpck_require__(129));
+const child = __importStar(__nccwpck_require__(81));
 const core = __importStar(__nccwpck_require__(186));
-const path = __importStar(__nccwpck_require__(622));
-const styles = __importStar(__nccwpck_require__(68));
+const path = __importStar(__nccwpck_require__(17));
+const styles = __importStar(__nccwpck_require__(844));
 const error_1 = __nccwpck_require__(751);
 const workspaceEnvKey = 'GITHUB_WORKSPACE';
 function cerbosCompileAndTest(binaryPath, policyDir, testDir, enableTests) {
@@ -84,7 +84,7 @@ function cerbosCompileAndTest(binaryPath, policyDir, testDir, enableTests) {
         }
     });
 }
-exports.default = cerbosCompileAndTest;
+exports["default"] = cerbosCompileAndTest;
 
 
 /***/ }),
@@ -170,7 +170,7 @@ function getPathToBinary() {
         return pathToCerbos;
     });
 }
-exports.default = getPathToBinary;
+exports["default"] = getPathToBinary;
 
 
 /***/ }),
@@ -276,7 +276,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.issue = exports.issueCommand = void 0;
-const os = __importStar(__nccwpck_require__(87));
+const os = __importStar(__nccwpck_require__(37));
 const utils_1 = __nccwpck_require__(278);
 /**
  * Commands
@@ -387,8 +387,8 @@ exports.getIDToken = exports.getState = exports.saveState = exports.group = expo
 const command_1 = __nccwpck_require__(351);
 const file_command_1 = __nccwpck_require__(717);
 const utils_1 = __nccwpck_require__(278);
-const os = __importStar(__nccwpck_require__(87));
-const path = __importStar(__nccwpck_require__(622));
+const os = __importStar(__nccwpck_require__(37));
+const path = __importStar(__nccwpck_require__(17));
 const oidc_utils_1 = __nccwpck_require__(41);
 /**
  * The code to exit an action
@@ -721,8 +721,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.prepareKeyValueMessage = exports.issueFileCommand = void 0;
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const fs = __importStar(__nccwpck_require__(747));
-const os = __importStar(__nccwpck_require__(87));
+const fs = __importStar(__nccwpck_require__(147));
+const os = __importStar(__nccwpck_require__(37));
 const uuid_1 = __nccwpck_require__(840);
 const utils_1 = __nccwpck_require__(278);
 function issueFileCommand(command, message) {
@@ -867,7 +867,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.toPlatformPath = exports.toWin32Path = exports.toPosixPath = void 0;
-const path = __importStar(__nccwpck_require__(622));
+const path = __importStar(__nccwpck_require__(17));
 /**
  * toPosixPath converts the given path to the posix form. On Windows, \\ will be
  * replaced with /.
@@ -922,8 +922,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.summary = exports.markdownSummary = exports.SUMMARY_DOCS_URL = exports.SUMMARY_ENV_VAR = void 0;
-const os_1 = __nccwpck_require__(87);
-const fs_1 = __nccwpck_require__(747);
+const os_1 = __nccwpck_require__(37);
+const fs_1 = __nccwpck_require__(147);
 const { access, appendFile, writeFile } = fs_1.promises;
 exports.SUMMARY_ENV_VAR = 'GITHUB_STEP_SUMMARY';
 exports.SUMMARY_DOCS_URL = 'https://docs.github.com/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary';
@@ -1367,8 +1367,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.HttpClient = exports.isHttps = exports.HttpClientResponse = exports.HttpClientError = exports.getProxyUrl = exports.MediaTypes = exports.Headers = exports.HttpCodes = void 0;
-const http = __importStar(__nccwpck_require__(605));
-const https = __importStar(__nccwpck_require__(211));
+const http = __importStar(__nccwpck_require__(685));
+const https = __importStar(__nccwpck_require__(687));
 const pm = __importStar(__nccwpck_require__(835));
 const tunnel = __importStar(__nccwpck_require__(294));
 var HttpCodes;
@@ -2047,8 +2047,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 var _a;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getCmdPath = exports.tryGetExecutablePath = exports.isRooted = exports.isDirectory = exports.exists = exports.IS_WINDOWS = exports.unlink = exports.symlink = exports.stat = exports.rmdir = exports.rename = exports.readlink = exports.readdir = exports.mkdir = exports.lstat = exports.copyFile = exports.chmod = void 0;
-const fs = __importStar(__nccwpck_require__(747));
-const path = __importStar(__nccwpck_require__(622));
+const fs = __importStar(__nccwpck_require__(147));
+const path = __importStar(__nccwpck_require__(17));
 _a = fs.promises, exports.chmod = _a.chmod, exports.copyFile = _a.copyFile, exports.lstat = _a.lstat, exports.mkdir = _a.mkdir, exports.readdir = _a.readdir, exports.readlink = _a.readlink, exports.rename = _a.rename, exports.rmdir = _a.rmdir, exports.stat = _a.stat, exports.symlink = _a.symlink, exports.unlink = _a.unlink;
 exports.IS_WINDOWS = process.platform === 'win32';
 function exists(fsPath) {
@@ -2230,10 +2230,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.findInPath = exports.which = exports.mkdirP = exports.rmRF = exports.mv = exports.cp = void 0;
-const assert_1 = __nccwpck_require__(357);
-const childProcess = __importStar(__nccwpck_require__(129));
-const path = __importStar(__nccwpck_require__(622));
-const util_1 = __nccwpck_require__(669);
+const assert_1 = __nccwpck_require__(491);
+const childProcess = __importStar(__nccwpck_require__(81));
+const path = __importStar(__nccwpck_require__(17));
+const util_1 = __nccwpck_require__(837);
 const ioUtil = __importStar(__nccwpck_require__(962));
 const exec = util_1.promisify(childProcess.exec);
 const execFile = util_1.promisify(childProcess.execFile);
@@ -2543,245 +2543,6 @@ function copyFile(srcFile, destFile, force) {
 
 /***/ }),
 
-/***/ 68:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
-
-"use strict";
-__nccwpck_require__.r(__webpack_exports__);
-/* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
-/* harmony export */   "modifierNames": () => (/* binding */ modifierNames),
-/* harmony export */   "foregroundColorNames": () => (/* binding */ foregroundColorNames),
-/* harmony export */   "backgroundColorNames": () => (/* binding */ backgroundColorNames),
-/* harmony export */   "colorNames": () => (/* binding */ colorNames),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const ANSI_BACKGROUND_OFFSET = 10;
-
-const wrapAnsi16 = (offset = 0) => code => `\u001B[${code + offset}m`;
-
-const wrapAnsi256 = (offset = 0) => code => `\u001B[${38 + offset};5;${code}m`;
-
-const wrapAnsi16m = (offset = 0) => (red, green, blue) => `\u001B[${38 + offset};2;${red};${green};${blue}m`;
-
-const styles = {
-	modifier: {
-		reset: [0, 0],
-		// 21 isn't widely supported and 22 does the same thing
-		bold: [1, 22],
-		dim: [2, 22],
-		italic: [3, 23],
-		underline: [4, 24],
-		overline: [53, 55],
-		inverse: [7, 27],
-		hidden: [8, 28],
-		strikethrough: [9, 29],
-	},
-	color: {
-		black: [30, 39],
-		red: [31, 39],
-		green: [32, 39],
-		yellow: [33, 39],
-		blue: [34, 39],
-		magenta: [35, 39],
-		cyan: [36, 39],
-		white: [37, 39],
-
-		// Bright color
-		blackBright: [90, 39],
-		gray: [90, 39], // Alias of `blackBright`
-		grey: [90, 39], // Alias of `blackBright`
-		redBright: [91, 39],
-		greenBright: [92, 39],
-		yellowBright: [93, 39],
-		blueBright: [94, 39],
-		magentaBright: [95, 39],
-		cyanBright: [96, 39],
-		whiteBright: [97, 39],
-	},
-	bgColor: {
-		bgBlack: [40, 49],
-		bgRed: [41, 49],
-		bgGreen: [42, 49],
-		bgYellow: [43, 49],
-		bgBlue: [44, 49],
-		bgMagenta: [45, 49],
-		bgCyan: [46, 49],
-		bgWhite: [47, 49],
-
-		// Bright color
-		bgBlackBright: [100, 49],
-		bgGray: [100, 49], // Alias of `bgBlackBright`
-		bgGrey: [100, 49], // Alias of `bgBlackBright`
-		bgRedBright: [101, 49],
-		bgGreenBright: [102, 49],
-		bgYellowBright: [103, 49],
-		bgBlueBright: [104, 49],
-		bgMagentaBright: [105, 49],
-		bgCyanBright: [106, 49],
-		bgWhiteBright: [107, 49],
-	},
-};
-
-const modifierNames = Object.keys(styles.modifier);
-const foregroundColorNames = Object.keys(styles.color);
-const backgroundColorNames = Object.keys(styles.bgColor);
-const colorNames = [...foregroundColorNames, ...backgroundColorNames];
-
-function assembleStyles() {
-	const codes = new Map();
-
-	for (const [groupName, group] of Object.entries(styles)) {
-		for (const [styleName, style] of Object.entries(group)) {
-			styles[styleName] = {
-				open: `\u001B[${style[0]}m`,
-				close: `\u001B[${style[1]}m`,
-			};
-
-			group[styleName] = styles[styleName];
-
-			codes.set(style[0], style[1]);
-		}
-
-		Object.defineProperty(styles, groupName, {
-			value: group,
-			enumerable: false,
-		});
-	}
-
-	Object.defineProperty(styles, 'codes', {
-		value: codes,
-		enumerable: false,
-	});
-
-	styles.color.close = '\u001B[39m';
-	styles.bgColor.close = '\u001B[49m';
-
-	styles.color.ansi = wrapAnsi16();
-	styles.color.ansi256 = wrapAnsi256();
-	styles.color.ansi16m = wrapAnsi16m();
-	styles.bgColor.ansi = wrapAnsi16(ANSI_BACKGROUND_OFFSET);
-	styles.bgColor.ansi256 = wrapAnsi256(ANSI_BACKGROUND_OFFSET);
-	styles.bgColor.ansi16m = wrapAnsi16m(ANSI_BACKGROUND_OFFSET);
-
-	// From https://github.com/Qix-/color-convert/blob/3f0e0d4e92e235796ccb17f6e85c72094a651f49/conversions.js
-	Object.defineProperties(styles, {
-		rgbToAnsi256: {
-			value: (red, green, blue) => {
-				// We use the extended greyscale palette here, with the exception of
-				// black and white. normal palette only has 4 greyscale shades.
-				if (red === green && green === blue) {
-					if (red < 8) {
-						return 16;
-					}
-
-					if (red > 248) {
-						return 231;
-					}
-
-					return Math.round(((red - 8) / 247) * 24) + 232;
-				}
-
-				return 16
-					+ (36 * Math.round(red / 255 * 5))
-					+ (6 * Math.round(green / 255 * 5))
-					+ Math.round(blue / 255 * 5);
-			},
-			enumerable: false,
-		},
-		hexToRgb: {
-			value: hex => {
-				const matches = /[a-f\d]{6}|[a-f\d]{3}/i.exec(hex.toString(16));
-				if (!matches) {
-					return [0, 0, 0];
-				}
-
-				let [colorString] = matches;
-
-				if (colorString.length === 3) {
-					colorString = [...colorString].map(character => character + character).join('');
-				}
-
-				const integer = Number.parseInt(colorString, 16);
-
-				return [
-					/* eslint-disable no-bitwise */
-					(integer >> 16) & 0xFF,
-					(integer >> 8) & 0xFF,
-					integer & 0xFF,
-					/* eslint-enable no-bitwise */
-				];
-			},
-			enumerable: false,
-		},
-		hexToAnsi256: {
-			value: hex => styles.rgbToAnsi256(...styles.hexToRgb(hex)),
-			enumerable: false,
-		},
-		ansi256ToAnsi: {
-			value: code => {
-				if (code < 8) {
-					return 30 + code;
-				}
-
-				if (code < 16) {
-					return 90 + (code - 8);
-				}
-
-				let red;
-				let green;
-				let blue;
-
-				if (code >= 232) {
-					red = (((code - 232) * 10) + 8) / 255;
-					green = red;
-					blue = red;
-				} else {
-					code -= 16;
-
-					const remainder = code % 36;
-
-					red = Math.floor(code / 36) / 5;
-					green = Math.floor(remainder / 6) / 5;
-					blue = (remainder % 6) / 5;
-				}
-
-				const value = Math.max(red, green, blue) * 2;
-
-				if (value === 0) {
-					return 30;
-				}
-
-				// eslint-disable-next-line no-bitwise
-				let result = 30 + ((Math.round(blue) << 2) | (Math.round(green) << 1) | Math.round(red));
-
-				if (value === 2) {
-					result += 60;
-				}
-
-				return result;
-			},
-			enumerable: false,
-		},
-		rgbToAnsi: {
-			value: (red, green, blue) => styles.ansi256ToAnsi(styles.rgbToAnsi256(red, green, blue)),
-			enumerable: false,
-		},
-		hexToAnsi: {
-			value: hex => styles.ansi256ToAnsi(styles.hexToAnsi256(hex)),
-			enumerable: false,
-		},
-	});
-
-	return styles;
-}
-
-const ansiStyles = assembleStyles();
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ansiStyles);
-
-
-/***/ }),
-
 /***/ 294:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
@@ -2796,13 +2557,13 @@ module.exports = __nccwpck_require__(219);
 "use strict";
 
 
-var net = __nccwpck_require__(631);
-var tls = __nccwpck_require__(16);
-var http = __nccwpck_require__(605);
-var https = __nccwpck_require__(211);
-var events = __nccwpck_require__(614);
-var assert = __nccwpck_require__(357);
-var util = __nccwpck_require__(669);
+var net = __nccwpck_require__(808);
+var tls = __nccwpck_require__(404);
+var http = __nccwpck_require__(685);
+var https = __nccwpck_require__(687);
+var events = __nccwpck_require__(361);
+var assert = __nccwpck_require__(491);
+var util = __nccwpck_require__(837);
 
 
 exports.httpOverHttp = httpOverHttp;
@@ -3157,9 +2918,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = void 0;
+exports["default"] = void 0;
 
-var _crypto = _interopRequireDefault(__nccwpck_require__(417));
+var _crypto = _interopRequireDefault(__nccwpck_require__(113));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3174,7 +2935,7 @@ function md5(bytes) {
 }
 
 var _default = md5;
-exports.default = _default;
+exports["default"] = _default;
 
 /***/ }),
 
@@ -3187,9 +2948,9 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = void 0;
+exports["default"] = void 0;
 var _default = '00000000-0000-0000-0000-000000000000';
-exports.default = _default;
+exports["default"] = _default;
 
 /***/ }),
 
@@ -3202,7 +2963,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _validate = _interopRequireDefault(__nccwpck_require__(900));
 
@@ -3241,7 +3002,7 @@ function parse(uuid) {
 }
 
 var _default = parse;
-exports.default = _default;
+exports["default"] = _default;
 
 /***/ }),
 
@@ -3254,9 +3015,9 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = void 0;
+exports["default"] = void 0;
 var _default = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
-exports.default = _default;
+exports["default"] = _default;
 
 /***/ }),
 
@@ -3269,9 +3030,9 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = rng;
+exports["default"] = rng;
 
-var _crypto = _interopRequireDefault(__nccwpck_require__(417));
+var _crypto = _interopRequireDefault(__nccwpck_require__(113));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3300,9 +3061,9 @@ function rng() {
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = void 0;
+exports["default"] = void 0;
 
-var _crypto = _interopRequireDefault(__nccwpck_require__(417));
+var _crypto = _interopRequireDefault(__nccwpck_require__(113));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3317,7 +3078,7 @@ function sha1(bytes) {
 }
 
 var _default = sha1;
-exports.default = _default;
+exports["default"] = _default;
 
 /***/ }),
 
@@ -3330,7 +3091,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _validate = _interopRequireDefault(__nccwpck_require__(900));
 
@@ -3363,7 +3124,7 @@ function stringify(arr, offset = 0) {
 }
 
 var _default = stringify;
-exports.default = _default;
+exports["default"] = _default;
 
 /***/ }),
 
@@ -3376,7 +3137,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _rng = _interopRequireDefault(__nccwpck_require__(807));
 
@@ -3477,7 +3238,7 @@ function v1(options, buf, offset) {
 }
 
 var _default = v1;
-exports.default = _default;
+exports["default"] = _default;
 
 /***/ }),
 
@@ -3490,7 +3251,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _v = _interopRequireDefault(__nccwpck_require__(998));
 
@@ -3500,7 +3261,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const v3 = (0, _v.default)('v3', 0x30, _md.default);
 var _default = v3;
-exports.default = _default;
+exports["default"] = _default;
 
 /***/ }),
 
@@ -3513,7 +3274,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = _default;
+exports["default"] = _default;
 exports.URL = exports.DNS = void 0;
 
 var _stringify = _interopRequireDefault(__nccwpck_require__(950));
@@ -3598,7 +3359,7 @@ function _default(name, version, hashfunc) {
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _rng = _interopRequireDefault(__nccwpck_require__(807));
 
@@ -3629,7 +3390,7 @@ function v4(options, buf, offset) {
 }
 
 var _default = v4;
-exports.default = _default;
+exports["default"] = _default;
 
 /***/ }),
 
@@ -3642,7 +3403,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _v = _interopRequireDefault(__nccwpck_require__(998));
 
@@ -3652,7 +3413,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const v5 = (0, _v.default)('v5', 0x50, _sha.default);
 var _default = v5;
-exports.default = _default;
+exports["default"] = _default;
 
 /***/ }),
 
@@ -3665,7 +3426,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _regex = _interopRequireDefault(__nccwpck_require__(814));
 
@@ -3676,7 +3437,7 @@ function validate(uuid) {
 }
 
 var _default = validate;
-exports.default = _default;
+exports["default"] = _default;
 
 /***/ }),
 
@@ -3689,7 +3450,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _validate = _interopRequireDefault(__nccwpck_require__(900));
 
@@ -3704,11 +3465,11 @@ function version(uuid) {
 }
 
 var _default = version;
-exports.default = _default;
+exports["default"] = _default;
 
 /***/ }),
 
-/***/ 357:
+/***/ 491:
 /***/ ((module) => {
 
 "use strict";
@@ -3716,7 +3477,7 @@ module.exports = require("assert");
 
 /***/ }),
 
-/***/ 129:
+/***/ 81:
 /***/ ((module) => {
 
 "use strict";
@@ -3724,7 +3485,7 @@ module.exports = require("child_process");
 
 /***/ }),
 
-/***/ 417:
+/***/ 113:
 /***/ ((module) => {
 
 "use strict";
@@ -3732,7 +3493,7 @@ module.exports = require("crypto");
 
 /***/ }),
 
-/***/ 614:
+/***/ 361:
 /***/ ((module) => {
 
 "use strict";
@@ -3740,7 +3501,7 @@ module.exports = require("events");
 
 /***/ }),
 
-/***/ 747:
+/***/ 147:
 /***/ ((module) => {
 
 "use strict";
@@ -3748,7 +3509,7 @@ module.exports = require("fs");
 
 /***/ }),
 
-/***/ 605:
+/***/ 685:
 /***/ ((module) => {
 
 "use strict";
@@ -3756,7 +3517,7 @@ module.exports = require("http");
 
 /***/ }),
 
-/***/ 211:
+/***/ 687:
 /***/ ((module) => {
 
 "use strict";
@@ -3764,7 +3525,7 @@ module.exports = require("https");
 
 /***/ }),
 
-/***/ 631:
+/***/ 808:
 /***/ ((module) => {
 
 "use strict";
@@ -3772,7 +3533,7 @@ module.exports = require("net");
 
 /***/ }),
 
-/***/ 87:
+/***/ 37:
 /***/ ((module) => {
 
 "use strict";
@@ -3780,7 +3541,7 @@ module.exports = require("os");
 
 /***/ }),
 
-/***/ 622:
+/***/ 17:
 /***/ ((module) => {
 
 "use strict";
@@ -3788,7 +3549,7 @@ module.exports = require("path");
 
 /***/ }),
 
-/***/ 16:
+/***/ 404:
 /***/ ((module) => {
 
 "use strict";
@@ -3796,11 +3557,250 @@ module.exports = require("tls");
 
 /***/ }),
 
-/***/ 669:
+/***/ 837:
 /***/ ((module) => {
 
 "use strict";
 module.exports = require("util");
+
+/***/ }),
+
+/***/ 844:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
+
+"use strict";
+__nccwpck_require__.r(__webpack_exports__);
+/* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
+/* harmony export */   "backgroundColorNames": () => (/* binding */ backgroundColorNames),
+/* harmony export */   "colorNames": () => (/* binding */ colorNames),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "foregroundColorNames": () => (/* binding */ foregroundColorNames),
+/* harmony export */   "modifierNames": () => (/* binding */ modifierNames)
+/* harmony export */ });
+const ANSI_BACKGROUND_OFFSET = 10;
+
+const wrapAnsi16 = (offset = 0) => code => `\u001B[${code + offset}m`;
+
+const wrapAnsi256 = (offset = 0) => code => `\u001B[${38 + offset};5;${code}m`;
+
+const wrapAnsi16m = (offset = 0) => (red, green, blue) => `\u001B[${38 + offset};2;${red};${green};${blue}m`;
+
+const styles = {
+	modifier: {
+		reset: [0, 0],
+		// 21 isn't widely supported and 22 does the same thing
+		bold: [1, 22],
+		dim: [2, 22],
+		italic: [3, 23],
+		underline: [4, 24],
+		overline: [53, 55],
+		inverse: [7, 27],
+		hidden: [8, 28],
+		strikethrough: [9, 29],
+	},
+	color: {
+		black: [30, 39],
+		red: [31, 39],
+		green: [32, 39],
+		yellow: [33, 39],
+		blue: [34, 39],
+		magenta: [35, 39],
+		cyan: [36, 39],
+		white: [37, 39],
+
+		// Bright color
+		blackBright: [90, 39],
+		gray: [90, 39], // Alias of `blackBright`
+		grey: [90, 39], // Alias of `blackBright`
+		redBright: [91, 39],
+		greenBright: [92, 39],
+		yellowBright: [93, 39],
+		blueBright: [94, 39],
+		magentaBright: [95, 39],
+		cyanBright: [96, 39],
+		whiteBright: [97, 39],
+	},
+	bgColor: {
+		bgBlack: [40, 49],
+		bgRed: [41, 49],
+		bgGreen: [42, 49],
+		bgYellow: [43, 49],
+		bgBlue: [44, 49],
+		bgMagenta: [45, 49],
+		bgCyan: [46, 49],
+		bgWhite: [47, 49],
+
+		// Bright color
+		bgBlackBright: [100, 49],
+		bgGray: [100, 49], // Alias of `bgBlackBright`
+		bgGrey: [100, 49], // Alias of `bgBlackBright`
+		bgRedBright: [101, 49],
+		bgGreenBright: [102, 49],
+		bgYellowBright: [103, 49],
+		bgBlueBright: [104, 49],
+		bgMagentaBright: [105, 49],
+		bgCyanBright: [106, 49],
+		bgWhiteBright: [107, 49],
+	},
+};
+
+const modifierNames = Object.keys(styles.modifier);
+const foregroundColorNames = Object.keys(styles.color);
+const backgroundColorNames = Object.keys(styles.bgColor);
+const colorNames = [...foregroundColorNames, ...backgroundColorNames];
+
+function assembleStyles() {
+	const codes = new Map();
+
+	for (const [groupName, group] of Object.entries(styles)) {
+		for (const [styleName, style] of Object.entries(group)) {
+			styles[styleName] = {
+				open: `\u001B[${style[0]}m`,
+				close: `\u001B[${style[1]}m`,
+			};
+
+			group[styleName] = styles[styleName];
+
+			codes.set(style[0], style[1]);
+		}
+
+		Object.defineProperty(styles, groupName, {
+			value: group,
+			enumerable: false,
+		});
+	}
+
+	Object.defineProperty(styles, 'codes', {
+		value: codes,
+		enumerable: false,
+	});
+
+	styles.color.close = '\u001B[39m';
+	styles.bgColor.close = '\u001B[49m';
+
+	styles.color.ansi = wrapAnsi16();
+	styles.color.ansi256 = wrapAnsi256();
+	styles.color.ansi16m = wrapAnsi16m();
+	styles.bgColor.ansi = wrapAnsi16(ANSI_BACKGROUND_OFFSET);
+	styles.bgColor.ansi256 = wrapAnsi256(ANSI_BACKGROUND_OFFSET);
+	styles.bgColor.ansi16m = wrapAnsi16m(ANSI_BACKGROUND_OFFSET);
+
+	// From https://github.com/Qix-/color-convert/blob/3f0e0d4e92e235796ccb17f6e85c72094a651f49/conversions.js
+	Object.defineProperties(styles, {
+		rgbToAnsi256: {
+			value: (red, green, blue) => {
+				// We use the extended greyscale palette here, with the exception of
+				// black and white. normal palette only has 4 greyscale shades.
+				if (red === green && green === blue) {
+					if (red < 8) {
+						return 16;
+					}
+
+					if (red > 248) {
+						return 231;
+					}
+
+					return Math.round(((red - 8) / 247) * 24) + 232;
+				}
+
+				return 16
+					+ (36 * Math.round(red / 255 * 5))
+					+ (6 * Math.round(green / 255 * 5))
+					+ Math.round(blue / 255 * 5);
+			},
+			enumerable: false,
+		},
+		hexToRgb: {
+			value: hex => {
+				const matches = /[a-f\d]{6}|[a-f\d]{3}/i.exec(hex.toString(16));
+				if (!matches) {
+					return [0, 0, 0];
+				}
+
+				let [colorString] = matches;
+
+				if (colorString.length === 3) {
+					colorString = [...colorString].map(character => character + character).join('');
+				}
+
+				const integer = Number.parseInt(colorString, 16);
+
+				return [
+					/* eslint-disable no-bitwise */
+					(integer >> 16) & 0xFF,
+					(integer >> 8) & 0xFF,
+					integer & 0xFF,
+					/* eslint-enable no-bitwise */
+				];
+			},
+			enumerable: false,
+		},
+		hexToAnsi256: {
+			value: hex => styles.rgbToAnsi256(...styles.hexToRgb(hex)),
+			enumerable: false,
+		},
+		ansi256ToAnsi: {
+			value: code => {
+				if (code < 8) {
+					return 30 + code;
+				}
+
+				if (code < 16) {
+					return 90 + (code - 8);
+				}
+
+				let red;
+				let green;
+				let blue;
+
+				if (code >= 232) {
+					red = (((code - 232) * 10) + 8) / 255;
+					green = red;
+					blue = red;
+				} else {
+					code -= 16;
+
+					const remainder = code % 36;
+
+					red = Math.floor(code / 36) / 5;
+					green = Math.floor(remainder / 6) / 5;
+					blue = (remainder % 6) / 5;
+				}
+
+				const value = Math.max(red, green, blue) * 2;
+
+				if (value === 0) {
+					return 30;
+				}
+
+				// eslint-disable-next-line no-bitwise
+				let result = 30 + ((Math.round(blue) << 2) | (Math.round(green) << 1) | Math.round(red));
+
+				if (value === 2) {
+					result += 60;
+				}
+
+				return result;
+			},
+			enumerable: false,
+		},
+		rgbToAnsi: {
+			value: (red, green, blue) => styles.ansi256ToAnsi(styles.rgbToAnsi256(red, green, blue)),
+			enumerable: false,
+		},
+		hexToAnsi: {
+			value: hex => styles.ansi256ToAnsi(styles.hexToAnsi256(hex)),
+			enumerable: false,
+		},
+	});
+
+	return styles;
+}
+
+const ansiStyles = assembleStyles();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ansiStyles);
+
 
 /***/ })
 
