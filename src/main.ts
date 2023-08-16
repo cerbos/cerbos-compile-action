@@ -13,30 +13,26 @@ async function run(): Promise<void> {
 
   if (isError(pathToBinary)) {
     core.setFailed(
-      `Error occured during getting path to the cerbos binary. ${
+      `Error occurred during getting path to the cerbos binary. ${
         asError(pathToBinary).message
       }`
     )
   }
 
-  core.info(`Succesfully got path to the cerbos binary: ${pathToBinary}`)
+  core.info(`Successfully got path to the cerbos binary: ${pathToBinary}`)
 
   // Directory to policies folder
   const policyDir = core.getInput('policyDir')
   // Directory to tests folder
   const testDir = core.getInput('testDir')
 
-  let enableTests = true
-
   if (testDir === '') {
-    // testDir not provided
-    enableTests = false
-    core.info('testDir not provided, skipping tests.')
+    core.info('testDir not provided')
   }
 
   core.info('Running cerbos compile process.')
 
-  cerbosCompileAndTest(pathToBinary as string, policyDir, testDir, enableTests)
+  await cerbosCompileAndTest(pathToBinary as string, policyDir, testDir)
 
   core.info('Cerbos compile process is done.')
 }
