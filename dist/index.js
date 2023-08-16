@@ -57,7 +57,7 @@ function cerbosCompileAndTest(binaryPath, policyDir, testDir) {
         let command = `${binaryPath} compile ${policyDirAbs}`;
         if (testDir !== '') {
             command += ` --tests ${testDirAbs}`;
-            core.info('Added --tests flag to the command as tests are enabled');
+            core.info('Added --tests flag to the command');
         }
         core.info(`Command to run: ${command}`);
         core.startGroup(`cerbos compile results`);
