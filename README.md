@@ -24,5 +24,4 @@ Use the [cerbos-setup-action](https://github.com/cerbos/cerbos-setup-action) to 
   uses: cerbos/cerbos-compile-action@v1
   with:
     policyDir: policies
-    testDir: tests # Omit to skip tests
 ```

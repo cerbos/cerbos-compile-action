@@ -4,15 +4,15 @@
 import * as child from 'child_process'
 import * as core from '@actions/core'
 import * as path from 'path'
-import * as styles from 'ansi-styles'
 
+const compileFailureErrorCode = 3
+const testFailureErrorCode = 4
 const workspaceEnvKey = 'GITHUB_WORKSPACE'
 
 async function cerbosCompileAndTest(
   binaryPath: string,
   policyDir: string,
-  testDir: string,
-  enableTests: boolean
+  testDir: string
 ): Promise<void> {
   const workspaceDir = process.env[workspaceEnvKey]
   const policyDirAbs = path.join(workspaceDir as string, policyDir)
@@ -22,39 +22,43 @@ async function cerbosCompileAndTest(
   core.info(`Configured test directory: ${testDirAbs}`)
 
   let command = `${binaryPath} compile ${policyDirAbs}`
-  if (enableTests) {
+  if (testDir !== '') {
     command += ` --tests ${testDirAbs}`
     core.info('Added --tests flag to the command as tests are enabled')
   }
 
   core.info(`Command to run: ${command}`)
-  core.startGroup('cerbos compile results')
+  core.startGroup(`cerbos compile results`)
   child.exec(command, (err, stdout, stderr) => {
     if (err || stderr) {
-      core.setFailed(`Error(s) occurred`)
       if (err) {
+        switch (err.code) {
+          case compileFailureErrorCode:
+            core.setFailed(`Compilation failed`)
+            break
+          case testFailureErrorCode:
+            core.setFailed(`Tests failed`)
+            break
+          default:
+            core.setFailed(`Failed to launch Cerbos`)
+            break
+        }
         core.error(err.message)
       }
+
       if (stderr) {
         core.error(stderr)
       }
+
       if (stdout) {
-        core.info(
-          `${styles.default.color.ansi16m(
-            ...styles.default.hexToRgb('#00ff00')
-          )}${stdout}${styles.default.color.close}`
-        )
+        core.info(stdout)
       }
+
       core.endGroup()
       return
     }
 
-    core.info(
-      `${styles.default.color.ansi16m(
-        ...styles.default.hexToRgb('#00ff00')
-      )}${stdout}${styles.default.color.close}`
-    )
-
+    core.info(stdout)
     core.endGroup()
   })
 }
