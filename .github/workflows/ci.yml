@@ -10,7 +10,7 @@ jobs:
     name: Build and Unit Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set Node.js 16
         uses: actions/setup-node@v3
@@ -33,7 +33,7 @@ jobs:
     name: Use
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set Node.js 16
         uses: actions/setup-node@v3
@@ -57,7 +57,7 @@ jobs:
     name: Check dist/index.js
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set Node.js 16
         uses: actions/setup-node@v3
