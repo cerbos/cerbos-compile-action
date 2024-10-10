@@ -2,9 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import * as io from '@actions/io'
-import Error from './error'
 
-async function getPathToBinary(): Promise<string | Error> {
+async function getPathToBinary() {
   const pathToCerbos = await io.which('cerbos', true)
 
   if (pathToCerbos === '') {
