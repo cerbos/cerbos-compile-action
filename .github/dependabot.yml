@@ -2,10 +2,18 @@ version: 2
 updates:
   - package-ecosystem: 'npm'
     directory: '/'
+    labels:
+      - 'area/ci'
+      - 'bots'
+      - 'kind/chore'
     schedule:
       interval: 'monthly'
 
   - package-ecosystem: 'github-actions'
     directory: '/'
+    labels:
+      - 'area/ci'
+      - 'bots'
+      - 'kind/chore'
     schedule:
       interval: 'monthly'
