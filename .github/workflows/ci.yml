@@ -28,7 +28,7 @@ jobs:
 
       - name: Run all
         run: |
-          npm run all
+          pnpm run all
 
       - name: Compare the expected and actual dist/ directories
         run: |
