@@ -27413,7 +27413,7 @@ var __webpack_exports__ = {};
 // EXTERNAL MODULE: ./node_modules/.pnpm/@actions+core@1.11.1/node_modules/@actions/core/lib/core.js
 var core = __nccwpck_require__(9999);
 ;// CONCATENATED MODULE: ./src/error.ts
-// Copyright 2021-2023 Zenauth Ltd.
+// Copyright 2021-2025 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 function isError(object) {
     return object.message !== undefined;
@@ -27433,7 +27433,7 @@ var external_child_process_ = __nccwpck_require__(5317);
 // EXTERNAL MODULE: external "path"
 var external_path_ = __nccwpck_require__(6928);
 ;// CONCATENATED MODULE: ./src/cerbos-compile-and-test.ts
-// Copyright 2021-2023 Zenauth Ltd.
+// Copyright 2021-2025 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 
@@ -27488,7 +27488,7 @@ async function cerbosCompileAndTest(binaryPath, policyDir, testDir) {
 // EXTERNAL MODULE: ./node_modules/.pnpm/@actions+io@1.1.3/node_modules/@actions/io/lib/io.js
 var io = __nccwpck_require__(3357);
 ;// CONCATENATED MODULE: ./src/get-path-to-binary.ts
-// Copyright 2021-2023 Zenauth Ltd.
+// Copyright 2021-2025 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 async function getPathToBinary() {
@@ -27503,7 +27503,7 @@ async function getPathToBinary() {
 /* harmony default export */ const get_path_to_binary = (getPathToBinary);
 
 ;// CONCATENATED MODULE: ./src/main.ts
-// Copyright 2021-2023 Zenauth Ltd.
+// Copyright 2021-2025 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
 
