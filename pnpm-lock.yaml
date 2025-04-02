@@ -19,8 +19,8 @@ importers:
         version: 2.0.2
     devDependencies:
       '@eslint/js':
-        specifier: ^9.21.0
-        version: 9.21.0
+        specifier: ^9.23.0
+        version: 9.23.0
       '@types/glob':
         specifier: ^8.1.0
         version: 8.1.0
