@@ -1,0 +1,23 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "baseBranches": [
+      "main"
+    ],
+    "dependencyDashboard": true,
+    "extends": [
+      ":automergeDisabled",
+      "config:recommended",
+      "docker:disable",
+      ":gitSignOff",
+      "group:allNonMajor",
+      ":renovatePrefix",
+      "schedule:monthly",
+      ":semanticCommitTypeAll(chore)",
+      ":separateMultipleMajorReleases"
+    ],
+    "labels": [
+      "area/dependencies",
+      "bots",
+      "kind/chore"
+    ]
+  }
