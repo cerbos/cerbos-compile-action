@@ -6,10 +6,10 @@
   "main": "lib/main.js",
   "exports": "./lib/main.js",
   "type": "module",
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@10.14.0",
   "engines": {
-    "node": "22.17.0",
-    "pnpm": "10.12.4"
+    "node": "22.18.0",
+    "pnpm": "10.14.0"
   },
   "scripts": {
     "build": "ncc build -o dist src/main.ts",
@@ -38,7 +38,7 @@
   "devDependencies": {
     "@eslint/js": "^9.23.0",
     "@types/glob": "^8.1.0",
-    "@types/node": "22.16.0",
+    "@types/node": "22.17.0",
     "@vercel/ncc": "^0.38.3",
     "eslint": "^9.23.0",
     "glob": "^11.0.1",
