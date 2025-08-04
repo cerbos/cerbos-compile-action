@@ -6,8 +6,7 @@
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "typeRoots": ["./node_modules/@types"]
+    "skipLibCheck": true
   },
   "exclude": ["node_modules", "dist", "tests/*.test.ts"]
 }
