@@ -6,18 +6,22 @@
   "main": "lib/main.js",
   "exports": "./lib/main.js",
   "type": "module",
-  "packageManager": "pnpm@10.15.1",
+  "packageManager": "pnpm@10.17.0",
   "engines": {
     "node": "22.19.0",
-    "pnpm": "10.15.1"
+    "pnpm": "10.17.0"
   },
   "scripts": {
-    "build": "ncc build -o dist src/main.ts",
-    "format": "prettier --write '**/*.ts'",
-    "format-check": "prettier --check '**/*.ts'",
-    "lint": "eslint src/**/*.ts",
-    "test": "glob -c \"node --import tsx --no-warnings --test\" \"./tests/**/*.test.ts\"",
-    "all": "pnpm run format && pnpm run lint && pnpm run build && pnpm test"
+    "all:parallel": "concurrently --group --prefix=none",
+    "build": "rm -rf dist && ncc build -o dist src/main.ts",
+    "eslint:run": "NODE_OPTIONS=--max-old-space-size=3072 eslint --max-warnings=0",
+    "lint": "pnpm run all:parallel 'pnpm:lint:check:*'",
+    "lint:check:eslint": "pnpm run eslint:run src tests",
+    "lint:check:prettier": "prettier --check src tests",
+    "lint:fix": "pnpm run lint:fix:eslint && pnpm run lint:fix:prettier",
+    "lint:fix:eslint": "pnpm run eslint:run --fix src tests",
+    "lint:fix:prettier": "prettier --write src tests",
+    "test": "glob -c \"node --import tsx --no-warnings --test\" \"./tests/**/*.test.ts\""
   },
   "repository": {
     "type": "git",
@@ -37,8 +41,9 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
-    "@types/node": "22.18.1",
+    "@types/node": "22.18.6",
     "@vercel/ncc": "^0.38.3",
+    "concurrently": "^9.2.1",
     "eslint": "^9.33.0",
     "glob": "^11.0.3",
     "globals": "^16.3.0",

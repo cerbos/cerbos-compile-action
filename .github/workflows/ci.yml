@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  build-test-check-and-use:
-    name: Build, Test, Check and Use
+  lint-build-test-and-use:
+    name: Lint, Build, Test, Check and Use
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,18 +26,27 @@ jobs:
         run: |
           pnpm install --frozen-lockfile
 
-      - name: Run all
+      - name: Lint
         run: |
-          pnpm run all
+          pnpm run lint
 
-      - name: Compare the expected and actual dist/ directories
+      - name: Build
         run: |
-          if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
-            echo "Detected uncommitted changes after build.  See status below:"
-            git diff
+          pnpm run build
+
+      - name: Check repo status
+        run: |
+          repo_status=$(git status --porcelain)
+          if [[ ! -z "${repo_status}" ]]; then
+            echo "::error::Uncommitted changes detected"
+            echo "${repo_status}"
+            git status -vv
             exit 1
           fi
-        id: diff
+
+      - name: Test
+        run: |
+          pnpm run test
 
       - uses: cerbos/cerbos-setup-action@v1
         with:

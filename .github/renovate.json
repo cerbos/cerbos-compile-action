@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "baseBranchPatterns": ["main"],
+  "commitMessageLowerCase": "never",
   "dependencyDashboard": true,
   "extends": [
     ":automergeDisabled",
