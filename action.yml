@@ -1,5 +1,5 @@
 name: 'Cerbos Compile Action'
-description: 'Compile and test Cerbos policies'
+description: 'Compiles and tests Cerbos policies'
 author: 'Cerbos'
 
 inputs:
@@ -12,5 +12,5 @@ inputs:
     description: 'Test directory'
 
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'dist/index.js'
