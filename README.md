@@ -46,5 +46,5 @@ You'll need to install
 ### Build
 
 ```
-pnpm run all
+pnpm run build
 ```
