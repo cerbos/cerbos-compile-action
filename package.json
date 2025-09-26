@@ -6,10 +6,10 @@
   "main": "lib/main.js",
   "exports": "./lib/main.js",
   "type": "module",
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.17.1",
   "engines": {
-    "node": "22.19.0",
-    "pnpm": "10.17.0"
+    "node": "22.20.0",
+    "pnpm": "10.17.1"
   },
   "scripts": {
     "all:parallel": "concurrently --group --prefix=none",
