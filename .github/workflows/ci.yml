@@ -55,5 +55,3 @@ jobs:
 
       - name: Use action
         uses: ./
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}

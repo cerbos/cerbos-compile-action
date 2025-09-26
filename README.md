@@ -1,6 +1,6 @@
 # Cerbos Compile Action
 
-A GitHub action to validate Cerbos policies using the compiler and run policy tests if there are any.
+A GitHub action to compile Cerbos policies and execute policy tests.
 
 Cerbos helps you super-charge your authorization implementation by writing context-aware access control policies for your application resources. Find out more about Cerbos using the following resources:
 
