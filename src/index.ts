@@ -8,7 +8,7 @@ async function run(): Promise<void> {
   const policiesDir = core.getInput('policyDir')
   const testsDir = core.getInput('testDir')
 
-  common.compile({
+  await common.compile({
     policiesDir: policiesDir,
     testsDir: testsDir
   })
