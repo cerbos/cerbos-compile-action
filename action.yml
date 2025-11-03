@@ -1,6 +1,9 @@
 name: 'Cerbos Compile Action'
 description: 'Compiles and tests Cerbos policies'
 author: 'Cerbos'
+branding:
+  icon: 'package'
+  color: 'orange'
 
 inputs:
   policyDir:
