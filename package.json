@@ -33,7 +33,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@actions/core": "^1.11.1",
-    "cerbos-actions-common": "github:cerbos/cerbos-actions-common#0.0.14"
+    "cerbos-actions-common": "github:cerbos/cerbos-actions-common#0.0.16"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
