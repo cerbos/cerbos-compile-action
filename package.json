@@ -10,7 +10,7 @@
   },
   "scripts": {
     "all:parallel": "concurrently --group --prefix=none",
-    "build": "rm -rf dist && tsc --project tsconfig.json",
+    "build": "rm -rf dist && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "eslint:run": "NODE_OPTIONS=--max-old-space-size=3072 eslint --max-warnings=0",
     "lint": "pnpm run all:parallel 'pnpm:lint:check:*'",
     "lint:check:eslint": "pnpm run eslint:run src tests",
@@ -37,12 +37,16 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-typescript": "^12.3.0",
     "@types/node": "24.10.0",
     "concurrently": "^9.2.1",
     "eslint": "^9.33.0",
     "glob": "^11.0.3",
     "globals": "^16.3.0",
     "prettier": "^3.6.2",
+    "rollup": "^4.52.5",
     "tsx": "^4.20.4",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.40.0"
