@@ -12,8 +12,8 @@ importers:
         specifier: 1.11.1
         version: 1.11.1
       cerbos-actions-common:
-        specifier: github:cerbos/cerbos-actions-common#0.0.18
-        version: https://codeload.github.com/cerbos/cerbos-actions-common/tar.gz/e6d79690fd1139530123e482852cb2230a56bb41
+        specifier: github:cerbos/cerbos-actions-common#0.0.19
+        version: https://codeload.github.com/cerbos/cerbos-actions-common/tar.gz/daf2537c9f0d0b4ead1f3345246f036db64238e7
     devDependencies:
       '@eslint/js':
         specifier: 9.39.1
@@ -705,8 +705,8 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
-  cerbos-actions-common@https://codeload.github.com/cerbos/cerbos-actions-common/tar.gz/e6d79690fd1139530123e482852cb2230a56bb41:
-    resolution: {tarball: https://codeload.github.com/cerbos/cerbos-actions-common/tar.gz/e6d79690fd1139530123e482852cb2230a56bb41}
+  cerbos-actions-common@https://codeload.github.com/cerbos/cerbos-actions-common/tar.gz/daf2537c9f0d0b4ead1f3345246f036db64238e7:
+    resolution: {tarball: https://codeload.github.com/cerbos/cerbos-actions-common/tar.gz/daf2537c9f0d0b4ead1f3345246f036db64238e7}
     version: 0.0.0
     engines: {node: 24.11.1, pnpm: 10.22.0}
 
@@ -1878,7 +1878,7 @@ snapshots:
 
   callsites@3.1.0: {}
 
-  cerbos-actions-common@https://codeload.github.com/cerbos/cerbos-actions-common/tar.gz/e6d79690fd1139530123e482852cb2230a56bb41:
+  cerbos-actions-common@https://codeload.github.com/cerbos/cerbos-actions-common/tar.gz/daf2537c9f0d0b4ead1f3345246f036db64238e7:
     dependencies:
       '@actions/core': 1.11.1
       '@actions/io': 2.0.0
