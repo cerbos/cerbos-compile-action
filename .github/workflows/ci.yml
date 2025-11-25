@@ -11,13 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
 
       - name: Set up pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           node-version-file: '.node-version'
@@ -48,7 +48,7 @@ jobs:
         run: |
           pnpm run test
 
-      - uses: cerbos/cerbos-setup-action@v1
+      - uses: cerbos/cerbos-setup-action@d7550f020dbe2b32b3b830c1a8223699ed7a7942 # v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           version: 'latest'
