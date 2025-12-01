@@ -3,10 +3,10 @@
   "private": true,
   "description": "A GitHub action to compile Cerbos policies and execute policy tests",
   "type": "module",
-  "packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b",
+  "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a",
   "engines": {
     "node": "24.11.1",
-    "pnpm": "10.23.0"
+    "pnpm": "10.24.0"
   },
   "scripts": {
     "all:parallel": "concurrently --group --prefix=none",
@@ -33,7 +33,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@actions/core": "1.11.1",
-    "cerbos-actions-common": "github:cerbos/cerbos-actions-common#0.0.19"
+    "cerbos-actions-common": "github:cerbos/cerbos-actions-common#0.0.20"
   },
   "devDependencies": {
     "@eslint/js": "9.39.1",
@@ -45,9 +45,9 @@
     "eslint": "9.39.1",
     "glob-bin": "1.0.0",
     "globals": "16.5.0",
-    "prettier": "3.6.2",
+    "prettier": "3.7.3",
     "rollup": "4.53.3",
-    "tsx": "4.20.6",
+    "tsx": "4.21.0",
     "typescript": "5.9.3",
     "typescript-eslint": "8.48.0"
   }
