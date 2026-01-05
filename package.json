@@ -32,7 +32,7 @@
   "author": "Cerbos",
   "license": "Apache-2.0",
   "dependencies": {
-    "@actions/core": "1.11.1",
+    "@actions/core": "2.0.1",
     "cerbos-actions-common": "github:cerbos/cerbos-actions-common#0.0.21"
   },
   "devDependencies": {
