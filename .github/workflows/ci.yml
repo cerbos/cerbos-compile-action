@@ -48,7 +48,7 @@ jobs:
         run: |
           pnpm run test
 
-      - uses: cerbos/cerbos-setup-action@d7550f020dbe2b32b3b830c1a8223699ed7a7942 # v1
+      - uses: cerbos/cerbos-setup-action@feb2173363a24d30544b990965892bc391909213 # v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           version: 'latest'
