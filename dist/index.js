@@ -3,10 +3,10 @@ import require$$0$1 from 'crypto';
 import require$$1$1 from 'fs';
 import * as require$$1 from 'path';
 import require$$1__default from 'path';
-import require$$2 from 'http';
-import require$$3 from 'https';
+import require$$2$1 from 'http';
+import require$$1$2 from 'https';
 import require$$0$4 from 'net';
-import require$$1$2 from 'tls';
+import require$$1$3 from 'tls';
 import require$$4 from 'events';
 import require$$0$3 from 'assert';
 import require$$0$2 from 'util';
@@ -15,20 +15,20 @@ import require$$7 from 'buffer';
 import require$$8 from 'querystring';
 import require$$14 from 'stream/web';
 import require$$0$7 from 'node:stream';
-import require$$1$3 from 'node:util';
+import require$$1$4 from 'node:util';
 import require$$0$6 from 'node:events';
 import require$$0$8 from 'worker_threads';
-import require$$2$1 from 'perf_hooks';
+import require$$2$2 from 'perf_hooks';
 import require$$5 from 'util/types';
 import require$$4$1 from 'async_hooks';
-import require$$1$4 from 'console';
-import require$$1$5 from 'url';
-import require$$3$1 from 'zlib';
-import require$$6 from 'string_decoder';
-import require$$0$9 from 'diagnostics_channel';
-import * as child from 'child_process';
-import child__default from 'child_process';
-import require$$6$1 from 'timers';
+import require$$1$5 from 'console';
+import require$$1$6 from 'url';
+import require$$3 from 'zlib';
+import require$$0$9 from 'string_decoder';
+import require$$0$a from 'diagnostics_channel';
+import * as require$$2 from 'child_process';
+import require$$2__default from 'child_process';
+import require$$6 from 'timers';
 import 'node:path';
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -37,21 +37,21 @@ function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
 
-var core = {};
+var core$1 = {};
 
-var command = {};
+var command$1 = {};
 
-var utils$1 = {};
+var utils$2 = {};
 
-var hasRequiredUtils$1;
+var hasRequiredUtils$2;
 
-function requireUtils$1 () {
-	if (hasRequiredUtils$1) return utils$1;
-	hasRequiredUtils$1 = 1;
+function requireUtils$2 () {
+	if (hasRequiredUtils$2) return utils$2;
+	hasRequiredUtils$2 = 1;
 	// We use any as a valid input type
 	/* eslint-disable @typescript-eslint/no-explicit-any */
-	Object.defineProperty(utils$1, "__esModule", { value: true });
-	utils$1.toCommandProperties = utils$1.toCommandValue = void 0;
+	Object.defineProperty(utils$2, "__esModule", { value: true });
+	utils$2.toCommandProperties = utils$2.toCommandValue = void 0;
 	/**
 	 * Sanitizes an input into a string so it can be passed into issueCommand safely
 	 * @param input input to sanitize into a string
@@ -65,7 +65,7 @@ function requireUtils$1 () {
 	    }
 	    return JSON.stringify(input);
 	}
-	utils$1.toCommandValue = toCommandValue;
+	utils$2.toCommandValue = toCommandValue;
 	/**
 	 *
 	 * @param annotationProperties
@@ -85,17 +85,17 @@ function requireUtils$1 () {
 	        endColumn: annotationProperties.endColumn
 	    };
 	}
-	utils$1.toCommandProperties = toCommandProperties;
+	utils$2.toCommandProperties = toCommandProperties;
 	
-	return utils$1;
+	return utils$2;
 }
 
-var hasRequiredCommand;
+var hasRequiredCommand$1;
 
-function requireCommand () {
-	if (hasRequiredCommand) return command;
-	hasRequiredCommand = 1;
-	var __createBinding = (command && command.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+function requireCommand$1 () {
+	if (hasRequiredCommand$1) return command$1;
+	hasRequiredCommand$1 = 1;
+	var __createBinding = (command$1 && command$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -106,22 +106,22 @@ function requireCommand () {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (command && command.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (command$1 && command$1.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (command && command.__importStar) || function (mod) {
+	var __importStar = (command$1 && command$1.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	Object.defineProperty(command, "__esModule", { value: true });
-	command.issue = command.issueCommand = void 0;
+	Object.defineProperty(command$1, "__esModule", { value: true });
+	command$1.issue = command$1.issueCommand = void 0;
 	const os = __importStar(require$$0);
-	const utils_1 = requireUtils$1();
+	const utils_1 = requireUtils$2();
 	/**
 	 * Commands
 	 *
@@ -136,11 +136,11 @@ function requireCommand () {
 	    const cmd = new Command(command, properties, message);
 	    process.stdout.write(cmd.toString() + os.EOL);
 	}
-	command.issueCommand = issueCommand;
+	command$1.issueCommand = issueCommand;
 	function issue(name, message = '') {
 	    issueCommand(name, {}, message);
 	}
-	command.issue = issue;
+	command$1.issue = issue;
 	const CMD_STRING = '::';
 	class Command {
 	    constructor(command, properties, message) {
@@ -190,18 +190,18 @@ function requireCommand () {
 	        .replace(/,/g, '%2C');
 	}
 	
-	return command;
+	return command$1;
 }
 
-var fileCommand = {};
+var fileCommand$1 = {};
 
-var hasRequiredFileCommand;
+var hasRequiredFileCommand$1;
 
-function requireFileCommand () {
-	if (hasRequiredFileCommand) return fileCommand;
-	hasRequiredFileCommand = 1;
+function requireFileCommand$1 () {
+	if (hasRequiredFileCommand$1) return fileCommand$1;
+	hasRequiredFileCommand$1 = 1;
 	// For internal use, subject to change.
-	var __createBinding = (fileCommand && fileCommand.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (fileCommand$1 && fileCommand$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -212,26 +212,26 @@ function requireFileCommand () {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (fileCommand && fileCommand.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (fileCommand$1 && fileCommand$1.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (fileCommand && fileCommand.__importStar) || function (mod) {
+	var __importStar = (fileCommand$1 && fileCommand$1.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	Object.defineProperty(fileCommand, "__esModule", { value: true });
-	fileCommand.prepareKeyValueMessage = fileCommand.issueFileCommand = void 0;
+	Object.defineProperty(fileCommand$1, "__esModule", { value: true });
+	fileCommand$1.prepareKeyValueMessage = fileCommand$1.issueFileCommand = void 0;
 	// We use any as a valid input type
 	/* eslint-disable @typescript-eslint/no-explicit-any */
 	const crypto = __importStar(require$$0$1);
 	const fs = __importStar(require$$1$1);
 	const os = __importStar(require$$0);
-	const utils_1 = requireUtils$1();
+	const utils_1 = requireUtils$2();
 	function issueFileCommand(command, message) {
 	    const filePath = process.env[`GITHUB_${command}`];
 	    if (!filePath) {
@@ -244,7 +244,7 @@ function requireFileCommand () {
 	        encoding: 'utf8'
 	    });
 	}
-	fileCommand.issueFileCommand = issueFileCommand;
+	fileCommand$1.issueFileCommand = issueFileCommand;
 	function prepareKeyValueMessage(key, value) {
 	    const delimiter = `ghadelimiter_${crypto.randomUUID()}`;
 	    const convertedValue = (0, utils_1.toCommandValue)(value);
@@ -259,24 +259,24 @@ function requireFileCommand () {
 	    }
 	    return `${key}<<${delimiter}${os.EOL}${convertedValue}${os.EOL}${delimiter}`;
 	}
-	fileCommand.prepareKeyValueMessage = prepareKeyValueMessage;
+	fileCommand$1.prepareKeyValueMessage = prepareKeyValueMessage;
 	
-	return fileCommand;
+	return fileCommand$1;
 }
 
-var oidcUtils = {};
+var oidcUtils$1 = {};
 
-var lib = {};
+var lib$1 = {};
 
-var proxy = {};
+var proxy$1 = {};
 
-var hasRequiredProxy;
+var hasRequiredProxy$1;
 
-function requireProxy () {
-	if (hasRequiredProxy) return proxy;
-	hasRequiredProxy = 1;
-	Object.defineProperty(proxy, "__esModule", { value: true });
-	proxy.checkBypass = proxy.getProxyUrl = void 0;
+function requireProxy$1 () {
+	if (hasRequiredProxy$1) return proxy$1;
+	hasRequiredProxy$1 = 1;
+	Object.defineProperty(proxy$1, "__esModule", { value: true });
+	proxy$1.checkBypass = proxy$1.getProxyUrl = void 0;
 	function getProxyUrl(reqUrl) {
 	    const usingSsl = reqUrl.protocol === 'https:';
 	    if (checkBypass(reqUrl)) {
@@ -303,7 +303,7 @@ function requireProxy () {
 	        return undefined;
 	    }
 	}
-	proxy.getProxyUrl = getProxyUrl;
+	proxy$1.getProxyUrl = getProxyUrl;
 	function checkBypass(reqUrl) {
 	    if (!reqUrl.hostname) {
 	        return false;
@@ -347,7 +347,7 @@ function requireProxy () {
 	    }
 	    return false;
 	}
-	proxy.checkBypass = checkBypass;
+	proxy$1.checkBypass = checkBypass;
 	function isLoopbackAddress(host) {
 	    const hostLower = host.toLowerCase();
 	    return (hostLower === 'localhost' ||
@@ -369,7 +369,7 @@ function requireProxy () {
 	    }
 	}
 	
-	return proxy;
+	return proxy$1;
 }
 
 var tunnel$1 = {};
@@ -379,9 +379,9 @@ var hasRequiredTunnel$1;
 function requireTunnel$1 () {
 	if (hasRequiredTunnel$1) return tunnel$1;
 	hasRequiredTunnel$1 = 1;
-	var tls = require$$1$2;
-	var http = require$$2;
-	var https = require$$3;
+	var tls = require$$1$3;
+	var http = require$$2$1;
+	var https = require$$1$2;
 	var events = require$$4;
 	var util = require$$0$2;
 
@@ -1099,7 +1099,7 @@ function requireUtil$6 () {
 
 	const assert = require$$0$3;
 	const { kDestroyed, kBodyUsed } = requireSymbols$4();
-	const { IncomingMessage } = require$$2;
+	const { IncomingMessage } = require$$2$1;
 	const stream = require$$0$5;
 	const net = require$$0$4;
 	const { InvalidArgumentError } = requireErrors();
@@ -1761,7 +1761,7 @@ function requireSbmh () {
 	 * by Hongli Lai at: https://github.com/FooBarWidget/boyer-moore-horspool
 	 */
 	const EventEmitter = require$$0$6.EventEmitter;
-	const inherits = require$$1$3.inherits;
+	const inherits = require$$1$4.inherits;
 
 	function SBMH (needle) {
 	  if (typeof needle === 'string') {
@@ -1970,7 +1970,7 @@ function requirePartStream () {
 	if (hasRequiredPartStream) return PartStream_1;
 	hasRequiredPartStream = 1;
 
-	const inherits = require$$1$3.inherits;
+	const inherits = require$$1$4.inherits;
 	const ReadableStream = require$$0$7.Readable;
 
 	function PartStream (opts) {
@@ -2016,7 +2016,7 @@ function requireHeaderParser () {
 	hasRequiredHeaderParser = 1;
 
 	const EventEmitter = require$$0$6.EventEmitter;
-	const inherits = require$$1$3.inherits;
+	const inherits = require$$1$4.inherits;
 	const getLimit = requireGetLimit();
 
 	const StreamSearch = requireSbmh();
@@ -2124,7 +2124,7 @@ function requireDicer () {
 	hasRequiredDicer = 1;
 
 	const WritableStream = require$$0$7.Writable;
-	const inherits = require$$1$3.inherits;
+	const inherits = require$$1$4.inherits;
 
 	const StreamSearch = requireSbmh();
 
@@ -2701,7 +2701,7 @@ function requireMultipart () {
 	//     -- this will require modifications to utils.parseParams
 
 	const { Readable } = require$$0$7;
-	const { inherits } = require$$1$3;
+	const { inherits } = require$$1$4;
 
 	const Dicer = requireDicer();
 
@@ -3267,7 +3267,7 @@ function requireMain () {
 	hasRequiredMain = 1;
 
 	const WritableStream = require$$0$7.Writable;
-	const { inherits } = require$$1$3;
+	const { inherits } = require$$1$4;
 	const Dicer = requireDicer();
 
 	const MultipartParser = requireMultipart();
@@ -3568,7 +3568,7 @@ function requireUtil$5 () {
 
 	const { redirectStatusSet, referrerPolicySet: referrerPolicyTokens, badPortsSet } = requireConstants$3();
 	const { getGlobalOrigin } = requireGlobal$1();
-	const { performance } = require$$2$1;
+	const { performance } = require$$2$2;
 	const { isBlobLike, toUSVString, ReadableStreamFrom } = requireUtil$6();
 	const assert = require$$0$3;
 	const { isUint8Array } = require$$5;
@@ -8091,7 +8091,7 @@ function requireConnect () {
 	    let socket;
 	    if (protocol === 'https:') {
 	      if (!tls) {
-	        tls = require$$1$2;
+	        tls = require$$1$3;
 	      }
 	      servername = servername || options.servername || util.getServerName(host) || null;
 
@@ -8197,15 +8197,15 @@ function requireConnect () {
 
 var constants$2 = {};
 
-var utils = {};
+var utils$1 = {};
 
-var hasRequiredUtils;
+var hasRequiredUtils$1;
 
-function requireUtils () {
-	if (hasRequiredUtils) return utils;
-	hasRequiredUtils = 1;
-	Object.defineProperty(utils, "__esModule", { value: true });
-	utils.enumToMap = void 0;
+function requireUtils$1 () {
+	if (hasRequiredUtils$1) return utils$1;
+	hasRequiredUtils$1 = 1;
+	Object.defineProperty(utils$1, "__esModule", { value: true });
+	utils$1.enumToMap = void 0;
 	function enumToMap(obj) {
 	    const res = {};
 	    Object.keys(obj).forEach((key) => {
@@ -8216,9 +8216,9 @@ function requireUtils () {
 	    });
 	    return res;
 	}
-	utils.enumToMap = enumToMap;
+	utils$1.enumToMap = enumToMap;
 	
-	return utils;
+	return utils$1;
 }
 
 var hasRequiredConstants$2;
@@ -8229,7 +8229,7 @@ function requireConstants$2 () {
 	(function (exports$1) {
 		Object.defineProperty(exports$1, "__esModule", { value: true });
 		exports$1.SPECIAL_HEADERS = exports$1.HEADER_STATE = exports$1.MINOR = exports$1.MAJOR = exports$1.CONNECTION_TOKEN_CHARS = exports$1.HEADER_CHARS = exports$1.TOKEN = exports$1.STRICT_TOKEN = exports$1.HEX = exports$1.URL_CHAR = exports$1.STRICT_URL_CHAR = exports$1.USERINFO_CHARS = exports$1.MARK = exports$1.ALPHANUM = exports$1.NUM = exports$1.HEX_MAP = exports$1.NUM_MAP = exports$1.ALPHA = exports$1.FINISH = exports$1.H_METHOD_MAP = exports$1.METHOD_MAP = exports$1.METHODS_RTSP = exports$1.METHODS_ICE = exports$1.METHODS_HTTP = exports$1.METHODS = exports$1.LENIENT_FLAGS = exports$1.FLAGS = exports$1.TYPE = exports$1.ERROR = void 0;
-		const utils_1 = requireUtils();
+		const utils_1 = requireUtils$1();
 		(function (ERROR) {
 		    ERROR[ERROR["OK"] = 0] = "OK";
 		    ERROR[ERROR["INTERNAL"] = 1] = "INTERNAL";
@@ -8773,7 +8773,7 @@ function requireClient () {
 
 	const assert = require$$0$3;
 	const net = require$$0$4;
-	const http = require$$2;
+	const http = require$$2$1;
 	const { pipeline } = require$$0$5;
 	const util = requireUtil$6();
 	const timers = requireTimers();
@@ -13378,7 +13378,7 @@ function requireMockUtils () {
 	  kGetNetConnect
 	} = requireMockSymbols();
 	const { buildURL, nop } = requireUtil$6();
-	const { STATUS_CODES } = require$$2;
+	const { STATUS_CODES } = require$$2$1;
 	const {
 	  types: {
 	    isPromise
@@ -14115,7 +14115,7 @@ function requirePendingInterceptorsFormatter () {
 	hasRequiredPendingInterceptorsFormatter = 1;
 
 	const { Transform } = require$$0$5;
-	const { Console } = require$$1$4;
+	const { Console } = require$$1$5;
 
 	/**
 	 * Gets the output of `console.table(…)` as a string.
@@ -14342,7 +14342,7 @@ function requireProxyAgent () {
 	hasRequiredProxyAgent = 1;
 
 	const { kProxy, kClose, kDestroy, kInterceptors } = requireSymbols$4();
-	const { URL } = require$$1$5;
+	const { URL } = require$$1$6;
 	const Agent = requireAgent();
 	const Pool = requirePool();
 	const DispatcherBase = requireDispatcherBase();
@@ -17100,7 +17100,7 @@ function requireFetch () {
 	} = requireResponse();
 	const { Headers } = requireHeaders();
 	const { Request, makeRequest } = requireRequest();
-	const zlib = require$$3$1;
+	const zlib = require$$3;
 	const {
 	  bytesMatch,
 	  makePolicyContainer,
@@ -17150,7 +17150,7 @@ function requireFetch () {
 	const { TransformStream } = require$$14;
 	const { getGlobalDispatcher } = requireGlobal();
 	const { webidl } = requireWebidl();
-	const { STATUS_CODES } = require$$2;
+	const { STATUS_CODES } = require$$2$1;
 	const GET_OR_HEAD = ['GET', 'HEAD'];
 
 	/** @type {import('buffer').resolveObjectURL} */
@@ -19585,7 +19585,7 @@ function requireUtil$3 () {
 	const { DOMException } = requireConstants$3();
 	const { serializeAMimeType, parseMIMEType } = requireDataURL();
 	const { types } = require$$0$2;
-	const { StringDecoder } = require$$6;
+	const { StringDecoder } = require$$0$9;
 	const { btoa } = require$$7;
 
 	/** @type {PropertyDescriptor} */
@@ -22809,7 +22809,7 @@ function requireConnection () {
 	if (hasRequiredConnection) return connection;
 	hasRequiredConnection = 1;
 
-	const diagnosticsChannel = require$$0$9;
+	const diagnosticsChannel = require$$0$a;
 	const { uid, states } = requireConstants();
 	const {
 	  kReadyState,
@@ -23190,7 +23190,7 @@ function requireReceiver () {
 	hasRequiredReceiver = 1;
 
 	const { Writable } = require$$0$5;
-	const diagnosticsChannel = require$$0$9;
+	const diagnosticsChannel = require$$0$a;
 	const { parserStates, opcodes, states, emptyBuffer } = requireConstants();
 	const { kReadyState, kSentClose, kResponse, kReceivedClose } = requireSymbols();
 	const { isValidStatusCode, failWebsocketConnection, websocketMessageReceived } = requireUtil();
@@ -24354,13 +24354,13 @@ function requireUndici () {
 	return undici;
 }
 
-var hasRequiredLib;
+var hasRequiredLib$1;
 
-function requireLib () {
-	if (hasRequiredLib) return lib;
-	hasRequiredLib = 1;
+function requireLib$1 () {
+	if (hasRequiredLib$1) return lib$1;
+	hasRequiredLib$1 = 1;
 	/* eslint-disable @typescript-eslint/no-explicit-any */
-	var __createBinding = (lib && lib.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (lib$1 && lib$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -24371,19 +24371,19 @@ function requireLib () {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (lib && lib.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (lib$1 && lib$1.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (lib && lib.__importStar) || function (mod) {
+	var __importStar = (lib$1 && lib$1.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __awaiter = (lib && lib.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (lib$1 && lib$1.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -24392,11 +24392,11 @@ function requireLib () {
 	        step((generator = generator.apply(thisArg, _arguments || [])).next());
 	    });
 	};
-	Object.defineProperty(lib, "__esModule", { value: true });
-	lib.HttpClient = lib.isHttps = lib.HttpClientResponse = lib.HttpClientError = lib.getProxyUrl = lib.MediaTypes = lib.Headers = lib.HttpCodes = void 0;
-	const http = __importStar(require$$2);
-	const https = __importStar(require$$3);
-	const pm = __importStar(requireProxy());
+	Object.defineProperty(lib$1, "__esModule", { value: true });
+	lib$1.HttpClient = lib$1.isHttps = lib$1.HttpClientResponse = lib$1.HttpClientError = lib$1.getProxyUrl = lib$1.MediaTypes = lib$1.Headers = lib$1.HttpCodes = void 0;
+	const http = __importStar(require$$2$1);
+	const https = __importStar(require$$1$2);
+	const pm = __importStar(requireProxy$1());
 	const tunnel = __importStar(requireTunnel());
 	const undici_1 = requireUndici();
 	var HttpCodes;
@@ -24428,16 +24428,16 @@ function requireLib () {
 	    HttpCodes[HttpCodes["BadGateway"] = 502] = "BadGateway";
 	    HttpCodes[HttpCodes["ServiceUnavailable"] = 503] = "ServiceUnavailable";
 	    HttpCodes[HttpCodes["GatewayTimeout"] = 504] = "GatewayTimeout";
-	})(HttpCodes || (lib.HttpCodes = HttpCodes = {}));
+	})(HttpCodes || (lib$1.HttpCodes = HttpCodes = {}));
 	var Headers;
 	(function (Headers) {
 	    Headers["Accept"] = "accept";
 	    Headers["ContentType"] = "content-type";
-	})(Headers || (lib.Headers = Headers = {}));
+	})(Headers || (lib$1.Headers = Headers = {}));
 	var MediaTypes;
 	(function (MediaTypes) {
 	    MediaTypes["ApplicationJson"] = "application/json";
-	})(MediaTypes || (lib.MediaTypes = MediaTypes = {}));
+	})(MediaTypes || (lib$1.MediaTypes = MediaTypes = {}));
 	/**
 	 * Returns the proxy URL, depending upon the supplied url and proxy environment variables.
 	 * @param serverUrl  The server URL where the request will be sent. For example, https://api.github.com
@@ -24446,7 +24446,7 @@ function requireLib () {
 	    const proxyUrl = pm.getProxyUrl(new URL(serverUrl));
 	    return proxyUrl ? proxyUrl.href : '';
 	}
-	lib.getProxyUrl = getProxyUrl;
+	lib$1.getProxyUrl = getProxyUrl;
 	const HttpRedirectCodes = [
 	    HttpCodes.MovedPermanently,
 	    HttpCodes.ResourceMoved,
@@ -24470,7 +24470,7 @@ function requireLib () {
 	        Object.setPrototypeOf(this, HttpClientError.prototype);
 	    }
 	}
-	lib.HttpClientError = HttpClientError;
+	lib$1.HttpClientError = HttpClientError;
 	class HttpClientResponse {
 	    constructor(message) {
 	        this.message = message;
@@ -24502,12 +24502,12 @@ function requireLib () {
 	        });
 	    }
 	}
-	lib.HttpClientResponse = HttpClientResponse;
+	lib$1.HttpClientResponse = HttpClientResponse;
 	function isHttps(requestUrl) {
 	    const parsedUrl = new URL(requestUrl);
 	    return parsedUrl.protocol === 'https:';
 	}
-	lib.isHttps = isHttps;
+	lib$1.isHttps = isHttps;
 	class HttpClient {
 	    constructor(userAgent, handlers, requestOptions) {
 	        this._ignoreSslError = false;
@@ -25007,20 +25007,20 @@ function requireLib () {
 	        });
 	    }
 	}
-	lib.HttpClient = HttpClient;
+	lib$1.HttpClient = HttpClient;
 	const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCase()] = obj[k]), c), {});
 	
-	return lib;
+	return lib$1;
 }
 
-var auth$1 = {};
+var auth$2 = {};
 
-var hasRequiredAuth;
+var hasRequiredAuth$1;
 
-function requireAuth () {
-	if (hasRequiredAuth) return auth$1;
-	hasRequiredAuth = 1;
-	var __awaiter = (auth$1 && auth$1.__awaiter) || function (thisArg, _arguments, P, generator) {
+function requireAuth$1 () {
+	if (hasRequiredAuth$1) return auth$2;
+	hasRequiredAuth$1 = 1;
+	var __awaiter = (auth$2 && auth$2.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -25029,8 +25029,8 @@ function requireAuth () {
 	        step((generator = generator.apply(thisArg, _arguments || [])).next());
 	    });
 	};
-	Object.defineProperty(auth$1, "__esModule", { value: true });
-	auth$1.PersonalAccessTokenCredentialHandler = auth$1.BearerCredentialHandler = auth$1.BasicCredentialHandler = void 0;
+	Object.defineProperty(auth$2, "__esModule", { value: true });
+	auth$2.PersonalAccessTokenCredentialHandler = auth$2.BearerCredentialHandler = auth$2.BasicCredentialHandler = void 0;
 	class BasicCredentialHandler {
 	    constructor(username, password) {
 	        this.username = username;
@@ -25052,7 +25052,7 @@ function requireAuth () {
 	        });
 	    }
 	}
-	auth$1.BasicCredentialHandler = BasicCredentialHandler;
+	auth$2.BasicCredentialHandler = BasicCredentialHandler;
 	class BearerCredentialHandler {
 	    constructor(token) {
 	        this.token = token;
@@ -25075,7 +25075,7 @@ function requireAuth () {
 	        });
 	    }
 	}
-	auth$1.BearerCredentialHandler = BearerCredentialHandler;
+	auth$2.BearerCredentialHandler = BearerCredentialHandler;
 	class PersonalAccessTokenCredentialHandler {
 	    constructor(token) {
 	        this.token = token;
@@ -25098,17 +25098,17 @@ function requireAuth () {
 	        });
 	    }
 	}
-	auth$1.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHandler;
+	auth$2.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHandler;
 	
-	return auth$1;
+	return auth$2;
 }
 
-var hasRequiredOidcUtils;
+var hasRequiredOidcUtils$1;
 
-function requireOidcUtils () {
-	if (hasRequiredOidcUtils) return oidcUtils;
-	hasRequiredOidcUtils = 1;
-	var __awaiter = (oidcUtils && oidcUtils.__awaiter) || function (thisArg, _arguments, P, generator) {
+function requireOidcUtils$1 () {
+	if (hasRequiredOidcUtils$1) return oidcUtils$1;
+	hasRequiredOidcUtils$1 = 1;
+	var __awaiter = (oidcUtils$1 && oidcUtils$1.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -25117,11 +25117,11 @@ function requireOidcUtils () {
 	        step((generator = generator.apply(thisArg, _arguments || [])).next());
 	    });
 	};
-	Object.defineProperty(oidcUtils, "__esModule", { value: true });
-	oidcUtils.OidcClient = void 0;
-	const http_client_1 = requireLib();
-	const auth_1 = requireAuth();
-	const core_1 = requireCore();
+	Object.defineProperty(oidcUtils$1, "__esModule", { value: true });
+	oidcUtils$1.OidcClient = void 0;
+	const http_client_1 = requireLib$1();
+	const auth_1 = requireAuth$1();
+	const core_1 = requireCore$1();
 	class OidcClient {
 	    static createHttpClient(allowRetry = true, maxRetry = 10) {
 	        const requestOptions = {
@@ -25182,20 +25182,20 @@ function requireOidcUtils () {
 	        });
 	    }
 	}
-	oidcUtils.OidcClient = OidcClient;
+	oidcUtils$1.OidcClient = OidcClient;
 	
-	return oidcUtils;
+	return oidcUtils$1;
 }
 
-var summary = {};
+var summary$1 = {};
 
-var hasRequiredSummary;
+var hasRequiredSummary$1;
 
-function requireSummary () {
-	if (hasRequiredSummary) return summary;
-	hasRequiredSummary = 1;
+function requireSummary$1 () {
+	if (hasRequiredSummary$1) return summary$1;
+	hasRequiredSummary$1 = 1;
 	(function (exports$1) {
-		var __awaiter = (summary && summary.__awaiter) || function (thisArg, _arguments, P, generator) {
+		var __awaiter = (summary$1 && summary$1.__awaiter) || function (thisArg, _arguments, P, generator) {
 		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 		    return new (P || (P = Promise))(function (resolve, reject) {
 		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -25477,18 +25477,18 @@ function requireSummary () {
 		exports$1.markdownSummary = _summary;
 		exports$1.summary = _summary;
 		
-	} (summary));
-	return summary;
+	} (summary$1));
+	return summary$1;
 }
 
-var pathUtils = {};
+var pathUtils$1 = {};
 
-var hasRequiredPathUtils;
+var hasRequiredPathUtils$1;
 
-function requirePathUtils () {
-	if (hasRequiredPathUtils) return pathUtils;
-	hasRequiredPathUtils = 1;
-	var __createBinding = (pathUtils && pathUtils.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+function requirePathUtils$1 () {
+	if (hasRequiredPathUtils$1) return pathUtils$1;
+	hasRequiredPathUtils$1 = 1;
+	var __createBinding = (pathUtils$1 && pathUtils$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -25499,20 +25499,20 @@ function requirePathUtils () {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (pathUtils && pathUtils.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (pathUtils$1 && pathUtils$1.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (pathUtils && pathUtils.__importStar) || function (mod) {
+	var __importStar = (pathUtils$1 && pathUtils$1.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	Object.defineProperty(pathUtils, "__esModule", { value: true });
-	pathUtils.toPlatformPath = pathUtils.toWin32Path = pathUtils.toPosixPath = void 0;
+	Object.defineProperty(pathUtils$1, "__esModule", { value: true });
+	pathUtils$1.toPlatformPath = pathUtils$1.toWin32Path = pathUtils$1.toPosixPath = void 0;
 	const path = __importStar(require$$1__default);
 	/**
 	 * toPosixPath converts the given path to the posix form. On Windows, \\ will be
@@ -25524,7 +25524,7 @@ function requirePathUtils () {
 	function toPosixPath(pth) {
 	    return pth.replace(/[\\]/g, '/');
 	}
-	pathUtils.toPosixPath = toPosixPath;
+	pathUtils$1.toPosixPath = toPosixPath;
 	/**
 	 * toWin32Path converts the given path to the win32 form. On Linux, / will be
 	 * replaced with \\.
@@ -25535,7 +25535,7 @@ function requirePathUtils () {
 	function toWin32Path(pth) {
 	    return pth.replace(/[/]/g, '\\');
 	}
-	pathUtils.toWin32Path = toWin32Path;
+	pathUtils$1.toWin32Path = toWin32Path;
 	/**
 	 * toPlatformPath converts the given path to a platform-specific path. It does
 	 * this by replacing instances of / and \ with the platform-specific path
@@ -25547,16 +25547,16 @@ function requirePathUtils () {
 	function toPlatformPath(pth) {
 	    return pth.replace(/[/\\]/g, path.sep);
 	}
-	pathUtils.toPlatformPath = toPlatformPath;
+	pathUtils$1.toPlatformPath = toPlatformPath;
 	
-	return pathUtils;
+	return pathUtils$1;
 }
 
-var platform = {};
+var platform$1 = {};
 
-var exec = {};
+var exec$1 = {};
 
-var toolrunner = {};
+var toolrunner$1 = {};
 
 var io$1 = {};
 
@@ -26060,31 +26060,31 @@ function requireIo$1 () {
 	return io$1;
 }
 
-var hasRequiredToolrunner;
+var hasRequiredToolrunner$1;
 
-function requireToolrunner () {
-	if (hasRequiredToolrunner) return toolrunner;
-	hasRequiredToolrunner = 1;
-	var __createBinding = (toolrunner && toolrunner.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+function requireToolrunner$1 () {
+	if (hasRequiredToolrunner$1) return toolrunner$1;
+	hasRequiredToolrunner$1 = 1;
+	var __createBinding = (toolrunner$1 && toolrunner$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (toolrunner && toolrunner.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (toolrunner$1 && toolrunner$1.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (toolrunner && toolrunner.__importStar) || function (mod) {
+	var __importStar = (toolrunner$1 && toolrunner$1.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __awaiter = (toolrunner && toolrunner.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (toolrunner$1 && toolrunner$1.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -26093,15 +26093,15 @@ function requireToolrunner () {
 	        step((generator = generator.apply(thisArg, _arguments || [])).next());
 	    });
 	};
-	Object.defineProperty(toolrunner, "__esModule", { value: true });
-	toolrunner.argStringToArray = toolrunner.ToolRunner = void 0;
+	Object.defineProperty(toolrunner$1, "__esModule", { value: true });
+	toolrunner$1.argStringToArray = toolrunner$1.ToolRunner = void 0;
 	const os = __importStar(require$$0);
 	const events = __importStar(require$$4);
-	const child = __importStar(child__default);
+	const child = __importStar(require$$2__default);
 	const path = __importStar(require$$1__default);
 	const io = __importStar(requireIo$1());
 	const ioUtil = __importStar(requireIoUtil$1());
-	const timers_1 = require$$6$1;
+	const timers_1 = require$$6;
 	/* eslint-disable @typescript-eslint/unbound-method */
 	const IS_WINDOWS = process.platform === 'win32';
 	/*
@@ -26559,7 +26559,7 @@ function requireToolrunner () {
 	        });
 	    }
 	}
-	toolrunner.ToolRunner = ToolRunner;
+	toolrunner$1.ToolRunner = ToolRunner;
 	/**
 	 * Convert an arg string to an array of args. Handles escaping
 	 *
@@ -26612,7 +26612,7 @@ function requireToolrunner () {
 	    }
 	    return args;
 	}
-	toolrunner.argStringToArray = argStringToArray;
+	toolrunner$1.argStringToArray = argStringToArray;
 	class ExecState extends events.EventEmitter {
 	    constructor(options, toolPath) {
 	        super();
@@ -26682,34 +26682,34 @@ function requireToolrunner () {
 	    }
 	}
 	
-	return toolrunner;
+	return toolrunner$1;
 }
 
-var hasRequiredExec;
+var hasRequiredExec$1;
 
-function requireExec () {
-	if (hasRequiredExec) return exec;
-	hasRequiredExec = 1;
-	var __createBinding = (exec && exec.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+function requireExec$1 () {
+	if (hasRequiredExec$1) return exec$1;
+	hasRequiredExec$1 = 1;
+	var __createBinding = (exec$1 && exec$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 	}) : (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (exec && exec.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (exec$1 && exec$1.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (exec && exec.__importStar) || function (mod) {
+	var __importStar = (exec$1 && exec$1.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	var __awaiter = (exec && exec.__awaiter) || function (thisArg, _arguments, P, generator) {
+	var __awaiter = (exec$1 && exec$1.__awaiter) || function (thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -26718,10 +26718,10 @@ function requireExec () {
 	        step((generator = generator.apply(thisArg, _arguments || [])).next());
 	    });
 	};
-	Object.defineProperty(exec, "__esModule", { value: true });
-	exec.getExecOutput = exec.exec = void 0;
-	const string_decoder_1 = require$$6;
-	const tr = __importStar(requireToolrunner());
+	Object.defineProperty(exec$1, "__esModule", { value: true });
+	exec$1.getExecOutput = exec$1.exec = void 0;
+	const string_decoder_1 = require$$0$9;
+	const tr = __importStar(requireToolrunner$1());
 	/**
 	 * Exec a command.
 	 * Output will be streamed to the live console.
@@ -26732,7 +26732,7 @@ function requireExec () {
 	 * @param     options            optional exec options.  See ExecOptions
 	 * @returns   Promise<number>    exit code
 	 */
-	function exec$1(commandLine, args, options) {
+	function exec(commandLine, args, options) {
 	    return __awaiter(this, void 0, void 0, function* () {
 	        const commandArgs = tr.argStringToArray(commandLine);
 	        if (commandArgs.length === 0) {
@@ -26745,7 +26745,7 @@ function requireExec () {
 	        return runner.exec();
 	    });
 	}
-	exec.exec = exec$1;
+	exec$1.exec = exec;
 	/**
 	 * Exec a command and get the output.
 	 * Output will be streamed to the live console.
@@ -26779,7 +26779,7 @@ function requireExec () {
 	            }
 	        };
 	        const listeners = Object.assign(Object.assign({}, options === null || options === void 0 ? void 0 : options.listeners), { stdout: stdOutListener, stderr: stdErrListener });
-	        const exitCode = yield exec$1(commandLine, args, Object.assign(Object.assign({}, options), { listeners }));
+	        const exitCode = yield exec(commandLine, args, Object.assign(Object.assign({}, options), { listeners }));
 	        //flush any remaining characters
 	        stdout += stdoutDecoder.end();
 	        stderr += stderrDecoder.end();
@@ -26790,18 +26790,18 @@ function requireExec () {
 	        };
 	    });
 	}
-	exec.getExecOutput = getExecOutput;
+	exec$1.getExecOutput = getExecOutput;
 	
-	return exec;
+	return exec$1;
 }
 
-var hasRequiredPlatform;
+var hasRequiredPlatform$1;
 
-function requirePlatform () {
-	if (hasRequiredPlatform) return platform;
-	hasRequiredPlatform = 1;
+function requirePlatform$1 () {
+	if (hasRequiredPlatform$1) return platform$1;
+	hasRequiredPlatform$1 = 1;
 	(function (exports$1) {
-		var __createBinding = (platform && platform.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+		var __createBinding = (platform$1 && platform$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    var desc = Object.getOwnPropertyDescriptor(m, k);
 		    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -26812,19 +26812,19 @@ function requirePlatform () {
 		    if (k2 === undefined) k2 = k;
 		    o[k2] = m[k];
 		}));
-		var __setModuleDefault = (platform && platform.__setModuleDefault) || (Object.create ? (function(o, v) {
+		var __setModuleDefault = (platform$1 && platform$1.__setModuleDefault) || (Object.create ? (function(o, v) {
 		    Object.defineProperty(o, "default", { enumerable: true, value: v });
 		}) : function(o, v) {
 		    o["default"] = v;
 		});
-		var __importStar = (platform && platform.__importStar) || function (mod) {
+		var __importStar = (platform$1 && platform$1.__importStar) || function (mod) {
 		    if (mod && mod.__esModule) return mod;
 		    var result = {};
 		    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 		    __setModuleDefault(result, mod);
 		    return result;
 		};
-		var __awaiter = (platform && platform.__awaiter) || function (thisArg, _arguments, P, generator) {
+		var __awaiter = (platform$1 && platform$1.__awaiter) || function (thisArg, _arguments, P, generator) {
 		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 		    return new (P || (P = Promise))(function (resolve, reject) {
 		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -26833,13 +26833,13 @@ function requirePlatform () {
 		        step((generator = generator.apply(thisArg, _arguments || [])).next());
 		    });
 		};
-		var __importDefault = (platform && platform.__importDefault) || function (mod) {
+		var __importDefault = (platform$1 && platform$1.__importDefault) || function (mod) {
 		    return (mod && mod.__esModule) ? mod : { "default": mod };
 		};
 		Object.defineProperty(exports$1, "__esModule", { value: true });
 		exports$1.getDetails = exports$1.isLinux = exports$1.isMacOS = exports$1.isWindows = exports$1.arch = exports$1.platform = void 0;
 		const os_1 = __importDefault(require$$0);
-		const exec = __importStar(requireExec());
+		const exec = __importStar(requireExec$1());
 		const getWindowsInfo = () => __awaiter(void 0, void 0, void 0, function* () {
 		    const { stdout: version } = yield exec.getExecOutput('powershell -command "(Get-CimInstance -ClassName Win32_OperatingSystem).Version"', undefined, {
 		        silent: true
@@ -26894,17 +26894,17 @@ function requirePlatform () {
 		}
 		exports$1.getDetails = getDetails;
 		
-	} (platform));
-	return platform;
+	} (platform$1));
+	return platform$1;
 }
 
-var hasRequiredCore;
+var hasRequiredCore$1;
 
-function requireCore () {
-	if (hasRequiredCore) return core;
-	hasRequiredCore = 1;
+function requireCore$1 () {
+	if (hasRequiredCore$1) return core$1;
+	hasRequiredCore$1 = 1;
 	(function (exports$1) {
-		var __createBinding = (core && core.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+		var __createBinding = (core$1 && core$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    var desc = Object.getOwnPropertyDescriptor(m, k);
 		    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -26915,19 +26915,19 @@ function requireCore () {
 		    if (k2 === undefined) k2 = k;
 		    o[k2] = m[k];
 		}));
-		var __setModuleDefault = (core && core.__setModuleDefault) || (Object.create ? (function(o, v) {
+		var __setModuleDefault = (core$1 && core$1.__setModuleDefault) || (Object.create ? (function(o, v) {
 		    Object.defineProperty(o, "default", { enumerable: true, value: v });
 		}) : function(o, v) {
 		    o["default"] = v;
 		});
-		var __importStar = (core && core.__importStar) || function (mod) {
+		var __importStar = (core$1 && core$1.__importStar) || function (mod) {
 		    if (mod && mod.__esModule) return mod;
 		    var result = {};
 		    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 		    __setModuleDefault(result, mod);
 		    return result;
 		};
-		var __awaiter = (core && core.__awaiter) || function (thisArg, _arguments, P, generator) {
+		var __awaiter = (core$1 && core$1.__awaiter) || function (thisArg, _arguments, P, generator) {
 		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 		    return new (P || (P = Promise))(function (resolve, reject) {
 		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -26938,12 +26938,12 @@ function requireCore () {
 		};
 		Object.defineProperty(exports$1, "__esModule", { value: true });
 		exports$1.platform = exports$1.toPlatformPath = exports$1.toWin32Path = exports$1.toPosixPath = exports$1.markdownSummary = exports$1.summary = exports$1.getIDToken = exports$1.getState = exports$1.saveState = exports$1.group = exports$1.endGroup = exports$1.startGroup = exports$1.info = exports$1.notice = exports$1.warning = exports$1.error = exports$1.debug = exports$1.isDebug = exports$1.setFailed = exports$1.setCommandEcho = exports$1.setOutput = exports$1.getBooleanInput = exports$1.getMultilineInput = exports$1.getInput = exports$1.addPath = exports$1.setSecret = exports$1.exportVariable = exports$1.ExitCode = void 0;
-		const command_1 = requireCommand();
-		const file_command_1 = requireFileCommand();
-		const utils_1 = requireUtils$1();
+		const command_1 = requireCommand$1();
+		const file_command_1 = requireFileCommand$1();
+		const utils_1 = requireUtils$2();
 		const os = __importStar(require$$0);
 		const path = __importStar(require$$1__default);
-		const oidc_utils_1 = requireOidcUtils();
+		const oidc_utils_1 = requireOidcUtils$1();
 		/**
 		 * The code to exit an action
 		 */
@@ -27228,30 +27228,1691 @@ function requireCore () {
 		/**
 		 * Summary exports
 		 */
-		var summary_1 = requireSummary();
+		var summary_1 = requireSummary$1();
 		Object.defineProperty(exports$1, "summary", { enumerable: true, get: function () { return summary_1.summary; } });
 		/**
 		 * @deprecated use core.summary
 		 */
-		var summary_2 = requireSummary();
+		var summary_2 = requireSummary$1();
 		Object.defineProperty(exports$1, "markdownSummary", { enumerable: true, get: function () { return summary_2.markdownSummary; } });
 		/**
 		 * Path exports
 		 */
-		var path_utils_1 = requirePathUtils();
+		var path_utils_1 = requirePathUtils$1();
 		Object.defineProperty(exports$1, "toPosixPath", { enumerable: true, get: function () { return path_utils_1.toPosixPath; } });
 		Object.defineProperty(exports$1, "toWin32Path", { enumerable: true, get: function () { return path_utils_1.toWin32Path; } });
 		Object.defineProperty(exports$1, "toPlatformPath", { enumerable: true, get: function () { return path_utils_1.toPlatformPath; } });
 		/**
 		 * Platform utilities exports
 		 */
-		exports$1.platform = __importStar(requirePlatform());
+		exports$1.platform = __importStar(requirePlatform$1());
 		
-	} (core));
-	return core;
+	} (core$1));
+	return core$1;
 }
 
-var coreExports = requireCore();
+var coreExports$1 = requireCore$1();
+
+var core = {};
+
+var command = {};
+
+var utils = {};
+
+var hasRequiredUtils;
+
+function requireUtils () {
+	if (hasRequiredUtils) return utils;
+	hasRequiredUtils = 1;
+	// We use any as a valid input type
+	/* eslint-disable @typescript-eslint/no-explicit-any */
+	Object.defineProperty(utils, "__esModule", { value: true });
+	utils.toCommandValue = toCommandValue;
+	utils.toCommandProperties = toCommandProperties;
+	/**
+	 * Sanitizes an input into a string so it can be passed into issueCommand safely
+	 * @param input input to sanitize into a string
+	 */
+	function toCommandValue(input) {
+	    if (input === null || input === undefined) {
+	        return '';
+	    }
+	    else if (typeof input === 'string' || input instanceof String) {
+	        return input;
+	    }
+	    return JSON.stringify(input);
+	}
+	/**
+	 *
+	 * @param annotationProperties
+	 * @returns The command properties to send with the actual annotation command
+	 * See IssueCommandProperties: https://github.com/actions/runner/blob/main/src/Runner.Worker/ActionCommandManager.cs#L646
+	 */
+	function toCommandProperties(annotationProperties) {
+	    if (!Object.keys(annotationProperties).length) {
+	        return {};
+	    }
+	    return {
+	        title: annotationProperties.title,
+	        file: annotationProperties.file,
+	        line: annotationProperties.startLine,
+	        endLine: annotationProperties.endLine,
+	        col: annotationProperties.startColumn,
+	        endColumn: annotationProperties.endColumn
+	    };
+	}
+	
+	return utils;
+}
+
+var hasRequiredCommand;
+
+function requireCommand () {
+	if (hasRequiredCommand) return command;
+	hasRequiredCommand = 1;
+	var __createBinding = (command && command.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	      desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	}));
+	var __setModuleDefault = (command && command.__setModuleDefault) || (Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	});
+	var __importStar = (command && command.__importStar) || (function () {
+	    var ownKeys = function(o) {
+	        ownKeys = Object.getOwnPropertyNames || function (o) {
+	            var ar = [];
+	            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+	            return ar;
+	        };
+	        return ownKeys(o);
+	    };
+	    return function (mod) {
+	        if (mod && mod.__esModule) return mod;
+	        var result = {};
+	        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+	        __setModuleDefault(result, mod);
+	        return result;
+	    };
+	})();
+	Object.defineProperty(command, "__esModule", { value: true });
+	command.issueCommand = issueCommand;
+	command.issue = issue;
+	const os = __importStar(require$$0);
+	const utils_1 = requireUtils();
+	/**
+	 * Issues a command to the GitHub Actions runner
+	 *
+	 * @param command - The command name to issue
+	 * @param properties - Additional properties for the command (key-value pairs)
+	 * @param message - The message to include with the command
+	 * @remarks
+	 * This function outputs a specially formatted string to stdout that the Actions
+	 * runner interprets as a command. These commands can control workflow behavior,
+	 * set outputs, create annotations, mask values, and more.
+	 *
+	 * Command Format:
+	 *   ::name key=value,key=value::message
+	 *
+	 * @example
+	 * ```typescript
+	 * // Issue a warning annotation
+	 * issueCommand('warning', {}, 'This is a warning message');
+	 * // Output: ::warning::This is a warning message
+	 *
+	 * // Set an environment variable
+	 * issueCommand('set-env', { name: 'MY_VAR' }, 'some value');
+	 * // Output: ::set-env name=MY_VAR::some value
+	 *
+	 * // Add a secret mask
+	 * issueCommand('add-mask', {}, 'secretValue123');
+	 * // Output: ::add-mask::secretValue123
+	 * ```
+	 *
+	 * @internal
+	 * This is an internal utility function that powers the public API functions
+	 * such as setSecret, warning, error, and exportVariable.
+	 */
+	function issueCommand(command, properties, message) {
+	    const cmd = new Command(command, properties, message);
+	    process.stdout.write(cmd.toString() + os.EOL);
+	}
+	function issue(name, message = '') {
+	    issueCommand(name, {}, message);
+	}
+	const CMD_STRING = '::';
+	class Command {
+	    constructor(command, properties, message) {
+	        if (!command) {
+	            command = 'missing.command';
+	        }
+	        this.command = command;
+	        this.properties = properties;
+	        this.message = message;
+	    }
+	    toString() {
+	        let cmdStr = CMD_STRING + this.command;
+	        if (this.properties && Object.keys(this.properties).length > 0) {
+	            cmdStr += ' ';
+	            let first = true;
+	            for (const key in this.properties) {
+	                if (this.properties.hasOwnProperty(key)) {
+	                    const val = this.properties[key];
+	                    if (val) {
+	                        if (first) {
+	                            first = false;
+	                        }
+	                        else {
+	                            cmdStr += ',';
+	                        }
+	                        cmdStr += `${key}=${escapeProperty(val)}`;
+	                    }
+	                }
+	            }
+	        }
+	        cmdStr += `${CMD_STRING}${escapeData(this.message)}`;
+	        return cmdStr;
+	    }
+	}
+	function escapeData(s) {
+	    return (0, utils_1.toCommandValue)(s)
+	        .replace(/%/g, '%25')
+	        .replace(/\r/g, '%0D')
+	        .replace(/\n/g, '%0A');
+	}
+	function escapeProperty(s) {
+	    return (0, utils_1.toCommandValue)(s)
+	        .replace(/%/g, '%25')
+	        .replace(/\r/g, '%0D')
+	        .replace(/\n/g, '%0A')
+	        .replace(/:/g, '%3A')
+	        .replace(/,/g, '%2C');
+	}
+	
+	return command;
+}
+
+var fileCommand = {};
+
+var hasRequiredFileCommand;
+
+function requireFileCommand () {
+	if (hasRequiredFileCommand) return fileCommand;
+	hasRequiredFileCommand = 1;
+	// For internal use, subject to change.
+	var __createBinding = (fileCommand && fileCommand.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	      desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	}));
+	var __setModuleDefault = (fileCommand && fileCommand.__setModuleDefault) || (Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	});
+	var __importStar = (fileCommand && fileCommand.__importStar) || (function () {
+	    var ownKeys = function(o) {
+	        ownKeys = Object.getOwnPropertyNames || function (o) {
+	            var ar = [];
+	            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+	            return ar;
+	        };
+	        return ownKeys(o);
+	    };
+	    return function (mod) {
+	        if (mod && mod.__esModule) return mod;
+	        var result = {};
+	        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+	        __setModuleDefault(result, mod);
+	        return result;
+	    };
+	})();
+	Object.defineProperty(fileCommand, "__esModule", { value: true });
+	fileCommand.issueFileCommand = issueFileCommand;
+	fileCommand.prepareKeyValueMessage = prepareKeyValueMessage;
+	// We use any as a valid input type
+	/* eslint-disable @typescript-eslint/no-explicit-any */
+	const crypto = __importStar(require$$0$1);
+	const fs = __importStar(require$$1$1);
+	const os = __importStar(require$$0);
+	const utils_1 = requireUtils();
+	function issueFileCommand(command, message) {
+	    const filePath = process.env[`GITHUB_${command}`];
+	    if (!filePath) {
+	        throw new Error(`Unable to find environment variable for file command ${command}`);
+	    }
+	    if (!fs.existsSync(filePath)) {
+	        throw new Error(`Missing file at path: ${filePath}`);
+	    }
+	    fs.appendFileSync(filePath, `${(0, utils_1.toCommandValue)(message)}${os.EOL}`, {
+	        encoding: 'utf8'
+	    });
+	}
+	function prepareKeyValueMessage(key, value) {
+	    const delimiter = `ghadelimiter_${crypto.randomUUID()}`;
+	    const convertedValue = (0, utils_1.toCommandValue)(value);
+	    // These should realistically never happen, but just in case someone finds a
+	    // way to exploit uuid generation let's not allow keys or values that contain
+	    // the delimiter.
+	    if (key.includes(delimiter)) {
+	        throw new Error(`Unexpected input: name should not contain the delimiter "${delimiter}"`);
+	    }
+	    if (convertedValue.includes(delimiter)) {
+	        throw new Error(`Unexpected input: value should not contain the delimiter "${delimiter}"`);
+	    }
+	    return `${key}<<${delimiter}${os.EOL}${convertedValue}${os.EOL}${delimiter}`;
+	}
+	
+	return fileCommand;
+}
+
+var oidcUtils = {};
+
+var lib = {};
+
+var proxy = {};
+
+var hasRequiredProxy;
+
+function requireProxy () {
+	if (hasRequiredProxy) return proxy;
+	hasRequiredProxy = 1;
+	Object.defineProperty(proxy, "__esModule", { value: true });
+	proxy.getProxyUrl = getProxyUrl;
+	proxy.checkBypass = checkBypass;
+	function getProxyUrl(reqUrl) {
+	    const usingSsl = reqUrl.protocol === 'https:';
+	    if (checkBypass(reqUrl)) {
+	        return undefined;
+	    }
+	    const proxyVar = (() => {
+	        if (usingSsl) {
+	            return process.env['https_proxy'] || process.env['HTTPS_PROXY'];
+	        }
+	        else {
+	            return process.env['http_proxy'] || process.env['HTTP_PROXY'];
+	        }
+	    })();
+	    if (proxyVar) {
+	        try {
+	            return new DecodedURL(proxyVar);
+	        }
+	        catch (_a) {
+	            if (!proxyVar.startsWith('http://') && !proxyVar.startsWith('https://'))
+	                return new DecodedURL(`http://${proxyVar}`);
+	        }
+	    }
+	    else {
+	        return undefined;
+	    }
+	}
+	function checkBypass(reqUrl) {
+	    if (!reqUrl.hostname) {
+	        return false;
+	    }
+	    const reqHost = reqUrl.hostname;
+	    if (isLoopbackAddress(reqHost)) {
+	        return true;
+	    }
+	    const noProxy = process.env['no_proxy'] || process.env['NO_PROXY'] || '';
+	    if (!noProxy) {
+	        return false;
+	    }
+	    // Determine the request port
+	    let reqPort;
+	    if (reqUrl.port) {
+	        reqPort = Number(reqUrl.port);
+	    }
+	    else if (reqUrl.protocol === 'http:') {
+	        reqPort = 80;
+	    }
+	    else if (reqUrl.protocol === 'https:') {
+	        reqPort = 443;
+	    }
+	    // Format the request hostname and hostname with port
+	    const upperReqHosts = [reqUrl.hostname.toUpperCase()];
+	    if (typeof reqPort === 'number') {
+	        upperReqHosts.push(`${upperReqHosts[0]}:${reqPort}`);
+	    }
+	    // Compare request host against noproxy
+	    for (const upperNoProxyItem of noProxy
+	        .split(',')
+	        .map(x => x.trim().toUpperCase())
+	        .filter(x => x)) {
+	        if (upperNoProxyItem === '*' ||
+	            upperReqHosts.some(x => x === upperNoProxyItem ||
+	                x.endsWith(`.${upperNoProxyItem}`) ||
+	                (upperNoProxyItem.startsWith('.') &&
+	                    x.endsWith(`${upperNoProxyItem}`)))) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+	function isLoopbackAddress(host) {
+	    const hostLower = host.toLowerCase();
+	    return (hostLower === 'localhost' ||
+	        hostLower.startsWith('127.') ||
+	        hostLower.startsWith('[::1]') ||
+	        hostLower.startsWith('[0:0:0:0:0:0:0:1]'));
+	}
+	class DecodedURL extends URL {
+	    constructor(url, base) {
+	        super(url, base);
+	        this._decodedUsername = decodeURIComponent(super.username);
+	        this._decodedPassword = decodeURIComponent(super.password);
+	    }
+	    get username() {
+	        return this._decodedUsername;
+	    }
+	    get password() {
+	        return this._decodedPassword;
+	    }
+	}
+	
+	return proxy;
+}
+
+var hasRequiredLib;
+
+function requireLib () {
+	if (hasRequiredLib) return lib;
+	hasRequiredLib = 1;
+	/* eslint-disable @typescript-eslint/no-explicit-any */
+	var __createBinding = (lib && lib.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	      desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	}));
+	var __setModuleDefault = (lib && lib.__setModuleDefault) || (Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	});
+	var __importStar = (lib && lib.__importStar) || (function () {
+	    var ownKeys = function(o) {
+	        ownKeys = Object.getOwnPropertyNames || function (o) {
+	            var ar = [];
+	            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+	            return ar;
+	        };
+	        return ownKeys(o);
+	    };
+	    return function (mod) {
+	        if (mod && mod.__esModule) return mod;
+	        var result = {};
+	        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+	        __setModuleDefault(result, mod);
+	        return result;
+	    };
+	})();
+	var __awaiter = (lib && lib.__awaiter) || function (thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	};
+	Object.defineProperty(lib, "__esModule", { value: true });
+	lib.HttpClient = lib.HttpClientResponse = lib.HttpClientError = lib.MediaTypes = lib.Headers = lib.HttpCodes = void 0;
+	lib.getProxyUrl = getProxyUrl;
+	lib.isHttps = isHttps;
+	const http = __importStar(require$$2$1);
+	const https = __importStar(require$$1$2);
+	const pm = __importStar(requireProxy());
+	const tunnel = __importStar(requireTunnel());
+	const undici_1 = requireUndici();
+	var HttpCodes;
+	(function (HttpCodes) {
+	    HttpCodes[HttpCodes["OK"] = 200] = "OK";
+	    HttpCodes[HttpCodes["MultipleChoices"] = 300] = "MultipleChoices";
+	    HttpCodes[HttpCodes["MovedPermanently"] = 301] = "MovedPermanently";
+	    HttpCodes[HttpCodes["ResourceMoved"] = 302] = "ResourceMoved";
+	    HttpCodes[HttpCodes["SeeOther"] = 303] = "SeeOther";
+	    HttpCodes[HttpCodes["NotModified"] = 304] = "NotModified";
+	    HttpCodes[HttpCodes["UseProxy"] = 305] = "UseProxy";
+	    HttpCodes[HttpCodes["SwitchProxy"] = 306] = "SwitchProxy";
+	    HttpCodes[HttpCodes["TemporaryRedirect"] = 307] = "TemporaryRedirect";
+	    HttpCodes[HttpCodes["PermanentRedirect"] = 308] = "PermanentRedirect";
+	    HttpCodes[HttpCodes["BadRequest"] = 400] = "BadRequest";
+	    HttpCodes[HttpCodes["Unauthorized"] = 401] = "Unauthorized";
+	    HttpCodes[HttpCodes["PaymentRequired"] = 402] = "PaymentRequired";
+	    HttpCodes[HttpCodes["Forbidden"] = 403] = "Forbidden";
+	    HttpCodes[HttpCodes["NotFound"] = 404] = "NotFound";
+	    HttpCodes[HttpCodes["MethodNotAllowed"] = 405] = "MethodNotAllowed";
+	    HttpCodes[HttpCodes["NotAcceptable"] = 406] = "NotAcceptable";
+	    HttpCodes[HttpCodes["ProxyAuthenticationRequired"] = 407] = "ProxyAuthenticationRequired";
+	    HttpCodes[HttpCodes["RequestTimeout"] = 408] = "RequestTimeout";
+	    HttpCodes[HttpCodes["Conflict"] = 409] = "Conflict";
+	    HttpCodes[HttpCodes["Gone"] = 410] = "Gone";
+	    HttpCodes[HttpCodes["TooManyRequests"] = 429] = "TooManyRequests";
+	    HttpCodes[HttpCodes["InternalServerError"] = 500] = "InternalServerError";
+	    HttpCodes[HttpCodes["NotImplemented"] = 501] = "NotImplemented";
+	    HttpCodes[HttpCodes["BadGateway"] = 502] = "BadGateway";
+	    HttpCodes[HttpCodes["ServiceUnavailable"] = 503] = "ServiceUnavailable";
+	    HttpCodes[HttpCodes["GatewayTimeout"] = 504] = "GatewayTimeout";
+	})(HttpCodes || (lib.HttpCodes = HttpCodes = {}));
+	var Headers;
+	(function (Headers) {
+	    Headers["Accept"] = "accept";
+	    Headers["ContentType"] = "content-type";
+	})(Headers || (lib.Headers = Headers = {}));
+	var MediaTypes;
+	(function (MediaTypes) {
+	    MediaTypes["ApplicationJson"] = "application/json";
+	})(MediaTypes || (lib.MediaTypes = MediaTypes = {}));
+	/**
+	 * Returns the proxy URL, depending upon the supplied url and proxy environment variables.
+	 * @param serverUrl  The server URL where the request will be sent. For example, https://api.github.com
+	 */
+	function getProxyUrl(serverUrl) {
+	    const proxyUrl = pm.getProxyUrl(new URL(serverUrl));
+	    return proxyUrl ? proxyUrl.href : '';
+	}
+	const HttpRedirectCodes = [
+	    HttpCodes.MovedPermanently,
+	    HttpCodes.ResourceMoved,
+	    HttpCodes.SeeOther,
+	    HttpCodes.TemporaryRedirect,
+	    HttpCodes.PermanentRedirect
+	];
+	const HttpResponseRetryCodes = [
+	    HttpCodes.BadGateway,
+	    HttpCodes.ServiceUnavailable,
+	    HttpCodes.GatewayTimeout
+	];
+	const RetryableHttpVerbs = ['OPTIONS', 'GET', 'DELETE', 'HEAD'];
+	const ExponentialBackoffCeiling = 10;
+	const ExponentialBackoffTimeSlice = 5;
+	class HttpClientError extends Error {
+	    constructor(message, statusCode) {
+	        super(message);
+	        this.name = 'HttpClientError';
+	        this.statusCode = statusCode;
+	        Object.setPrototypeOf(this, HttpClientError.prototype);
+	    }
+	}
+	lib.HttpClientError = HttpClientError;
+	class HttpClientResponse {
+	    constructor(message) {
+	        this.message = message;
+	    }
+	    readBody() {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return new Promise((resolve) => __awaiter(this, void 0, void 0, function* () {
+	                let output = Buffer.alloc(0);
+	                this.message.on('data', (chunk) => {
+	                    output = Buffer.concat([output, chunk]);
+	                });
+	                this.message.on('end', () => {
+	                    resolve(output.toString());
+	                });
+	            }));
+	        });
+	    }
+	    readBodyBuffer() {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return new Promise((resolve) => __awaiter(this, void 0, void 0, function* () {
+	                const chunks = [];
+	                this.message.on('data', (chunk) => {
+	                    chunks.push(chunk);
+	                });
+	                this.message.on('end', () => {
+	                    resolve(Buffer.concat(chunks));
+	                });
+	            }));
+	        });
+	    }
+	}
+	lib.HttpClientResponse = HttpClientResponse;
+	function isHttps(requestUrl) {
+	    const parsedUrl = new URL(requestUrl);
+	    return parsedUrl.protocol === 'https:';
+	}
+	class HttpClient {
+	    constructor(userAgent, handlers, requestOptions) {
+	        this._ignoreSslError = false;
+	        this._allowRedirects = true;
+	        this._allowRedirectDowngrade = false;
+	        this._maxRedirects = 50;
+	        this._allowRetries = false;
+	        this._maxRetries = 1;
+	        this._keepAlive = false;
+	        this._disposed = false;
+	        this.userAgent = userAgent;
+	        this.handlers = handlers || [];
+	        this.requestOptions = requestOptions;
+	        if (requestOptions) {
+	            if (requestOptions.ignoreSslError != null) {
+	                this._ignoreSslError = requestOptions.ignoreSslError;
+	            }
+	            this._socketTimeout = requestOptions.socketTimeout;
+	            if (requestOptions.allowRedirects != null) {
+	                this._allowRedirects = requestOptions.allowRedirects;
+	            }
+	            if (requestOptions.allowRedirectDowngrade != null) {
+	                this._allowRedirectDowngrade = requestOptions.allowRedirectDowngrade;
+	            }
+	            if (requestOptions.maxRedirects != null) {
+	                this._maxRedirects = Math.max(requestOptions.maxRedirects, 0);
+	            }
+	            if (requestOptions.keepAlive != null) {
+	                this._keepAlive = requestOptions.keepAlive;
+	            }
+	            if (requestOptions.allowRetries != null) {
+	                this._allowRetries = requestOptions.allowRetries;
+	            }
+	            if (requestOptions.maxRetries != null) {
+	                this._maxRetries = requestOptions.maxRetries;
+	            }
+	        }
+	    }
+	    options(requestUrl, additionalHeaders) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return this.request('OPTIONS', requestUrl, null, additionalHeaders || {});
+	        });
+	    }
+	    get(requestUrl, additionalHeaders) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return this.request('GET', requestUrl, null, additionalHeaders || {});
+	        });
+	    }
+	    del(requestUrl, additionalHeaders) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return this.request('DELETE', requestUrl, null, additionalHeaders || {});
+	        });
+	    }
+	    post(requestUrl, data, additionalHeaders) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return this.request('POST', requestUrl, data, additionalHeaders || {});
+	        });
+	    }
+	    patch(requestUrl, data, additionalHeaders) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return this.request('PATCH', requestUrl, data, additionalHeaders || {});
+	        });
+	    }
+	    put(requestUrl, data, additionalHeaders) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return this.request('PUT', requestUrl, data, additionalHeaders || {});
+	        });
+	    }
+	    head(requestUrl, additionalHeaders) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return this.request('HEAD', requestUrl, null, additionalHeaders || {});
+	        });
+	    }
+	    sendStream(verb, requestUrl, stream, additionalHeaders) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return this.request(verb, requestUrl, stream, additionalHeaders);
+	        });
+	    }
+	    /**
+	     * Gets a typed object from an endpoint
+	     * Be aware that not found returns a null.  Other errors (4xx, 5xx) reject the promise
+	     */
+	    getJson(requestUrl_1) {
+	        return __awaiter(this, arguments, void 0, function* (requestUrl, additionalHeaders = {}) {
+	            additionalHeaders[Headers.Accept] = this._getExistingOrDefaultHeader(additionalHeaders, Headers.Accept, MediaTypes.ApplicationJson);
+	            const res = yield this.get(requestUrl, additionalHeaders);
+	            return this._processResponse(res, this.requestOptions);
+	        });
+	    }
+	    postJson(requestUrl_1, obj_1) {
+	        return __awaiter(this, arguments, void 0, function* (requestUrl, obj, additionalHeaders = {}) {
+	            const data = JSON.stringify(obj, null, 2);
+	            additionalHeaders[Headers.Accept] = this._getExistingOrDefaultHeader(additionalHeaders, Headers.Accept, MediaTypes.ApplicationJson);
+	            additionalHeaders[Headers.ContentType] =
+	                this._getExistingOrDefaultContentTypeHeader(additionalHeaders, MediaTypes.ApplicationJson);
+	            const res = yield this.post(requestUrl, data, additionalHeaders);
+	            return this._processResponse(res, this.requestOptions);
+	        });
+	    }
+	    putJson(requestUrl_1, obj_1) {
+	        return __awaiter(this, arguments, void 0, function* (requestUrl, obj, additionalHeaders = {}) {
+	            const data = JSON.stringify(obj, null, 2);
+	            additionalHeaders[Headers.Accept] = this._getExistingOrDefaultHeader(additionalHeaders, Headers.Accept, MediaTypes.ApplicationJson);
+	            additionalHeaders[Headers.ContentType] =
+	                this._getExistingOrDefaultContentTypeHeader(additionalHeaders, MediaTypes.ApplicationJson);
+	            const res = yield this.put(requestUrl, data, additionalHeaders);
+	            return this._processResponse(res, this.requestOptions);
+	        });
+	    }
+	    patchJson(requestUrl_1, obj_1) {
+	        return __awaiter(this, arguments, void 0, function* (requestUrl, obj, additionalHeaders = {}) {
+	            const data = JSON.stringify(obj, null, 2);
+	            additionalHeaders[Headers.Accept] = this._getExistingOrDefaultHeader(additionalHeaders, Headers.Accept, MediaTypes.ApplicationJson);
+	            additionalHeaders[Headers.ContentType] =
+	                this._getExistingOrDefaultContentTypeHeader(additionalHeaders, MediaTypes.ApplicationJson);
+	            const res = yield this.patch(requestUrl, data, additionalHeaders);
+	            return this._processResponse(res, this.requestOptions);
+	        });
+	    }
+	    /**
+	     * Makes a raw http request.
+	     * All other methods such as get, post, patch, and request ultimately call this.
+	     * Prefer get, del, post and patch
+	     */
+	    request(verb, requestUrl, data, headers) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            if (this._disposed) {
+	                throw new Error('Client has already been disposed.');
+	            }
+	            const parsedUrl = new URL(requestUrl);
+	            let info = this._prepareRequest(verb, parsedUrl, headers);
+	            // Only perform retries on reads since writes may not be idempotent.
+	            const maxTries = this._allowRetries && RetryableHttpVerbs.includes(verb)
+	                ? this._maxRetries + 1
+	                : 1;
+	            let numTries = 0;
+	            let response;
+	            do {
+	                response = yield this.requestRaw(info, data);
+	                // Check if it's an authentication challenge
+	                if (response &&
+	                    response.message &&
+	                    response.message.statusCode === HttpCodes.Unauthorized) {
+	                    let authenticationHandler;
+	                    for (const handler of this.handlers) {
+	                        if (handler.canHandleAuthentication(response)) {
+	                            authenticationHandler = handler;
+	                            break;
+	                        }
+	                    }
+	                    if (authenticationHandler) {
+	                        return authenticationHandler.handleAuthentication(this, info, data);
+	                    }
+	                    else {
+	                        // We have received an unauthorized response but have no handlers to handle it.
+	                        // Let the response return to the caller.
+	                        return response;
+	                    }
+	                }
+	                let redirectsRemaining = this._maxRedirects;
+	                while (response.message.statusCode &&
+	                    HttpRedirectCodes.includes(response.message.statusCode) &&
+	                    this._allowRedirects &&
+	                    redirectsRemaining > 0) {
+	                    const redirectUrl = response.message.headers['location'];
+	                    if (!redirectUrl) {
+	                        // if there's no location to redirect to, we won't
+	                        break;
+	                    }
+	                    const parsedRedirectUrl = new URL(redirectUrl);
+	                    if (parsedUrl.protocol === 'https:' &&
+	                        parsedUrl.protocol !== parsedRedirectUrl.protocol &&
+	                        !this._allowRedirectDowngrade) {
+	                        throw new Error('Redirect from HTTPS to HTTP protocol. This downgrade is not allowed for security reasons. If you want to allow this behavior, set the allowRedirectDowngrade option to true.');
+	                    }
+	                    // we need to finish reading the response before reassigning response
+	                    // which will leak the open socket.
+	                    yield response.readBody();
+	                    // strip authorization header if redirected to a different hostname
+	                    if (parsedRedirectUrl.hostname !== parsedUrl.hostname) {
+	                        for (const header in headers) {
+	                            // header names are case insensitive
+	                            if (header.toLowerCase() === 'authorization') {
+	                                delete headers[header];
+	                            }
+	                        }
+	                    }
+	                    // let's make the request with the new redirectUrl
+	                    info = this._prepareRequest(verb, parsedRedirectUrl, headers);
+	                    response = yield this.requestRaw(info, data);
+	                    redirectsRemaining--;
+	                }
+	                if (!response.message.statusCode ||
+	                    !HttpResponseRetryCodes.includes(response.message.statusCode)) {
+	                    // If not a retry code, return immediately instead of retrying
+	                    return response;
+	                }
+	                numTries += 1;
+	                if (numTries < maxTries) {
+	                    yield response.readBody();
+	                    yield this._performExponentialBackoff(numTries);
+	                }
+	            } while (numTries < maxTries);
+	            return response;
+	        });
+	    }
+	    /**
+	     * Needs to be called if keepAlive is set to true in request options.
+	     */
+	    dispose() {
+	        if (this._agent) {
+	            this._agent.destroy();
+	        }
+	        this._disposed = true;
+	    }
+	    /**
+	     * Raw request.
+	     * @param info
+	     * @param data
+	     */
+	    requestRaw(info, data) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return new Promise((resolve, reject) => {
+	                function callbackForResult(err, res) {
+	                    if (err) {
+	                        reject(err);
+	                    }
+	                    else if (!res) {
+	                        // If `err` is not passed, then `res` must be passed.
+	                        reject(new Error('Unknown error'));
+	                    }
+	                    else {
+	                        resolve(res);
+	                    }
+	                }
+	                this.requestRawWithCallback(info, data, callbackForResult);
+	            });
+	        });
+	    }
+	    /**
+	     * Raw request with callback.
+	     * @param info
+	     * @param data
+	     * @param onResult
+	     */
+	    requestRawWithCallback(info, data, onResult) {
+	        if (typeof data === 'string') {
+	            if (!info.options.headers) {
+	                info.options.headers = {};
+	            }
+	            info.options.headers['Content-Length'] = Buffer.byteLength(data, 'utf8');
+	        }
+	        let callbackCalled = false;
+	        function handleResult(err, res) {
+	            if (!callbackCalled) {
+	                callbackCalled = true;
+	                onResult(err, res);
+	            }
+	        }
+	        const req = info.httpModule.request(info.options, (msg) => {
+	            const res = new HttpClientResponse(msg);
+	            handleResult(undefined, res);
+	        });
+	        let socket;
+	        req.on('socket', sock => {
+	            socket = sock;
+	        });
+	        // If we ever get disconnected, we want the socket to timeout eventually
+	        req.setTimeout(this._socketTimeout || 3 * 60000, () => {
+	            if (socket) {
+	                socket.end();
+	            }
+	            handleResult(new Error(`Request timeout: ${info.options.path}`));
+	        });
+	        req.on('error', function (err) {
+	            // err has statusCode property
+	            // res should have headers
+	            handleResult(err);
+	        });
+	        if (data && typeof data === 'string') {
+	            req.write(data, 'utf8');
+	        }
+	        if (data && typeof data !== 'string') {
+	            data.on('close', function () {
+	                req.end();
+	            });
+	            data.pipe(req);
+	        }
+	        else {
+	            req.end();
+	        }
+	    }
+	    /**
+	     * Gets an http agent. This function is useful when you need an http agent that handles
+	     * routing through a proxy server - depending upon the url and proxy environment variables.
+	     * @param serverUrl  The server URL where the request will be sent. For example, https://api.github.com
+	     */
+	    getAgent(serverUrl) {
+	        const parsedUrl = new URL(serverUrl);
+	        return this._getAgent(parsedUrl);
+	    }
+	    getAgentDispatcher(serverUrl) {
+	        const parsedUrl = new URL(serverUrl);
+	        const proxyUrl = pm.getProxyUrl(parsedUrl);
+	        const useProxy = proxyUrl && proxyUrl.hostname;
+	        if (!useProxy) {
+	            return;
+	        }
+	        return this._getProxyAgentDispatcher(parsedUrl, proxyUrl);
+	    }
+	    _prepareRequest(method, requestUrl, headers) {
+	        const info = {};
+	        info.parsedUrl = requestUrl;
+	        const usingSsl = info.parsedUrl.protocol === 'https:';
+	        info.httpModule = usingSsl ? https : http;
+	        const defaultPort = usingSsl ? 443 : 80;
+	        info.options = {};
+	        info.options.host = info.parsedUrl.hostname;
+	        info.options.port = info.parsedUrl.port
+	            ? parseInt(info.parsedUrl.port)
+	            : defaultPort;
+	        info.options.path =
+	            (info.parsedUrl.pathname || '') + (info.parsedUrl.search || '');
+	        info.options.method = method;
+	        info.options.headers = this._mergeHeaders(headers);
+	        if (this.userAgent != null) {
+	            info.options.headers['user-agent'] = this.userAgent;
+	        }
+	        info.options.agent = this._getAgent(info.parsedUrl);
+	        // gives handlers an opportunity to participate
+	        if (this.handlers) {
+	            for (const handler of this.handlers) {
+	                handler.prepareRequest(info.options);
+	            }
+	        }
+	        return info;
+	    }
+	    _mergeHeaders(headers) {
+	        if (this.requestOptions && this.requestOptions.headers) {
+	            return Object.assign({}, lowercaseKeys(this.requestOptions.headers), lowercaseKeys(headers || {}));
+	        }
+	        return lowercaseKeys(headers || {});
+	    }
+	    /**
+	     * Gets an existing header value or returns a default.
+	     * Handles converting number header values to strings since HTTP headers must be strings.
+	     * Note: This returns string | string[] since some headers can have multiple values.
+	     * For headers that must always be a single string (like Content-Type), use the
+	     * specialized _getExistingOrDefaultContentTypeHeader method instead.
+	     */
+	    _getExistingOrDefaultHeader(additionalHeaders, header, _default) {
+	        let clientHeader;
+	        if (this.requestOptions && this.requestOptions.headers) {
+	            const headerValue = lowercaseKeys(this.requestOptions.headers)[header];
+	            if (headerValue) {
+	                clientHeader =
+	                    typeof headerValue === 'number' ? headerValue.toString() : headerValue;
+	            }
+	        }
+	        const additionalValue = additionalHeaders[header];
+	        if (additionalValue !== undefined) {
+	            return typeof additionalValue === 'number'
+	                ? additionalValue.toString()
+	                : additionalValue;
+	        }
+	        if (clientHeader !== undefined) {
+	            return clientHeader;
+	        }
+	        return _default;
+	    }
+	    /**
+	     * Specialized version of _getExistingOrDefaultHeader for Content-Type header.
+	     * Always returns a single string (not an array) since Content-Type should be a single value.
+	     * Converts arrays to comma-separated strings and numbers to strings to ensure type safety.
+	     * This was split from _getExistingOrDefaultHeader to provide stricter typing for callers
+	     * that assign the result to places expecting a string (e.g., additionalHeaders[Headers.ContentType]).
+	     */
+	    _getExistingOrDefaultContentTypeHeader(additionalHeaders, _default) {
+	        let clientHeader;
+	        if (this.requestOptions && this.requestOptions.headers) {
+	            const headerValue = lowercaseKeys(this.requestOptions.headers)[Headers.ContentType];
+	            if (headerValue) {
+	                if (typeof headerValue === 'number') {
+	                    clientHeader = String(headerValue);
+	                }
+	                else if (Array.isArray(headerValue)) {
+	                    clientHeader = headerValue.join(', ');
+	                }
+	                else {
+	                    clientHeader = headerValue;
+	                }
+	            }
+	        }
+	        const additionalValue = additionalHeaders[Headers.ContentType];
+	        // Return the first non-undefined value, converting numbers or arrays to strings if necessary
+	        if (additionalValue !== undefined) {
+	            if (typeof additionalValue === 'number') {
+	                return String(additionalValue);
+	            }
+	            else if (Array.isArray(additionalValue)) {
+	                return additionalValue.join(', ');
+	            }
+	            else {
+	                return additionalValue;
+	            }
+	        }
+	        if (clientHeader !== undefined) {
+	            return clientHeader;
+	        }
+	        return _default;
+	    }
+	    _getAgent(parsedUrl) {
+	        let agent;
+	        const proxyUrl = pm.getProxyUrl(parsedUrl);
+	        const useProxy = proxyUrl && proxyUrl.hostname;
+	        if (this._keepAlive && useProxy) {
+	            agent = this._proxyAgent;
+	        }
+	        if (!useProxy) {
+	            agent = this._agent;
+	        }
+	        // if agent is already assigned use that agent.
+	        if (agent) {
+	            return agent;
+	        }
+	        const usingSsl = parsedUrl.protocol === 'https:';
+	        let maxSockets = 100;
+	        if (this.requestOptions) {
+	            maxSockets = this.requestOptions.maxSockets || http.globalAgent.maxSockets;
+	        }
+	        // This is `useProxy` again, but we need to check `proxyURl` directly for TypeScripts's flow analysis.
+	        if (proxyUrl && proxyUrl.hostname) {
+	            const agentOptions = {
+	                maxSockets,
+	                keepAlive: this._keepAlive,
+	                proxy: Object.assign(Object.assign({}, ((proxyUrl.username || proxyUrl.password) && {
+	                    proxyAuth: `${proxyUrl.username}:${proxyUrl.password}`
+	                })), { host: proxyUrl.hostname, port: proxyUrl.port })
+	            };
+	            let tunnelAgent;
+	            const overHttps = proxyUrl.protocol === 'https:';
+	            if (usingSsl) {
+	                tunnelAgent = overHttps ? tunnel.httpsOverHttps : tunnel.httpsOverHttp;
+	            }
+	            else {
+	                tunnelAgent = overHttps ? tunnel.httpOverHttps : tunnel.httpOverHttp;
+	            }
+	            agent = tunnelAgent(agentOptions);
+	            this._proxyAgent = agent;
+	        }
+	        // if tunneling agent isn't assigned create a new agent
+	        if (!agent) {
+	            const options = { keepAlive: this._keepAlive, maxSockets };
+	            agent = usingSsl ? new https.Agent(options) : new http.Agent(options);
+	            this._agent = agent;
+	        }
+	        if (usingSsl && this._ignoreSslError) {
+	            // we don't want to set NODE_TLS_REJECT_UNAUTHORIZED=0 since that will affect request for entire process
+	            // http.RequestOptions doesn't expose a way to modify RequestOptions.agent.options
+	            // we have to cast it to any and change it directly
+	            agent.options = Object.assign(agent.options || {}, {
+	                rejectUnauthorized: false
+	            });
+	        }
+	        return agent;
+	    }
+	    _getProxyAgentDispatcher(parsedUrl, proxyUrl) {
+	        let proxyAgent;
+	        if (this._keepAlive) {
+	            proxyAgent = this._proxyAgentDispatcher;
+	        }
+	        // if agent is already assigned use that agent.
+	        if (proxyAgent) {
+	            return proxyAgent;
+	        }
+	        const usingSsl = parsedUrl.protocol === 'https:';
+	        proxyAgent = new undici_1.ProxyAgent(Object.assign({ uri: proxyUrl.href, pipelining: !this._keepAlive ? 0 : 1 }, ((proxyUrl.username || proxyUrl.password) && {
+	            token: `Basic ${Buffer.from(`${proxyUrl.username}:${proxyUrl.password}`).toString('base64')}`
+	        })));
+	        this._proxyAgentDispatcher = proxyAgent;
+	        if (usingSsl && this._ignoreSslError) {
+	            // we don't want to set NODE_TLS_REJECT_UNAUTHORIZED=0 since that will affect request for entire process
+	            // http.RequestOptions doesn't expose a way to modify RequestOptions.agent.options
+	            // we have to cast it to any and change it directly
+	            proxyAgent.options = Object.assign(proxyAgent.options.requestTls || {}, {
+	                rejectUnauthorized: false
+	            });
+	        }
+	        return proxyAgent;
+	    }
+	    _performExponentialBackoff(retryNumber) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            retryNumber = Math.min(ExponentialBackoffCeiling, retryNumber);
+	            const ms = ExponentialBackoffTimeSlice * Math.pow(2, retryNumber);
+	            return new Promise(resolve => setTimeout(() => resolve(), ms));
+	        });
+	    }
+	    _processResponse(res, options) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            return new Promise((resolve, reject) => __awaiter(this, void 0, void 0, function* () {
+	                const statusCode = res.message.statusCode || 0;
+	                const response = {
+	                    statusCode,
+	                    result: null,
+	                    headers: {}
+	                };
+	                // not found leads to null obj returned
+	                if (statusCode === HttpCodes.NotFound) {
+	                    resolve(response);
+	                }
+	                // get the result from the body
+	                function dateTimeDeserializer(key, value) {
+	                    if (typeof value === 'string') {
+	                        const a = new Date(value);
+	                        if (!isNaN(a.valueOf())) {
+	                            return a;
+	                        }
+	                    }
+	                    return value;
+	                }
+	                let obj;
+	                let contents;
+	                try {
+	                    contents = yield res.readBody();
+	                    if (contents && contents.length > 0) {
+	                        if (options && options.deserializeDates) {
+	                            obj = JSON.parse(contents, dateTimeDeserializer);
+	                        }
+	                        else {
+	                            obj = JSON.parse(contents);
+	                        }
+	                        response.result = obj;
+	                    }
+	                    response.headers = res.message.headers;
+	                }
+	                catch (err) {
+	                    // Invalid resource (contents not json);  leaving result obj null
+	                }
+	                // note that 3xx redirects are handled by the http layer.
+	                if (statusCode > 299) {
+	                    let msg;
+	                    // if exception/error in body, attempt to get better error
+	                    if (obj && obj.message) {
+	                        msg = obj.message;
+	                    }
+	                    else if (contents && contents.length > 0) {
+	                        // it may be the case that the exception is in the body message as string
+	                        msg = contents;
+	                    }
+	                    else {
+	                        msg = `Failed request: (${statusCode})`;
+	                    }
+	                    const err = new HttpClientError(msg, statusCode);
+	                    err.result = response.result;
+	                    reject(err);
+	                }
+	                else {
+	                    resolve(response);
+	                }
+	            }));
+	        });
+	    }
+	}
+	lib.HttpClient = HttpClient;
+	const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCase()] = obj[k]), c), {});
+	
+	return lib;
+}
+
+var auth$1 = {};
+
+var hasRequiredAuth;
+
+function requireAuth () {
+	if (hasRequiredAuth) return auth$1;
+	hasRequiredAuth = 1;
+	var __awaiter = (auth$1 && auth$1.__awaiter) || function (thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	};
+	Object.defineProperty(auth$1, "__esModule", { value: true });
+	auth$1.PersonalAccessTokenCredentialHandler = auth$1.BearerCredentialHandler = auth$1.BasicCredentialHandler = void 0;
+	class BasicCredentialHandler {
+	    constructor(username, password) {
+	        this.username = username;
+	        this.password = password;
+	    }
+	    prepareRequest(options) {
+	        if (!options.headers) {
+	            throw Error('The request has no headers');
+	        }
+	        options.headers['Authorization'] = `Basic ${Buffer.from(`${this.username}:${this.password}`).toString('base64')}`;
+	    }
+	    // This handler cannot handle 401
+	    canHandleAuthentication() {
+	        return false;
+	    }
+	    handleAuthentication() {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            throw new Error('not implemented');
+	        });
+	    }
+	}
+	auth$1.BasicCredentialHandler = BasicCredentialHandler;
+	class BearerCredentialHandler {
+	    constructor(token) {
+	        this.token = token;
+	    }
+	    // currently implements pre-authorization
+	    // TODO: support preAuth = false where it hooks on 401
+	    prepareRequest(options) {
+	        if (!options.headers) {
+	            throw Error('The request has no headers');
+	        }
+	        options.headers['Authorization'] = `Bearer ${this.token}`;
+	    }
+	    // This handler cannot handle 401
+	    canHandleAuthentication() {
+	        return false;
+	    }
+	    handleAuthentication() {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            throw new Error('not implemented');
+	        });
+	    }
+	}
+	auth$1.BearerCredentialHandler = BearerCredentialHandler;
+	class PersonalAccessTokenCredentialHandler {
+	    constructor(token) {
+	        this.token = token;
+	    }
+	    // currently implements pre-authorization
+	    // TODO: support preAuth = false where it hooks on 401
+	    prepareRequest(options) {
+	        if (!options.headers) {
+	            throw Error('The request has no headers');
+	        }
+	        options.headers['Authorization'] = `Basic ${Buffer.from(`PAT:${this.token}`).toString('base64')}`;
+	    }
+	    // This handler cannot handle 401
+	    canHandleAuthentication() {
+	        return false;
+	    }
+	    handleAuthentication() {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            throw new Error('not implemented');
+	        });
+	    }
+	}
+	auth$1.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHandler;
+	
+	return auth$1;
+}
+
+var hasRequiredOidcUtils;
+
+function requireOidcUtils () {
+	if (hasRequiredOidcUtils) return oidcUtils;
+	hasRequiredOidcUtils = 1;
+	var __awaiter = (oidcUtils && oidcUtils.__awaiter) || function (thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	};
+	Object.defineProperty(oidcUtils, "__esModule", { value: true });
+	oidcUtils.OidcClient = void 0;
+	const http_client_1 = requireLib();
+	const auth_1 = requireAuth();
+	const core_1 = requireCore();
+	class OidcClient {
+	    static createHttpClient(allowRetry = true, maxRetry = 10) {
+	        const requestOptions = {
+	            allowRetries: allowRetry,
+	            maxRetries: maxRetry
+	        };
+	        return new http_client_1.HttpClient('actions/oidc-client', [new auth_1.BearerCredentialHandler(OidcClient.getRequestToken())], requestOptions);
+	    }
+	    static getRequestToken() {
+	        const token = process.env['ACTIONS_ID_TOKEN_REQUEST_TOKEN'];
+	        if (!token) {
+	            throw new Error('Unable to get ACTIONS_ID_TOKEN_REQUEST_TOKEN env variable');
+	        }
+	        return token;
+	    }
+	    static getIDTokenUrl() {
+	        const runtimeUrl = process.env['ACTIONS_ID_TOKEN_REQUEST_URL'];
+	        if (!runtimeUrl) {
+	            throw new Error('Unable to get ACTIONS_ID_TOKEN_REQUEST_URL env variable');
+	        }
+	        return runtimeUrl;
+	    }
+	    static getCall(id_token_url) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            var _a;
+	            const httpclient = OidcClient.createHttpClient();
+	            const res = yield httpclient
+	                .getJson(id_token_url)
+	                .catch(error => {
+	                throw new Error(`Failed to get ID Token. \n 
+        Error Code : ${error.statusCode}\n 
+        Error Message: ${error.message}`);
+	            });
+	            const id_token = (_a = res.result) === null || _a === void 0 ? void 0 : _a.value;
+	            if (!id_token) {
+	                throw new Error('Response json body do not have ID Token field');
+	            }
+	            return id_token;
+	        });
+	    }
+	    static getIDToken(audience) {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            try {
+	                // New ID Token is requested from action service
+	                let id_token_url = OidcClient.getIDTokenUrl();
+	                if (audience) {
+	                    const encodedAudience = encodeURIComponent(audience);
+	                    id_token_url = `${id_token_url}&audience=${encodedAudience}`;
+	                }
+	                (0, core_1.debug)(`ID token url is ${id_token_url}`);
+	                const id_token = yield OidcClient.getCall(id_token_url);
+	                (0, core_1.setSecret)(id_token);
+	                return id_token;
+	            }
+	            catch (error) {
+	                throw new Error(`Error message: ${error.message}`);
+	            }
+	        });
+	    }
+	}
+	oidcUtils.OidcClient = OidcClient;
+	
+	return oidcUtils;
+}
+
+var summary = {};
+
+var hasRequiredSummary;
+
+function requireSummary () {
+	if (hasRequiredSummary) return summary;
+	hasRequiredSummary = 1;
+	(function (exports$1) {
+		var __awaiter = (summary && summary.__awaiter) || function (thisArg, _arguments, P, generator) {
+		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+		    return new (P || (P = Promise))(function (resolve, reject) {
+		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+		        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+		        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+		        step((generator = generator.apply(thisArg, _arguments || [])).next());
+		    });
+		};
+		Object.defineProperty(exports$1, "__esModule", { value: true });
+		exports$1.summary = exports$1.markdownSummary = exports$1.SUMMARY_DOCS_URL = exports$1.SUMMARY_ENV_VAR = void 0;
+		const os_1 = require$$0;
+		const fs_1 = require$$1$1;
+		const { access, appendFile, writeFile } = fs_1.promises;
+		exports$1.SUMMARY_ENV_VAR = 'GITHUB_STEP_SUMMARY';
+		exports$1.SUMMARY_DOCS_URL = 'https://docs.github.com/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary';
+		class Summary {
+		    constructor() {
+		        this._buffer = '';
+		    }
+		    /**
+		     * Finds the summary file path from the environment, rejects if env var is not found or file does not exist
+		     * Also checks r/w permissions.
+		     *
+		     * @returns step summary file path
+		     */
+		    filePath() {
+		        return __awaiter(this, void 0, void 0, function* () {
+		            if (this._filePath) {
+		                return this._filePath;
+		            }
+		            const pathFromEnv = process.env[exports$1.SUMMARY_ENV_VAR];
+		            if (!pathFromEnv) {
+		                throw new Error(`Unable to find environment variable for $${exports$1.SUMMARY_ENV_VAR}. Check if your runtime environment supports job summaries.`);
+		            }
+		            try {
+		                yield access(pathFromEnv, fs_1.constants.R_OK | fs_1.constants.W_OK);
+		            }
+		            catch (_a) {
+		                throw new Error(`Unable to access summary file: '${pathFromEnv}'. Check if the file has correct read/write permissions.`);
+		            }
+		            this._filePath = pathFromEnv;
+		            return this._filePath;
+		        });
+		    }
+		    /**
+		     * Wraps content in an HTML tag, adding any HTML attributes
+		     *
+		     * @param {string} tag HTML tag to wrap
+		     * @param {string | null} content content within the tag
+		     * @param {[attribute: string]: string} attrs key-value list of HTML attributes to add
+		     *
+		     * @returns {string} content wrapped in HTML element
+		     */
+		    wrap(tag, content, attrs = {}) {
+		        const htmlAttrs = Object.entries(attrs)
+		            .map(([key, value]) => ` ${key}="${value}"`)
+		            .join('');
+		        if (!content) {
+		            return `<${tag}${htmlAttrs}>`;
+		        }
+		        return `<${tag}${htmlAttrs}>${content}</${tag}>`;
+		    }
+		    /**
+		     * Writes text in the buffer to the summary buffer file and empties buffer. Will append by default.
+		     *
+		     * @param {SummaryWriteOptions} [options] (optional) options for write operation
+		     *
+		     * @returns {Promise<Summary>} summary instance
+		     */
+		    write(options) {
+		        return __awaiter(this, void 0, void 0, function* () {
+		            const overwrite = !!(options === null || options === void 0 ? void 0 : options.overwrite);
+		            const filePath = yield this.filePath();
+		            const writeFunc = overwrite ? writeFile : appendFile;
+		            yield writeFunc(filePath, this._buffer, { encoding: 'utf8' });
+		            return this.emptyBuffer();
+		        });
+		    }
+		    /**
+		     * Clears the summary buffer and wipes the summary file
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    clear() {
+		        return __awaiter(this, void 0, void 0, function* () {
+		            return this.emptyBuffer().write({ overwrite: true });
+		        });
+		    }
+		    /**
+		     * Returns the current summary buffer as a string
+		     *
+		     * @returns {string} string of summary buffer
+		     */
+		    stringify() {
+		        return this._buffer;
+		    }
+		    /**
+		     * If the summary buffer is empty
+		     *
+		     * @returns {boolen} true if the buffer is empty
+		     */
+		    isEmptyBuffer() {
+		        return this._buffer.length === 0;
+		    }
+		    /**
+		     * Resets the summary buffer without writing to summary file
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    emptyBuffer() {
+		        this._buffer = '';
+		        return this;
+		    }
+		    /**
+		     * Adds raw text to the summary buffer
+		     *
+		     * @param {string} text content to add
+		     * @param {boolean} [addEOL=false] (optional) append an EOL to the raw text (default: false)
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    addRaw(text, addEOL = false) {
+		        this._buffer += text;
+		        return addEOL ? this.addEOL() : this;
+		    }
+		    /**
+		     * Adds the operating system-specific end-of-line marker to the buffer
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    addEOL() {
+		        return this.addRaw(os_1.EOL);
+		    }
+		    /**
+		     * Adds an HTML codeblock to the summary buffer
+		     *
+		     * @param {string} code content to render within fenced code block
+		     * @param {string} lang (optional) language to syntax highlight code
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    addCodeBlock(code, lang) {
+		        const attrs = Object.assign({}, (lang && { lang }));
+		        const element = this.wrap('pre', this.wrap('code', code), attrs);
+		        return this.addRaw(element).addEOL();
+		    }
+		    /**
+		     * Adds an HTML list to the summary buffer
+		     *
+		     * @param {string[]} items list of items to render
+		     * @param {boolean} [ordered=false] (optional) if the rendered list should be ordered or not (default: false)
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    addList(items, ordered = false) {
+		        const tag = ordered ? 'ol' : 'ul';
+		        const listItems = items.map(item => this.wrap('li', item)).join('');
+		        const element = this.wrap(tag, listItems);
+		        return this.addRaw(element).addEOL();
+		    }
+		    /**
+		     * Adds an HTML table to the summary buffer
+		     *
+		     * @param {SummaryTableCell[]} rows table rows
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    addTable(rows) {
+		        const tableBody = rows
+		            .map(row => {
+		            const cells = row
+		                .map(cell => {
+		                if (typeof cell === 'string') {
+		                    return this.wrap('td', cell);
+		                }
+		                const { header, data, colspan, rowspan } = cell;
+		                const tag = header ? 'th' : 'td';
+		                const attrs = Object.assign(Object.assign({}, (colspan && { colspan })), (rowspan && { rowspan }));
+		                return this.wrap(tag, data, attrs);
+		            })
+		                .join('');
+		            return this.wrap('tr', cells);
+		        })
+		            .join('');
+		        const element = this.wrap('table', tableBody);
+		        return this.addRaw(element).addEOL();
+		    }
+		    /**
+		     * Adds a collapsable HTML details element to the summary buffer
+		     *
+		     * @param {string} label text for the closed state
+		     * @param {string} content collapsable content
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    addDetails(label, content) {
+		        const element = this.wrap('details', this.wrap('summary', label) + content);
+		        return this.addRaw(element).addEOL();
+		    }
+		    /**
+		     * Adds an HTML image tag to the summary buffer
+		     *
+		     * @param {string} src path to the image you to embed
+		     * @param {string} alt text description of the image
+		     * @param {SummaryImageOptions} options (optional) addition image attributes
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    addImage(src, alt, options) {
+		        const { width, height } = options || {};
+		        const attrs = Object.assign(Object.assign({}, (width && { width })), (height && { height }));
+		        const element = this.wrap('img', null, Object.assign({ src, alt }, attrs));
+		        return this.addRaw(element).addEOL();
+		    }
+		    /**
+		     * Adds an HTML section heading element
+		     *
+		     * @param {string} text heading text
+		     * @param {number | string} [level=1] (optional) the heading level, default: 1
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    addHeading(text, level) {
+		        const tag = `h${level}`;
+		        const allowedTag = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tag)
+		            ? tag
+		            : 'h1';
+		        const element = this.wrap(allowedTag, text);
+		        return this.addRaw(element).addEOL();
+		    }
+		    /**
+		     * Adds an HTML thematic break (<hr>) to the summary buffer
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    addSeparator() {
+		        const element = this.wrap('hr', null);
+		        return this.addRaw(element).addEOL();
+		    }
+		    /**
+		     * Adds an HTML line break (<br>) to the summary buffer
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    addBreak() {
+		        const element = this.wrap('br', null);
+		        return this.addRaw(element).addEOL();
+		    }
+		    /**
+		     * Adds an HTML blockquote to the summary buffer
+		     *
+		     * @param {string} text quote text
+		     * @param {string} cite (optional) citation url
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    addQuote(text, cite) {
+		        const attrs = Object.assign({}, (cite && { cite }));
+		        const element = this.wrap('blockquote', text, attrs);
+		        return this.addRaw(element).addEOL();
+		    }
+		    /**
+		     * Adds an HTML anchor tag to the summary buffer
+		     *
+		     * @param {string} text link text/content
+		     * @param {string} href hyperlink
+		     *
+		     * @returns {Summary} summary instance
+		     */
+		    addLink(text, href) {
+		        const element = this.wrap('a', text, { href });
+		        return this.addRaw(element).addEOL();
+		    }
+		}
+		const _summary = new Summary();
+		/**
+		 * @deprecated use `core.summary`
+		 */
+		exports$1.markdownSummary = _summary;
+		exports$1.summary = _summary;
+		
+	} (summary));
+	return summary;
+}
+
+var pathUtils = {};
+
+var hasRequiredPathUtils;
+
+function requirePathUtils () {
+	if (hasRequiredPathUtils) return pathUtils;
+	hasRequiredPathUtils = 1;
+	var __createBinding = (pathUtils && pathUtils.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	      desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	}));
+	var __setModuleDefault = (pathUtils && pathUtils.__setModuleDefault) || (Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	});
+	var __importStar = (pathUtils && pathUtils.__importStar) || (function () {
+	    var ownKeys = function(o) {
+	        ownKeys = Object.getOwnPropertyNames || function (o) {
+	            var ar = [];
+	            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+	            return ar;
+	        };
+	        return ownKeys(o);
+	    };
+	    return function (mod) {
+	        if (mod && mod.__esModule) return mod;
+	        var result = {};
+	        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+	        __setModuleDefault(result, mod);
+	        return result;
+	    };
+	})();
+	Object.defineProperty(pathUtils, "__esModule", { value: true });
+	pathUtils.toPosixPath = toPosixPath;
+	pathUtils.toWin32Path = toWin32Path;
+	pathUtils.toPlatformPath = toPlatformPath;
+	const path = __importStar(require$$1__default);
+	/**
+	 * toPosixPath converts the given path to the posix form. On Windows, \\ will be
+	 * replaced with /.
+	 *
+	 * @param pth. Path to transform.
+	 * @return string Posix path.
+	 */
+	function toPosixPath(pth) {
+	    return pth.replace(/[\\]/g, '/');
+	}
+	/**
+	 * toWin32Path converts the given path to the win32 form. On Linux, / will be
+	 * replaced with \\.
+	 *
+	 * @param pth. Path to transform.
+	 * @return string Win32 path.
+	 */
+	function toWin32Path(pth) {
+	    return pth.replace(/[/]/g, '\\');
+	}
+	/**
+	 * toPlatformPath converts the given path to a platform-specific path. It does
+	 * this by replacing instances of / and \ with the platform-specific path
+	 * separator.
+	 *
+	 * @param pth The path to platformize.
+	 * @return string The platform-specific path.
+	 */
+	function toPlatformPath(pth) {
+	    return pth.replace(/[/\\]/g, path.sep);
+	}
+	
+	return pathUtils;
+}
+
+var platform = {};
+
+var exec = {};
+
+var toolrunner = {};
 
 var io = {};
 
@@ -27808,6 +29469,1264 @@ function requireIo () {
 	
 	return io;
 }
+
+var hasRequiredToolrunner;
+
+function requireToolrunner () {
+	if (hasRequiredToolrunner) return toolrunner;
+	hasRequiredToolrunner = 1;
+	var __createBinding = (toolrunner && toolrunner.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	      desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	}));
+	var __setModuleDefault = (toolrunner && toolrunner.__setModuleDefault) || (Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	});
+	var __importStar = (toolrunner && toolrunner.__importStar) || (function () {
+	    var ownKeys = function(o) {
+	        ownKeys = Object.getOwnPropertyNames || function (o) {
+	            var ar = [];
+	            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+	            return ar;
+	        };
+	        return ownKeys(o);
+	    };
+	    return function (mod) {
+	        if (mod && mod.__esModule) return mod;
+	        var result = {};
+	        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+	        __setModuleDefault(result, mod);
+	        return result;
+	    };
+	})();
+	var __awaiter = (toolrunner && toolrunner.__awaiter) || function (thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	};
+	Object.defineProperty(toolrunner, "__esModule", { value: true });
+	toolrunner.ToolRunner = void 0;
+	toolrunner.argStringToArray = argStringToArray;
+	const os = __importStar(require$$0);
+	const events = __importStar(require$$4);
+	const child = __importStar(require$$2__default);
+	const path = __importStar(require$$1__default);
+	const io = __importStar(requireIo());
+	const ioUtil = __importStar(requireIoUtil());
+	const timers_1 = require$$6;
+	/* eslint-disable @typescript-eslint/unbound-method */
+	const IS_WINDOWS = process.platform === 'win32';
+	/*
+	 * Class for running command line tools. Handles quoting and arg parsing in a platform agnostic way.
+	 */
+	class ToolRunner extends events.EventEmitter {
+	    constructor(toolPath, args, options) {
+	        super();
+	        if (!toolPath) {
+	            throw new Error("Parameter 'toolPath' cannot be null or empty.");
+	        }
+	        this.toolPath = toolPath;
+	        this.args = args || [];
+	        this.options = options || {};
+	    }
+	    _debug(message) {
+	        if (this.options.listeners && this.options.listeners.debug) {
+	            this.options.listeners.debug(message);
+	        }
+	    }
+	    _getCommandString(options, noPrefix) {
+	        const toolPath = this._getSpawnFileName();
+	        const args = this._getSpawnArgs(options);
+	        let cmd = noPrefix ? '' : '[command]'; // omit prefix when piped to a second tool
+	        if (IS_WINDOWS) {
+	            // Windows + cmd file
+	            if (this._isCmdFile()) {
+	                cmd += toolPath;
+	                for (const a of args) {
+	                    cmd += ` ${a}`;
+	                }
+	            }
+	            // Windows + verbatim
+	            else if (options.windowsVerbatimArguments) {
+	                cmd += `"${toolPath}"`;
+	                for (const a of args) {
+	                    cmd += ` ${a}`;
+	                }
+	            }
+	            // Windows (regular)
+	            else {
+	                cmd += this._windowsQuoteCmdArg(toolPath);
+	                for (const a of args) {
+	                    cmd += ` ${this._windowsQuoteCmdArg(a)}`;
+	                }
+	            }
+	        }
+	        else {
+	            // OSX/Linux - this can likely be improved with some form of quoting.
+	            // creating processes on Unix is fundamentally different than Windows.
+	            // on Unix, execvp() takes an arg array.
+	            cmd += toolPath;
+	            for (const a of args) {
+	                cmd += ` ${a}`;
+	            }
+	        }
+	        return cmd;
+	    }
+	    _processLineBuffer(data, strBuffer, onLine) {
+	        try {
+	            let s = strBuffer + data.toString();
+	            let n = s.indexOf(os.EOL);
+	            while (n > -1) {
+	                const line = s.substring(0, n);
+	                onLine(line);
+	                // the rest of the string ...
+	                s = s.substring(n + os.EOL.length);
+	                n = s.indexOf(os.EOL);
+	            }
+	            return s;
+	        }
+	        catch (err) {
+	            // streaming lines to console is best effort.  Don't fail a build.
+	            this._debug(`error processing line. Failed with error ${err}`);
+	            return '';
+	        }
+	    }
+	    _getSpawnFileName() {
+	        if (IS_WINDOWS) {
+	            if (this._isCmdFile()) {
+	                return process.env['COMSPEC'] || 'cmd.exe';
+	            }
+	        }
+	        return this.toolPath;
+	    }
+	    _getSpawnArgs(options) {
+	        if (IS_WINDOWS) {
+	            if (this._isCmdFile()) {
+	                let argline = `/D /S /C "${this._windowsQuoteCmdArg(this.toolPath)}`;
+	                for (const a of this.args) {
+	                    argline += ' ';
+	                    argline += options.windowsVerbatimArguments
+	                        ? a
+	                        : this._windowsQuoteCmdArg(a);
+	                }
+	                argline += '"';
+	                return [argline];
+	            }
+	        }
+	        return this.args;
+	    }
+	    _endsWith(str, end) {
+	        return str.endsWith(end);
+	    }
+	    _isCmdFile() {
+	        const upperToolPath = this.toolPath.toUpperCase();
+	        return (this._endsWith(upperToolPath, '.CMD') ||
+	            this._endsWith(upperToolPath, '.BAT'));
+	    }
+	    _windowsQuoteCmdArg(arg) {
+	        // for .exe, apply the normal quoting rules that libuv applies
+	        if (!this._isCmdFile()) {
+	            return this._uvQuoteCmdArg(arg);
+	        }
+	        // otherwise apply quoting rules specific to the cmd.exe command line parser.
+	        // the libuv rules are generic and are not designed specifically for cmd.exe
+	        // command line parser.
+	        //
+	        // for a detailed description of the cmd.exe command line parser, refer to
+	        // http://stackoverflow.com/questions/4094699/how-does-the-windows-command-interpreter-cmd-exe-parse-scripts/7970912#7970912
+	        // need quotes for empty arg
+	        if (!arg) {
+	            return '""';
+	        }
+	        // determine whether the arg needs to be quoted
+	        const cmdSpecialChars = [
+	            ' ',
+	            '\t',
+	            '&',
+	            '(',
+	            ')',
+	            '[',
+	            ']',
+	            '{',
+	            '}',
+	            '^',
+	            '=',
+	            ';',
+	            '!',
+	            "'",
+	            '+',
+	            ',',
+	            '`',
+	            '~',
+	            '|',
+	            '<',
+	            '>',
+	            '"'
+	        ];
+	        let needsQuotes = false;
+	        for (const char of arg) {
+	            if (cmdSpecialChars.some(x => x === char)) {
+	                needsQuotes = true;
+	                break;
+	            }
+	        }
+	        // short-circuit if quotes not needed
+	        if (!needsQuotes) {
+	            return arg;
+	        }
+	        // the following quoting rules are very similar to the rules that by libuv applies.
+	        //
+	        // 1) wrap the string in quotes
+	        //
+	        // 2) double-up quotes - i.e. " => ""
+	        //
+	        //    this is different from the libuv quoting rules. libuv replaces " with \", which unfortunately
+	        //    doesn't work well with a cmd.exe command line.
+	        //
+	        //    note, replacing " with "" also works well if the arg is passed to a downstream .NET console app.
+	        //    for example, the command line:
+	        //          foo.exe "myarg:""my val"""
+	        //    is parsed by a .NET console app into an arg array:
+	        //          [ "myarg:\"my val\"" ]
+	        //    which is the same end result when applying libuv quoting rules. although the actual
+	        //    command line from libuv quoting rules would look like:
+	        //          foo.exe "myarg:\"my val\""
+	        //
+	        // 3) double-up slashes that precede a quote,
+	        //    e.g.  hello \world    => "hello \world"
+	        //          hello\"world    => "hello\\""world"
+	        //          hello\\"world   => "hello\\\\""world"
+	        //          hello world\    => "hello world\\"
+	        //
+	        //    technically this is not required for a cmd.exe command line, or the batch argument parser.
+	        //    the reasons for including this as a .cmd quoting rule are:
+	        //
+	        //    a) this is optimized for the scenario where the argument is passed from the .cmd file to an
+	        //       external program. many programs (e.g. .NET console apps) rely on the slash-doubling rule.
+	        //
+	        //    b) it's what we've been doing previously (by deferring to node default behavior) and we
+	        //       haven't heard any complaints about that aspect.
+	        //
+	        // note, a weakness of the quoting rules chosen here, is that % is not escaped. in fact, % cannot be
+	        // escaped when used on the command line directly - even though within a .cmd file % can be escaped
+	        // by using %%.
+	        //
+	        // the saving grace is, on the command line, %var% is left as-is if var is not defined. this contrasts
+	        // the line parsing rules within a .cmd file, where if var is not defined it is replaced with nothing.
+	        //
+	        // one option that was explored was replacing % with ^% - i.e. %var% => ^%var^%. this hack would
+	        // often work, since it is unlikely that var^ would exist, and the ^ character is removed when the
+	        // variable is used. the problem, however, is that ^ is not removed when %* is used to pass the args
+	        // to an external program.
+	        //
+	        // an unexplored potential solution for the % escaping problem, is to create a wrapper .cmd file.
+	        // % can be escaped within a .cmd file.
+	        let reverse = '"';
+	        let quoteHit = true;
+	        for (let i = arg.length; i > 0; i--) {
+	            // walk the string in reverse
+	            reverse += arg[i - 1];
+	            if (quoteHit && arg[i - 1] === '\\') {
+	                reverse += '\\'; // double the slash
+	            }
+	            else if (arg[i - 1] === '"') {
+	                quoteHit = true;
+	                reverse += '"'; // double the quote
+	            }
+	            else {
+	                quoteHit = false;
+	            }
+	        }
+	        reverse += '"';
+	        return reverse.split('').reverse().join('');
+	    }
+	    _uvQuoteCmdArg(arg) {
+	        // Tool runner wraps child_process.spawn() and needs to apply the same quoting as
+	        // Node in certain cases where the undocumented spawn option windowsVerbatimArguments
+	        // is used.
+	        //
+	        // Since this function is a port of quote_cmd_arg from Node 4.x (technically, lib UV,
+	        // see https://github.com/nodejs/node/blob/v4.x/deps/uv/src/win/process.c for details),
+	        // pasting copyright notice from Node within this function:
+	        //
+	        //      Copyright Joyent, Inc. and other Node contributors. All rights reserved.
+	        //
+	        //      Permission is hereby granted, free of charge, to any person obtaining a copy
+	        //      of this software and associated documentation files (the "Software"), to
+	        //      deal in the Software without restriction, including without limitation the
+	        //      rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+	        //      sell copies of the Software, and to permit persons to whom the Software is
+	        //      furnished to do so, subject to the following conditions:
+	        //
+	        //      The above copyright notice and this permission notice shall be included in
+	        //      all copies or substantial portions of the Software.
+	        //
+	        //      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	        //      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	        //      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	        //      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	        //      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+	        //      FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+	        //      IN THE SOFTWARE.
+	        if (!arg) {
+	            // Need double quotation for empty argument
+	            return '""';
+	        }
+	        if (!arg.includes(' ') && !arg.includes('\t') && !arg.includes('"')) {
+	            // No quotation needed
+	            return arg;
+	        }
+	        if (!arg.includes('"') && !arg.includes('\\')) {
+	            // No embedded double quotes or backslashes, so I can just wrap
+	            // quote marks around the whole thing.
+	            return `"${arg}"`;
+	        }
+	        // Expected input/output:
+	        //   input : hello"world
+	        //   output: "hello\"world"
+	        //   input : hello""world
+	        //   output: "hello\"\"world"
+	        //   input : hello\world
+	        //   output: hello\world
+	        //   input : hello\\world
+	        //   output: hello\\world
+	        //   input : hello\"world
+	        //   output: "hello\\\"world"
+	        //   input : hello\\"world
+	        //   output: "hello\\\\\"world"
+	        //   input : hello world\
+	        //   output: "hello world\\" - note the comment in libuv actually reads "hello world\"
+	        //                             but it appears the comment is wrong, it should be "hello world\\"
+	        let reverse = '"';
+	        let quoteHit = true;
+	        for (let i = arg.length; i > 0; i--) {
+	            // walk the string in reverse
+	            reverse += arg[i - 1];
+	            if (quoteHit && arg[i - 1] === '\\') {
+	                reverse += '\\';
+	            }
+	            else if (arg[i - 1] === '"') {
+	                quoteHit = true;
+	                reverse += '\\';
+	            }
+	            else {
+	                quoteHit = false;
+	            }
+	        }
+	        reverse += '"';
+	        return reverse.split('').reverse().join('');
+	    }
+	    _cloneExecOptions(options) {
+	        options = options || {};
+	        const result = {
+	            cwd: options.cwd || process.cwd(),
+	            env: options.env || process.env,
+	            silent: options.silent || false,
+	            windowsVerbatimArguments: options.windowsVerbatimArguments || false,
+	            failOnStdErr: options.failOnStdErr || false,
+	            ignoreReturnCode: options.ignoreReturnCode || false,
+	            delay: options.delay || 10000
+	        };
+	        result.outStream = options.outStream || process.stdout;
+	        result.errStream = options.errStream || process.stderr;
+	        return result;
+	    }
+	    _getSpawnOptions(options, toolPath) {
+	        options = options || {};
+	        const result = {};
+	        result.cwd = options.cwd;
+	        result.env = options.env;
+	        result['windowsVerbatimArguments'] =
+	            options.windowsVerbatimArguments || this._isCmdFile();
+	        if (options.windowsVerbatimArguments) {
+	            result.argv0 = `"${toolPath}"`;
+	        }
+	        return result;
+	    }
+	    /**
+	     * Exec a tool.
+	     * Output will be streamed to the live console.
+	     * Returns promise with return code
+	     *
+	     * @param     tool     path to tool to exec
+	     * @param     options  optional exec options.  See ExecOptions
+	     * @returns   number
+	     */
+	    exec() {
+	        return __awaiter(this, void 0, void 0, function* () {
+	            // root the tool path if it is unrooted and contains relative pathing
+	            if (!ioUtil.isRooted(this.toolPath) &&
+	                (this.toolPath.includes('/') ||
+	                    (IS_WINDOWS && this.toolPath.includes('\\')))) {
+	                // prefer options.cwd if it is specified, however options.cwd may also need to be rooted
+	                this.toolPath = path.resolve(process.cwd(), this.options.cwd || process.cwd(), this.toolPath);
+	            }
+	            // if the tool is only a file name, then resolve it from the PATH
+	            // otherwise verify it exists (add extension on Windows if necessary)
+	            this.toolPath = yield io.which(this.toolPath, true);
+	            return new Promise((resolve, reject) => __awaiter(this, void 0, void 0, function* () {
+	                this._debug(`exec tool: ${this.toolPath}`);
+	                this._debug('arguments:');
+	                for (const arg of this.args) {
+	                    this._debug(`   ${arg}`);
+	                }
+	                const optionsNonNull = this._cloneExecOptions(this.options);
+	                if (!optionsNonNull.silent && optionsNonNull.outStream) {
+	                    optionsNonNull.outStream.write(this._getCommandString(optionsNonNull) + os.EOL);
+	                }
+	                const state = new ExecState(optionsNonNull, this.toolPath);
+	                state.on('debug', (message) => {
+	                    this._debug(message);
+	                });
+	                if (this.options.cwd && !(yield ioUtil.exists(this.options.cwd))) {
+	                    return reject(new Error(`The cwd: ${this.options.cwd} does not exist!`));
+	                }
+	                const fileName = this._getSpawnFileName();
+	                const cp = child.spawn(fileName, this._getSpawnArgs(optionsNonNull), this._getSpawnOptions(this.options, fileName));
+	                let stdbuffer = '';
+	                if (cp.stdout) {
+	                    cp.stdout.on('data', (data) => {
+	                        if (this.options.listeners && this.options.listeners.stdout) {
+	                            this.options.listeners.stdout(data);
+	                        }
+	                        if (!optionsNonNull.silent && optionsNonNull.outStream) {
+	                            optionsNonNull.outStream.write(data);
+	                        }
+	                        stdbuffer = this._processLineBuffer(data, stdbuffer, (line) => {
+	                            if (this.options.listeners && this.options.listeners.stdline) {
+	                                this.options.listeners.stdline(line);
+	                            }
+	                        });
+	                    });
+	                }
+	                let errbuffer = '';
+	                if (cp.stderr) {
+	                    cp.stderr.on('data', (data) => {
+	                        state.processStderr = true;
+	                        if (this.options.listeners && this.options.listeners.stderr) {
+	                            this.options.listeners.stderr(data);
+	                        }
+	                        if (!optionsNonNull.silent &&
+	                            optionsNonNull.errStream &&
+	                            optionsNonNull.outStream) {
+	                            const s = optionsNonNull.failOnStdErr
+	                                ? optionsNonNull.errStream
+	                                : optionsNonNull.outStream;
+	                            s.write(data);
+	                        }
+	                        errbuffer = this._processLineBuffer(data, errbuffer, (line) => {
+	                            if (this.options.listeners && this.options.listeners.errline) {
+	                                this.options.listeners.errline(line);
+	                            }
+	                        });
+	                    });
+	                }
+	                cp.on('error', (err) => {
+	                    state.processError = err.message;
+	                    state.processExited = true;
+	                    state.processClosed = true;
+	                    state.CheckComplete();
+	                });
+	                cp.on('exit', (code) => {
+	                    state.processExitCode = code;
+	                    state.processExited = true;
+	                    this._debug(`Exit code ${code} received from tool '${this.toolPath}'`);
+	                    state.CheckComplete();
+	                });
+	                cp.on('close', (code) => {
+	                    state.processExitCode = code;
+	                    state.processExited = true;
+	                    state.processClosed = true;
+	                    this._debug(`STDIO streams have closed for tool '${this.toolPath}'`);
+	                    state.CheckComplete();
+	                });
+	                state.on('done', (error, exitCode) => {
+	                    if (stdbuffer.length > 0) {
+	                        this.emit('stdline', stdbuffer);
+	                    }
+	                    if (errbuffer.length > 0) {
+	                        this.emit('errline', errbuffer);
+	                    }
+	                    cp.removeAllListeners();
+	                    if (error) {
+	                        reject(error);
+	                    }
+	                    else {
+	                        resolve(exitCode);
+	                    }
+	                });
+	                if (this.options.input) {
+	                    if (!cp.stdin) {
+	                        throw new Error('child process missing stdin');
+	                    }
+	                    cp.stdin.end(this.options.input);
+	                }
+	            }));
+	        });
+	    }
+	}
+	toolrunner.ToolRunner = ToolRunner;
+	/**
+	 * Convert an arg string to an array of args. Handles escaping
+	 *
+	 * @param    argString   string of arguments
+	 * @returns  string[]    array of arguments
+	 */
+	function argStringToArray(argString) {
+	    const args = [];
+	    let inQuotes = false;
+	    let escaped = false;
+	    let arg = '';
+	    function append(c) {
+	        // we only escape double quotes.
+	        if (escaped && c !== '"') {
+	            arg += '\\';
+	        }
+	        arg += c;
+	        escaped = false;
+	    }
+	    for (let i = 0; i < argString.length; i++) {
+	        const c = argString.charAt(i);
+	        if (c === '"') {
+	            if (!escaped) {
+	                inQuotes = !inQuotes;
+	            }
+	            else {
+	                append(c);
+	            }
+	            continue;
+	        }
+	        if (c === '\\' && escaped) {
+	            append(c);
+	            continue;
+	        }
+	        if (c === '\\' && inQuotes) {
+	            escaped = true;
+	            continue;
+	        }
+	        if (c === ' ' && !inQuotes) {
+	            if (arg.length > 0) {
+	                args.push(arg);
+	                arg = '';
+	            }
+	            continue;
+	        }
+	        append(c);
+	    }
+	    if (arg.length > 0) {
+	        args.push(arg.trim());
+	    }
+	    return args;
+	}
+	class ExecState extends events.EventEmitter {
+	    constructor(options, toolPath) {
+	        super();
+	        this.processClosed = false; // tracks whether the process has exited and stdio is closed
+	        this.processError = '';
+	        this.processExitCode = 0;
+	        this.processExited = false; // tracks whether the process has exited
+	        this.processStderr = false; // tracks whether stderr was written to
+	        this.delay = 10000; // 10 seconds
+	        this.done = false;
+	        this.timeout = null;
+	        if (!toolPath) {
+	            throw new Error('toolPath must not be empty');
+	        }
+	        this.options = options;
+	        this.toolPath = toolPath;
+	        if (options.delay) {
+	            this.delay = options.delay;
+	        }
+	    }
+	    CheckComplete() {
+	        if (this.done) {
+	            return;
+	        }
+	        if (this.processClosed) {
+	            this._setResult();
+	        }
+	        else if (this.processExited) {
+	            this.timeout = (0, timers_1.setTimeout)(ExecState.HandleTimeout, this.delay, this);
+	        }
+	    }
+	    _debug(message) {
+	        this.emit('debug', message);
+	    }
+	    _setResult() {
+	        // determine whether there is an error
+	        let error;
+	        if (this.processExited) {
+	            if (this.processError) {
+	                error = new Error(`There was an error when attempting to execute the process '${this.toolPath}'. This may indicate the process failed to start. Error: ${this.processError}`);
+	            }
+	            else if (this.processExitCode !== 0 && !this.options.ignoreReturnCode) {
+	                error = new Error(`The process '${this.toolPath}' failed with exit code ${this.processExitCode}`);
+	            }
+	            else if (this.processStderr && this.options.failOnStdErr) {
+	                error = new Error(`The process '${this.toolPath}' failed because one or more lines were written to the STDERR stream`);
+	            }
+	        }
+	        // clear the timeout
+	        if (this.timeout) {
+	            clearTimeout(this.timeout);
+	            this.timeout = null;
+	        }
+	        this.done = true;
+	        this.emit('done', error, this.processExitCode);
+	    }
+	    static HandleTimeout(state) {
+	        if (state.done) {
+	            return;
+	        }
+	        if (!state.processClosed && state.processExited) {
+	            const message = `The STDIO streams did not close within ${state.delay / 1000} seconds of the exit event from process '${state.toolPath}'. This may indicate a child process inherited the STDIO streams and has not yet exited.`;
+	            state._debug(message);
+	        }
+	        state._setResult();
+	    }
+	}
+	
+	return toolrunner;
+}
+
+var hasRequiredExec;
+
+function requireExec () {
+	if (hasRequiredExec) return exec;
+	hasRequiredExec = 1;
+	var __createBinding = (exec && exec.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	      desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	}));
+	var __setModuleDefault = (exec && exec.__setModuleDefault) || (Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	});
+	var __importStar = (exec && exec.__importStar) || (function () {
+	    var ownKeys = function(o) {
+	        ownKeys = Object.getOwnPropertyNames || function (o) {
+	            var ar = [];
+	            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+	            return ar;
+	        };
+	        return ownKeys(o);
+	    };
+	    return function (mod) {
+	        if (mod && mod.__esModule) return mod;
+	        var result = {};
+	        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+	        __setModuleDefault(result, mod);
+	        return result;
+	    };
+	})();
+	var __awaiter = (exec && exec.__awaiter) || function (thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	};
+	Object.defineProperty(exec, "__esModule", { value: true });
+	exec.exec = exec$1;
+	exec.getExecOutput = getExecOutput;
+	const string_decoder_1 = require$$0$9;
+	const tr = __importStar(requireToolrunner());
+	/**
+	 * Exec a command.
+	 * Output will be streamed to the live console.
+	 * Returns promise with return code
+	 *
+	 * @param     commandLine        command to execute (can include additional args). Must be correctly escaped.
+	 * @param     args               optional arguments for tool. Escaping is handled by the lib.
+	 * @param     options            optional exec options.  See ExecOptions
+	 * @returns   Promise<number>    exit code
+	 */
+	function exec$1(commandLine, args, options) {
+	    return __awaiter(this, void 0, void 0, function* () {
+	        const commandArgs = tr.argStringToArray(commandLine);
+	        if (commandArgs.length === 0) {
+	            throw new Error(`Parameter 'commandLine' cannot be null or empty.`);
+	        }
+	        // Path to tool to execute should be first arg
+	        const toolPath = commandArgs[0];
+	        args = commandArgs.slice(1).concat(args || []);
+	        const runner = new tr.ToolRunner(toolPath, args, options);
+	        return runner.exec();
+	    });
+	}
+	/**
+	 * Exec a command and get the output.
+	 * Output will be streamed to the live console.
+	 * Returns promise with the exit code and collected stdout and stderr
+	 *
+	 * @param     commandLine           command to execute (can include additional args). Must be correctly escaped.
+	 * @param     args                  optional arguments for tool. Escaping is handled by the lib.
+	 * @param     options               optional exec options.  See ExecOptions
+	 * @returns   Promise<ExecOutput>   exit code, stdout, and stderr
+	 */
+	function getExecOutput(commandLine, args, options) {
+	    return __awaiter(this, void 0, void 0, function* () {
+	        var _a, _b;
+	        let stdout = '';
+	        let stderr = '';
+	        //Using string decoder covers the case where a mult-byte character is split
+	        const stdoutDecoder = new string_decoder_1.StringDecoder('utf8');
+	        const stderrDecoder = new string_decoder_1.StringDecoder('utf8');
+	        const originalStdoutListener = (_a = options === null || options === void 0 ? void 0 : options.listeners) === null || _a === void 0 ? void 0 : _a.stdout;
+	        const originalStdErrListener = (_b = options === null || options === void 0 ? void 0 : options.listeners) === null || _b === void 0 ? void 0 : _b.stderr;
+	        const stdErrListener = (data) => {
+	            stderr += stderrDecoder.write(data);
+	            if (originalStdErrListener) {
+	                originalStdErrListener(data);
+	            }
+	        };
+	        const stdOutListener = (data) => {
+	            stdout += stdoutDecoder.write(data);
+	            if (originalStdoutListener) {
+	                originalStdoutListener(data);
+	            }
+	        };
+	        const listeners = Object.assign(Object.assign({}, options === null || options === void 0 ? void 0 : options.listeners), { stdout: stdOutListener, stderr: stdErrListener });
+	        const exitCode = yield exec$1(commandLine, args, Object.assign(Object.assign({}, options), { listeners }));
+	        //flush any remaining characters
+	        stdout += stdoutDecoder.end();
+	        stderr += stderrDecoder.end();
+	        return {
+	            exitCode,
+	            stdout,
+	            stderr
+	        };
+	    });
+	}
+	
+	return exec;
+}
+
+var hasRequiredPlatform;
+
+function requirePlatform () {
+	if (hasRequiredPlatform) return platform;
+	hasRequiredPlatform = 1;
+	(function (exports$1) {
+		var __createBinding = (platform && platform.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+		    if (k2 === undefined) k2 = k;
+		    var desc = Object.getOwnPropertyDescriptor(m, k);
+		    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+		      desc = { enumerable: true, get: function() { return m[k]; } };
+		    }
+		    Object.defineProperty(o, k2, desc);
+		}) : (function(o, m, k, k2) {
+		    if (k2 === undefined) k2 = k;
+		    o[k2] = m[k];
+		}));
+		var __setModuleDefault = (platform && platform.__setModuleDefault) || (Object.create ? (function(o, v) {
+		    Object.defineProperty(o, "default", { enumerable: true, value: v });
+		}) : function(o, v) {
+		    o["default"] = v;
+		});
+		var __importStar = (platform && platform.__importStar) || (function () {
+		    var ownKeys = function(o) {
+		        ownKeys = Object.getOwnPropertyNames || function (o) {
+		            var ar = [];
+		            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+		            return ar;
+		        };
+		        return ownKeys(o);
+		    };
+		    return function (mod) {
+		        if (mod && mod.__esModule) return mod;
+		        var result = {};
+		        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+		        __setModuleDefault(result, mod);
+		        return result;
+		    };
+		})();
+		var __awaiter = (platform && platform.__awaiter) || function (thisArg, _arguments, P, generator) {
+		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+		    return new (P || (P = Promise))(function (resolve, reject) {
+		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+		        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+		        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+		        step((generator = generator.apply(thisArg, _arguments || [])).next());
+		    });
+		};
+		var __importDefault = (platform && platform.__importDefault) || function (mod) {
+		    return (mod && mod.__esModule) ? mod : { "default": mod };
+		};
+		Object.defineProperty(exports$1, "__esModule", { value: true });
+		exports$1.isLinux = exports$1.isMacOS = exports$1.isWindows = exports$1.arch = exports$1.platform = void 0;
+		exports$1.getDetails = getDetails;
+		const os_1 = __importDefault(require$$0);
+		const exec = __importStar(requireExec());
+		const getWindowsInfo = () => __awaiter(void 0, void 0, void 0, function* () {
+		    const { stdout: version } = yield exec.getExecOutput('powershell -command "(Get-CimInstance -ClassName Win32_OperatingSystem).Version"', undefined, {
+		        silent: true
+		    });
+		    const { stdout: name } = yield exec.getExecOutput('powershell -command "(Get-CimInstance -ClassName Win32_OperatingSystem).Caption"', undefined, {
+		        silent: true
+		    });
+		    return {
+		        name: name.trim(),
+		        version: version.trim()
+		    };
+		});
+		const getMacOsInfo = () => __awaiter(void 0, void 0, void 0, function* () {
+		    var _a, _b, _c, _d;
+		    const { stdout } = yield exec.getExecOutput('sw_vers', undefined, {
+		        silent: true
+		    });
+		    const version = (_b = (_a = stdout.match(/ProductVersion:\s*(.+)/)) === null || _a === void 0 ? void 0 : _a[1]) !== null && _b !== void 0 ? _b : '';
+		    const name = (_d = (_c = stdout.match(/ProductName:\s*(.+)/)) === null || _c === void 0 ? void 0 : _c[1]) !== null && _d !== void 0 ? _d : '';
+		    return {
+		        name,
+		        version
+		    };
+		});
+		const getLinuxInfo = () => __awaiter(void 0, void 0, void 0, function* () {
+		    const { stdout } = yield exec.getExecOutput('lsb_release', ['-i', '-r', '-s'], {
+		        silent: true
+		    });
+		    const [name, version] = stdout.trim().split('\n');
+		    return {
+		        name,
+		        version
+		    };
+		});
+		exports$1.platform = os_1.default.platform();
+		exports$1.arch = os_1.default.arch();
+		exports$1.isWindows = exports$1.platform === 'win32';
+		exports$1.isMacOS = exports$1.platform === 'darwin';
+		exports$1.isLinux = exports$1.platform === 'linux';
+		function getDetails() {
+		    return __awaiter(this, void 0, void 0, function* () {
+		        return Object.assign(Object.assign({}, (yield (exports$1.isWindows
+		            ? getWindowsInfo()
+		            : exports$1.isMacOS
+		                ? getMacOsInfo()
+		                : getLinuxInfo()))), { platform: exports$1.platform,
+		            arch: exports$1.arch,
+		            isWindows: exports$1.isWindows,
+		            isMacOS: exports$1.isMacOS,
+		            isLinux: exports$1.isLinux });
+		    });
+		}
+		
+	} (platform));
+	return platform;
+}
+
+var hasRequiredCore;
+
+function requireCore () {
+	if (hasRequiredCore) return core;
+	hasRequiredCore = 1;
+	(function (exports$1) {
+		var __createBinding = (core && core.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+		    if (k2 === undefined) k2 = k;
+		    var desc = Object.getOwnPropertyDescriptor(m, k);
+		    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+		      desc = { enumerable: true, get: function() { return m[k]; } };
+		    }
+		    Object.defineProperty(o, k2, desc);
+		}) : (function(o, m, k, k2) {
+		    if (k2 === undefined) k2 = k;
+		    o[k2] = m[k];
+		}));
+		var __setModuleDefault = (core && core.__setModuleDefault) || (Object.create ? (function(o, v) {
+		    Object.defineProperty(o, "default", { enumerable: true, value: v });
+		}) : function(o, v) {
+		    o["default"] = v;
+		});
+		var __importStar = (core && core.__importStar) || (function () {
+		    var ownKeys = function(o) {
+		        ownKeys = Object.getOwnPropertyNames || function (o) {
+		            var ar = [];
+		            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+		            return ar;
+		        };
+		        return ownKeys(o);
+		    };
+		    return function (mod) {
+		        if (mod && mod.__esModule) return mod;
+		        var result = {};
+		        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+		        __setModuleDefault(result, mod);
+		        return result;
+		    };
+		})();
+		var __awaiter = (core && core.__awaiter) || function (thisArg, _arguments, P, generator) {
+		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+		    return new (P || (P = Promise))(function (resolve, reject) {
+		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+		        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+		        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+		        step((generator = generator.apply(thisArg, _arguments || [])).next());
+		    });
+		};
+		Object.defineProperty(exports$1, "__esModule", { value: true });
+		exports$1.platform = exports$1.toPlatformPath = exports$1.toWin32Path = exports$1.toPosixPath = exports$1.markdownSummary = exports$1.summary = exports$1.ExitCode = void 0;
+		exports$1.exportVariable = exportVariable;
+		exports$1.setSecret = setSecret;
+		exports$1.addPath = addPath;
+		exports$1.getInput = getInput;
+		exports$1.getMultilineInput = getMultilineInput;
+		exports$1.getBooleanInput = getBooleanInput;
+		exports$1.setOutput = setOutput;
+		exports$1.setCommandEcho = setCommandEcho;
+		exports$1.setFailed = setFailed;
+		exports$1.isDebug = isDebug;
+		exports$1.debug = debug;
+		exports$1.error = error;
+		exports$1.warning = warning;
+		exports$1.notice = notice;
+		exports$1.info = info;
+		exports$1.startGroup = startGroup;
+		exports$1.endGroup = endGroup;
+		exports$1.group = group;
+		exports$1.saveState = saveState;
+		exports$1.getState = getState;
+		exports$1.getIDToken = getIDToken;
+		const command_1 = requireCommand();
+		const file_command_1 = requireFileCommand();
+		const utils_1 = requireUtils();
+		const os = __importStar(require$$0);
+		const path = __importStar(require$$1__default);
+		const oidc_utils_1 = requireOidcUtils();
+		/**
+		 * The code to exit an action
+		 */
+		var ExitCode;
+		(function (ExitCode) {
+		    /**
+		     * A code indicating that the action was successful
+		     */
+		    ExitCode[ExitCode["Success"] = 0] = "Success";
+		    /**
+		     * A code indicating that the action was a failure
+		     */
+		    ExitCode[ExitCode["Failure"] = 1] = "Failure";
+		})(ExitCode || (exports$1.ExitCode = ExitCode = {}));
+		//-----------------------------------------------------------------------
+		// Variables
+		//-----------------------------------------------------------------------
+		/**
+		 * Sets env variable for this action and future actions in the job
+		 * @param name the name of the variable to set
+		 * @param val the value of the variable. Non-string values will be converted to a string via JSON.stringify
+		 */
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		function exportVariable(name, val) {
+		    const convertedVal = (0, utils_1.toCommandValue)(val);
+		    process.env[name] = convertedVal;
+		    const filePath = process.env['GITHUB_ENV'] || '';
+		    if (filePath) {
+		        return (0, file_command_1.issueFileCommand)('ENV', (0, file_command_1.prepareKeyValueMessage)(name, val));
+		    }
+		    (0, command_1.issueCommand)('set-env', { name }, convertedVal);
+		}
+		/**
+		 * Registers a secret which will get masked from logs
+		 *
+		 * @param secret - Value of the secret to be masked
+		 * @remarks
+		 * This function instructs the Actions runner to mask the specified value in any
+		 * logs produced during the workflow run. Once registered, the secret value will
+		 * be replaced with asterisks (***) whenever it appears in console output, logs,
+		 * or error messages.
+		 *
+		 * This is useful for protecting sensitive information such as:
+		 * - API keys
+		 * - Access tokens
+		 * - Authentication credentials
+		 * - URL parameters containing signatures (SAS tokens)
+		 *
+		 * Note that masking only affects future logs; any previous appearances of the
+		 * secret in logs before calling this function will remain unmasked.
+		 *
+		 * @example
+		 * ```typescript
+		 * // Register an API token as a secret
+		 * const apiToken = "abc123xyz456";
+		 * setSecret(apiToken);
+		 *
+		 * // Now any logs containing this value will show *** instead
+		 * console.log(`Using token: ${apiToken}`); // Outputs: "Using token: ***"
+		 * ```
+		 */
+		function setSecret(secret) {
+		    (0, command_1.issueCommand)('add-mask', {}, secret);
+		}
+		/**
+		 * Prepends inputPath to the PATH (for this action and future actions)
+		 * @param inputPath
+		 */
+		function addPath(inputPath) {
+		    const filePath = process.env['GITHUB_PATH'] || '';
+		    if (filePath) {
+		        (0, file_command_1.issueFileCommand)('PATH', inputPath);
+		    }
+		    else {
+		        (0, command_1.issueCommand)('add-path', {}, inputPath);
+		    }
+		    process.env['PATH'] = `${inputPath}${path.delimiter}${process.env['PATH']}`;
+		}
+		/**
+		 * Gets the value of an input.
+		 * Unless trimWhitespace is set to false in InputOptions, the value is also trimmed.
+		 * Returns an empty string if the value is not defined.
+		 *
+		 * @param     name     name of the input to get
+		 * @param     options  optional. See InputOptions.
+		 * @returns   string
+		 */
+		function getInput(name, options) {
+		    const val = process.env[`INPUT_${name.replace(/ /g, '_').toUpperCase()}`] || '';
+		    if (options && options.required && !val) {
+		        throw new Error(`Input required and not supplied: ${name}`);
+		    }
+		    if (options && options.trimWhitespace === false) {
+		        return val;
+		    }
+		    return val.trim();
+		}
+		/**
+		 * Gets the values of an multiline input.  Each value is also trimmed.
+		 *
+		 * @param     name     name of the input to get
+		 * @param     options  optional. See InputOptions.
+		 * @returns   string[]
+		 *
+		 */
+		function getMultilineInput(name, options) {
+		    const inputs = getInput(name, options)
+		        .split('\n')
+		        .filter(x => x !== '');
+		    if (options && options.trimWhitespace === false) {
+		        return inputs;
+		    }
+		    return inputs.map(input => input.trim());
+		}
+		/**
+		 * Gets the input value of the boolean type in the YAML 1.2 "core schema" specification.
+		 * Support boolean input list: `true | True | TRUE | false | False | FALSE` .
+		 * The return value is also in boolean type.
+		 * ref: https://yaml.org/spec/1.2/spec.html#id2804923
+		 *
+		 * @param     name     name of the input to get
+		 * @param     options  optional. See InputOptions.
+		 * @returns   boolean
+		 */
+		function getBooleanInput(name, options) {
+		    const trueValue = ['true', 'True', 'TRUE'];
+		    const falseValue = ['false', 'False', 'FALSE'];
+		    const val = getInput(name, options);
+		    if (trueValue.includes(val))
+		        return true;
+		    if (falseValue.includes(val))
+		        return false;
+		    throw new TypeError(`Input does not meet YAML 1.2 "Core Schema" specification: ${name}\n` +
+		        `Support boolean input list: \`true | True | TRUE | false | False | FALSE\``);
+		}
+		/**
+		 * Sets the value of an output.
+		 *
+		 * @param     name     name of the output to set
+		 * @param     value    value to store. Non-string values will be converted to a string via JSON.stringify
+		 */
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		function setOutput(name, value) {
+		    const filePath = process.env['GITHUB_OUTPUT'] || '';
+		    if (filePath) {
+		        return (0, file_command_1.issueFileCommand)('OUTPUT', (0, file_command_1.prepareKeyValueMessage)(name, value));
+		    }
+		    process.stdout.write(os.EOL);
+		    (0, command_1.issueCommand)('set-output', { name }, (0, utils_1.toCommandValue)(value));
+		}
+		/**
+		 * Enables or disables the echoing of commands into stdout for the rest of the step.
+		 * Echoing is disabled by default if ACTIONS_STEP_DEBUG is not set.
+		 *
+		 */
+		function setCommandEcho(enabled) {
+		    (0, command_1.issue)('echo', enabled ? 'on' : 'off');
+		}
+		//-----------------------------------------------------------------------
+		// Results
+		//-----------------------------------------------------------------------
+		/**
+		 * Sets the action status to failed.
+		 * When the action exits it will be with an exit code of 1
+		 * @param message add error issue message
+		 */
+		function setFailed(message) {
+		    process.exitCode = ExitCode.Failure;
+		    error(message);
+		}
+		//-----------------------------------------------------------------------
+		// Logging Commands
+		//-----------------------------------------------------------------------
+		/**
+		 * Gets whether Actions Step Debug is on or not
+		 */
+		function isDebug() {
+		    return process.env['RUNNER_DEBUG'] === '1';
+		}
+		/**
+		 * Writes debug message to user log
+		 * @param message debug message
+		 */
+		function debug(message) {
+		    (0, command_1.issueCommand)('debug', {}, message);
+		}
+		/**
+		 * Adds an error issue
+		 * @param message error issue message. Errors will be converted to string via toString()
+		 * @param properties optional properties to add to the annotation.
+		 */
+		function error(message, properties = {}) {
+		    (0, command_1.issueCommand)('error', (0, utils_1.toCommandProperties)(properties), message instanceof Error ? message.toString() : message);
+		}
+		/**
+		 * Adds a warning issue
+		 * @param message warning issue message. Errors will be converted to string via toString()
+		 * @param properties optional properties to add to the annotation.
+		 */
+		function warning(message, properties = {}) {
+		    (0, command_1.issueCommand)('warning', (0, utils_1.toCommandProperties)(properties), message instanceof Error ? message.toString() : message);
+		}
+		/**
+		 * Adds a notice issue
+		 * @param message notice issue message. Errors will be converted to string via toString()
+		 * @param properties optional properties to add to the annotation.
+		 */
+		function notice(message, properties = {}) {
+		    (0, command_1.issueCommand)('notice', (0, utils_1.toCommandProperties)(properties), message instanceof Error ? message.toString() : message);
+		}
+		/**
+		 * Writes info to log with console.log.
+		 * @param message info message
+		 */
+		function info(message) {
+		    process.stdout.write(message + os.EOL);
+		}
+		/**
+		 * Begin an output group.
+		 *
+		 * Output until the next `groupEnd` will be foldable in this group
+		 *
+		 * @param name The name of the output group
+		 */
+		function startGroup(name) {
+		    (0, command_1.issue)('group', name);
+		}
+		/**
+		 * End an output group.
+		 */
+		function endGroup() {
+		    (0, command_1.issue)('endgroup');
+		}
+		/**
+		 * Wrap an asynchronous function call in a group.
+		 *
+		 * Returns the same type as the function itself.
+		 *
+		 * @param name The name of the group
+		 * @param fn The function to wrap in the group
+		 */
+		function group(name, fn) {
+		    return __awaiter(this, void 0, void 0, function* () {
+		        startGroup(name);
+		        let result;
+		        try {
+		            result = yield fn();
+		        }
+		        finally {
+		            endGroup();
+		        }
+		        return result;
+		    });
+		}
+		//-----------------------------------------------------------------------
+		// Wrapper action state
+		//-----------------------------------------------------------------------
+		/**
+		 * Saves state for current action, the state can only be retrieved by this action's post job execution.
+		 *
+		 * @param     name     name of the state to store
+		 * @param     value    value to store. Non-string values will be converted to a string via JSON.stringify
+		 */
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		function saveState(name, value) {
+		    const filePath = process.env['GITHUB_STATE'] || '';
+		    if (filePath) {
+		        return (0, file_command_1.issueFileCommand)('STATE', (0, file_command_1.prepareKeyValueMessage)(name, value));
+		    }
+		    (0, command_1.issueCommand)('save-state', { name }, (0, utils_1.toCommandValue)(value));
+		}
+		/**
+		 * Gets the value of an state set by this action's main execution.
+		 *
+		 * @param     name     name of the state to get
+		 * @returns   string
+		 */
+		function getState(name) {
+		    return process.env[`STATE_${name}`] || '';
+		}
+		function getIDToken(aud) {
+		    return __awaiter(this, void 0, void 0, function* () {
+		        return yield oidc_utils_1.OidcClient.getIDToken(aud);
+		    });
+		}
+		/**
+		 * Summary exports
+		 */
+		var summary_1 = requireSummary();
+		Object.defineProperty(exports$1, "summary", { enumerable: true, get: function () { return summary_1.summary; } });
+		/**
+		 * @deprecated use core.summary
+		 */
+		var summary_2 = requireSummary();
+		Object.defineProperty(exports$1, "markdownSummary", { enumerable: true, get: function () { return summary_2.markdownSummary; } });
+		/**
+		 * Path exports
+		 */
+		var path_utils_1 = requirePathUtils();
+		Object.defineProperty(exports$1, "toPosixPath", { enumerable: true, get: function () { return path_utils_1.toPosixPath; } });
+		Object.defineProperty(exports$1, "toWin32Path", { enumerable: true, get: function () { return path_utils_1.toWin32Path; } });
+		Object.defineProperty(exports$1, "toPlatformPath", { enumerable: true, get: function () { return path_utils_1.toPlatformPath; } });
+		/**
+		 * Platform utilities exports
+		 */
+		exports$1.platform = __importStar(requirePlatform());
+		
+	} (core));
+	return core;
+}
+
+var coreExports = requireCore();
 
 var ioExports = requireIo();
 
@@ -29513,11 +32432,11 @@ function requireManifest () {
 		Object.defineProperty(exports$1, "__esModule", { value: true });
 		exports$1._readLinuxVersionFile = exports$1._getOsVersion = exports$1._findMatch = void 0;
 		const semver = __importStar(requireSemver());
-		const core_1 = requireCore();
+		const core_1 = requireCore$1();
 		// needs to be require for core node modules to be mocked
 		/* eslint @typescript-eslint/no-require-imports: 0 */
 		const os = require$$0;
-		const cp = child__default;
+		const cp = require$$2__default;
 		const fs = require$$1$1;
 		function _findMatch(versionSpec, stable, candidates, archFilter) {
 		    return __awaiter(this, void 0, void 0, function* () {
@@ -29651,7 +32570,7 @@ function requireRetryHelper () {
 	};
 	Object.defineProperty(retryHelper, "__esModule", { value: true });
 	retryHelper.RetryHelper = void 0;
-	const core = __importStar(requireCore());
+	const core = __importStar(requireCore$1());
 	/**
 	 * Internal class for retries
 	 */
@@ -29745,19 +32664,19 @@ function requireToolCache () {
 	};
 	Object.defineProperty(toolCache, "__esModule", { value: true });
 	toolCache.evaluateVersions = toolCache.isExplicitVersion = toolCache.findFromManifest = toolCache.getManifestFromRepo = toolCache.findAllVersions = toolCache.find = toolCache.cacheFile = toolCache.cacheDir = toolCache.extractZip = toolCache.extractXar = toolCache.extractTar = toolCache.extract7z = toolCache.downloadTool = toolCache.HTTPError = void 0;
-	const core = __importStar(requireCore());
+	const core = __importStar(requireCore$1());
 	const io = __importStar(requireIo$1());
 	const crypto = __importStar(require$$0$1);
 	const fs = __importStar(require$$1$1);
 	const mm = __importStar(requireManifest());
 	const os = __importStar(require$$0);
 	const path = __importStar(require$$1__default);
-	const httpm = __importStar(requireLib());
+	const httpm = __importStar(requireLib$1());
 	const semver = __importStar(requireSemver());
 	const stream = __importStar(require$$0$5);
 	const util = __importStar(require$$0$2);
 	const assert_1 = require$$0$3;
-	const exec_1 = requireExec();
+	const exec_1 = requireExec$1();
 	const retry_helper_1 = requireRetryHelper();
 	class HTTPError extends Error {
 	    constructor(httpStatusCode) {
@@ -36408,6 +39327,11 @@ function optionalKeys(shape) {
 }
 function pick(schema, mask) {
     const currDef = schema._zod.def;
+    const checks = currDef.checks;
+    const hasChecks = checks && checks.length > 0;
+    if (hasChecks) {
+        throw new Error(".pick() cannot be used on object schemas containing refinements");
+    }
     const def = mergeDefs(schema._zod.def, {
         get shape() {
             const newShape = {};
@@ -36428,6 +39352,11 @@ function pick(schema, mask) {
 }
 function omit(schema, mask) {
     const currDef = schema._zod.def;
+    const checks = currDef.checks;
+    const hasChecks = checks && checks.length > 0;
+    if (hasChecks) {
+        throw new Error(".omit() cannot be used on object schemas containing refinements");
+    }
     const def = mergeDefs(schema._zod.def, {
         get shape() {
             const newShape = { ...schema._zod.def.shape };
@@ -36453,7 +39382,14 @@ function extend(schema, shape) {
     const checks = schema._zod.def.checks;
     const hasChecks = checks && checks.length > 0;
     if (hasChecks) {
-        throw new Error("Object schemas containing refinements cannot be extended. Use `.safeExtend()` instead.");
+        // Only throw if new shape overlaps with existing shape
+        // Use getOwnPropertyDescriptor to check key existence without accessing values
+        const existingShape = schema._zod.def.shape;
+        for (const key in shape) {
+            if (Object.getOwnPropertyDescriptor(existingShape, key) !== undefined) {
+                throw new Error("Cannot overwrite keys on object schemas containing refinements. Use `.safeExtend()` instead.");
+            }
+        }
     }
     const def = mergeDefs(schema._zod.def, {
         get shape() {
@@ -36461,7 +39397,6 @@ function extend(schema, shape) {
             assignProp(this, "shape", _shape); // self-caching
             return _shape;
         },
-        checks: [],
     });
     return clone(schema, def);
 }
@@ -36469,15 +39404,13 @@ function safeExtend(schema, shape) {
     if (!isPlainObject(shape)) {
         throw new Error("Invalid input to safeExtend: expected a plain object");
     }
-    const def = {
-        ...schema._zod.def,
+    const def = mergeDefs(schema._zod.def, {
         get shape() {
             const _shape = { ...schema._zod.def.shape, ...shape };
             assignProp(this, "shape", _shape); // self-caching
             return _shape;
         },
-        checks: schema._zod.def.checks,
-    };
+    });
     return clone(schema, def);
 }
 function merge(a, b) {
@@ -36495,6 +39428,12 @@ function merge(a, b) {
     return clone(a, def);
 }
 function partial(Class, schema, mask) {
+    const currDef = schema._zod.def;
+    const checks = currDef.checks;
+    const hasChecks = checks && checks.length > 0;
+    if (hasChecks) {
+        throw new Error(".partial() cannot be used on object schemas containing refinements");
+    }
     const def = mergeDefs(schema._zod.def, {
         get shape() {
             const oldShape = schema._zod.def.shape;
@@ -36564,7 +39503,6 @@ function required(Class, schema, mask) {
             assignProp(this, "shape", shape); // self-caching
             return shape;
         },
-        checks: [],
     });
     return clone(schema, def);
 }
@@ -36815,7 +39753,8 @@ const base64 = /^$|^(?:[0-9a-zA-Z+/]{4})*(?:(?:[0-9a-zA-Z+/]{2}==)|(?:[0-9a-zA-Z
 const base64url = /^[A-Za-z0-9_-]*$/;
 const domain = /^([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/;
 // https://blog.stevenlevithan.com/archives/validate-phone-number#r4-3 (regex sans spaces)
-const e164 = /^\+(?:[0-9]){6,14}[0-9]$/;
+// E.164: leading digit must be 1-9; total digits (excluding '+') between 7-15
+const e164 = /^\+[1-9]\d{6,14}$/;
 // const dateSource = `((\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-((0[13578]|1[02])-(0[1-9]|[12]\\d|3[01])|(0[469]|11)-(0[1-9]|[12]\\d|30)|(02)-(0[1-9]|1\\d|2[0-8])))`;
 const dateSource = `(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))`;
 const date$1 = /*@__PURE__*/ new RegExp(`^${dateSource}$`);
@@ -37120,8 +40059,8 @@ class Doc {
 
 const version = {
     major: 4,
-    minor: 1,
-    patch: 13,
+    minor: 3,
+    patch: 5,
 };
 
 const $ZodType = /*@__PURE__*/ $constructor("$ZodType", (inst, def) => {
@@ -37191,16 +40130,6 @@ const $ZodType = /*@__PURE__*/ $constructor("$ZodType", (inst, def) => {
             }
             return payload;
         };
-        // const handleChecksResult = (
-        //   checkResult: ParsePayload,
-        //   originalResult: ParsePayload,
-        //   ctx: ParseContextInternal
-        // ): util.MaybeAsync<ParsePayload> => {
-        //   // if the checks mutated the value && there are no issues, re-parse the result
-        //   if (checkResult.value !== originalResult.value && !checkResult.issues.length)
-        //     return inst._zod.parse(checkResult, ctx);
-        //   return originalResult;
-        // };
         const handleCanaryResult = (canary, payload, ctx) => {
             // abort if the canary is aborted
             if (aborted(canary)) {
@@ -37241,7 +40170,8 @@ const $ZodType = /*@__PURE__*/ $constructor("$ZodType", (inst, def) => {
             return runChecks(result, checks, ctx);
         };
     }
-    inst["~standard"] = {
+    // Lazy initialize ~standard to avoid creating objects for every schema
+    defineLazy(inst, "~standard", () => ({
         validate: (value) => {
             try {
                 const r = safeParse$1(inst, value);
@@ -37253,7 +40183,7 @@ const $ZodType = /*@__PURE__*/ $constructor("$ZodType", (inst, def) => {
         },
         vendor: "zod",
         version: 1,
-    };
+    }));
 });
 const $ZodString = /*@__PURE__*/ $constructor("$ZodString", (inst, def) => {
     $ZodType.init(inst, def);
@@ -37644,8 +40574,12 @@ const $ZodArray = /*@__PURE__*/ $constructor("$ZodArray", (inst, def) => {
         return payload; //handleArrayResultsAsync(parseResults, final);
     };
 });
-function handlePropertyResult(result, final, key, input) {
+function handlePropertyResult(result, final, key, input, isOptionalOut) {
     if (result.issues.length) {
+        // For optional-out schemas, ignore errors on absent keys
+        if (isOptionalOut && !(key in input)) {
+            return;
+        }
         final.issues.push(...prefixIssues(key, result.issues));
     }
     if (result.value === undefined) {
@@ -37679,6 +40613,7 @@ function handleCatchall(proms, input, payload, ctx, def, inst) {
     const keySet = def.keySet;
     const _catchall = def.catchall._zod;
     const t = _catchall.def.type;
+    const isOptionalOut = _catchall.optout === "optional";
     for (const key in input) {
         if (keySet.has(key))
             continue;
@@ -37688,10 +40623,10 @@ function handleCatchall(proms, input, payload, ctx, def, inst) {
         }
         const r = _catchall.run({ value: input[key], issues: [] }, ctx);
         if (r instanceof Promise) {
-            proms.push(r.then((r) => handlePropertyResult(r, payload, key, input)));
+            proms.push(r.then((r) => handlePropertyResult(r, payload, key, input, isOptionalOut)));
         }
         else {
-            handlePropertyResult(r, payload, key, input);
+            handlePropertyResult(r, payload, key, input, isOptionalOut);
         }
     }
     if (unrecognized.length) {
@@ -37759,12 +40694,13 @@ const $ZodObject = /*@__PURE__*/ $constructor("$ZodObject", (inst, def) => {
         const shape = value.shape;
         for (const key of value.keys) {
             const el = shape[key];
+            const isOptionalOut = el._zod.optout === "optional";
             const r = el._zod.run({ value: input[key], issues: [] }, ctx);
             if (r instanceof Promise) {
-                proms.push(r.then((r) => handlePropertyResult(r, payload, key, input)));
+                proms.push(r.then((r) => handlePropertyResult(r, payload, key, input, isOptionalOut)));
             }
             else {
-                handlePropertyResult(r, payload, key, input);
+                handlePropertyResult(r, payload, key, input, isOptionalOut);
             }
         }
         if (!catchall) {
@@ -37796,15 +40732,20 @@ const $ZodObjectJIT = /*@__PURE__*/ $constructor("$ZodObjectJIT", (inst, def) =>
         for (const key of normalized.keys) {
             const id = ids[key];
             const k = esc(key);
+            const schema = shape[key];
+            const isOptionalOut = schema?._zod?.optout === "optional";
             doc.write(`const ${id} = ${parseStr(key)};`);
-            doc.write(`
+            if (isOptionalOut) {
+                // For optional-out schemas, ignore errors on absent keys
+                doc.write(`
         if (${id}.issues.length) {
-          payload.issues = payload.issues.concat(${id}.issues.map(iss => ({
-            ...iss,
-            path: iss.path ? [${k}, ...iss.path] : [${k}]
-          })));
+          if (${k} in input) {
+            payload.issues = payload.issues.concat(${id}.issues.map(iss => ({
+              ...iss,
+              path: iss.path ? [${k}, ...iss.path] : [${k}]
+            })));
+          }
         }
-        
         
         if (${id}.value === undefined) {
           if (${k} in input) {
@@ -37815,6 +40756,26 @@ const $ZodObjectJIT = /*@__PURE__*/ $constructor("$ZodObjectJIT", (inst, def) =>
         }
         
       `);
+            }
+            else {
+                doc.write(`
+        if (${id}.issues.length) {
+          payload.issues = payload.issues.concat(${id}.issues.map(iss => ({
+            ...iss,
+            path: iss.path ? [${k}, ...iss.path] : [${k}]
+          })));
+        }
+        
+        if (${id}.value === undefined) {
+          if (${k} in input) {
+            newResult[${k}] = undefined;
+          }
+        } else {
+          newResult[${k}] = ${id}.value;
+        }
+        
+      `);
+            }
         }
         doc.write(`payload.value = newResult;`);
         doc.write(`return payload;`);
@@ -37981,11 +40942,38 @@ function mergeValues(a, b) {
     return { valid: false, mergeErrorPath: [] };
 }
 function handleIntersectionResults(result, left, right) {
-    if (left.issues.length) {
-        result.issues.push(...left.issues);
+    // Track which side(s) report each key as unrecognized
+    const unrecKeys = new Map();
+    let unrecIssue;
+    for (const iss of left.issues) {
+        if (iss.code === "unrecognized_keys") {
+            unrecIssue ?? (unrecIssue = iss);
+            for (const k of iss.keys) {
+                if (!unrecKeys.has(k))
+                    unrecKeys.set(k, {});
+                unrecKeys.get(k).l = true;
+            }
+        }
+        else {
+            result.issues.push(iss);
+        }
     }
-    if (right.issues.length) {
-        result.issues.push(...right.issues);
+    for (const iss of right.issues) {
+        if (iss.code === "unrecognized_keys") {
+            for (const k of iss.keys) {
+                if (!unrecKeys.has(k))
+                    unrecKeys.set(k, {});
+                unrecKeys.get(k).r = true;
+            }
+        }
+        else {
+            result.issues.push(iss);
+        }
+    }
+    // Report only keys unrecognized by BOTH sides
+    const bothKeys = [...unrecKeys].filter(([, f]) => f.l && f.r).map(([k]) => k);
+    if (bothKeys.length && unrecIssue) {
+        result.issues.push({ ...unrecIssue, keys: bothKeys });
     }
     if (aborted(result))
         return result;
@@ -38091,6 +41079,17 @@ const $ZodOptional = /*@__PURE__*/ $constructor("$ZodOptional", (inst, def) => {
         if (payload.value === undefined) {
             return payload;
         }
+        return def.innerType._zod.run(payload, ctx);
+    };
+});
+const $ZodExactOptional = /*@__PURE__*/ $constructor("$ZodExactOptional", (inst, def) => {
+    // Call parent init - inherits optin/optout = "optional"
+    $ZodOptional.init(inst, def);
+    // Override values/pattern to NOT add undefined
+    defineLazy(inst._zod, "values", () => def.innerType._zod.values);
+    defineLazy(inst._zod, "pattern", () => def.innerType._zod.pattern);
+    // Override parse to just delegate (no undefined handling)
+    inst._zod.parse = (payload, ctx) => {
         return def.innerType._zod.run(payload, ctx);
     };
 });
@@ -38316,9 +41315,6 @@ class $ZodRegistry {
         const meta = _meta[0];
         this._map.set(schema, meta);
         if (meta && typeof meta === "object" && "id" in meta) {
-            if (this._idmap.has(meta.id)) {
-                throw new Error(`ID ${meta.id} already exists in the registry`);
-            }
             this._idmap.set(meta.id, schema);
         }
         return this;
@@ -38359,12 +41355,14 @@ function registry() {
 (_a = globalThis).__zod_globalRegistry ?? (_a.__zod_globalRegistry = registry());
 const globalRegistry = globalThis.__zod_globalRegistry;
 
+// @__NO_SIDE_EFFECTS__
 function _string(Class, params) {
     return new Class({
         type: "string",
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _email(Class, params) {
     return new Class({
         type: "string",
@@ -38374,6 +41372,7 @@ function _email(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _guid(Class, params) {
     return new Class({
         type: "string",
@@ -38383,6 +41382,7 @@ function _guid(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _uuid(Class, params) {
     return new Class({
         type: "string",
@@ -38392,6 +41392,7 @@ function _uuid(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _uuidv4(Class, params) {
     return new Class({
         type: "string",
@@ -38402,6 +41403,7 @@ function _uuidv4(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _uuidv6(Class, params) {
     return new Class({
         type: "string",
@@ -38412,6 +41414,7 @@ function _uuidv6(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _uuidv7(Class, params) {
     return new Class({
         type: "string",
@@ -38422,6 +41425,7 @@ function _uuidv7(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _url(Class, params) {
     return new Class({
         type: "string",
@@ -38431,6 +41435,7 @@ function _url(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _emoji(Class, params) {
     return new Class({
         type: "string",
@@ -38440,6 +41445,7 @@ function _emoji(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _nanoid(Class, params) {
     return new Class({
         type: "string",
@@ -38449,6 +41455,7 @@ function _nanoid(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _cuid(Class, params) {
     return new Class({
         type: "string",
@@ -38458,6 +41465,7 @@ function _cuid(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _cuid2(Class, params) {
     return new Class({
         type: "string",
@@ -38467,6 +41475,7 @@ function _cuid2(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _ulid(Class, params) {
     return new Class({
         type: "string",
@@ -38476,6 +41485,7 @@ function _ulid(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _xid(Class, params) {
     return new Class({
         type: "string",
@@ -38485,6 +41495,7 @@ function _xid(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _ksuid(Class, params) {
     return new Class({
         type: "string",
@@ -38494,6 +41505,7 @@ function _ksuid(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _ipv4(Class, params) {
     return new Class({
         type: "string",
@@ -38503,6 +41515,7 @@ function _ipv4(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _ipv6(Class, params) {
     return new Class({
         type: "string",
@@ -38512,6 +41525,7 @@ function _ipv6(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _cidrv4(Class, params) {
     return new Class({
         type: "string",
@@ -38521,6 +41535,7 @@ function _cidrv4(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _cidrv6(Class, params) {
     return new Class({
         type: "string",
@@ -38530,6 +41545,7 @@ function _cidrv6(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _base64(Class, params) {
     return new Class({
         type: "string",
@@ -38539,6 +41555,7 @@ function _base64(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _base64url(Class, params) {
     return new Class({
         type: "string",
@@ -38548,6 +41565,7 @@ function _base64url(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _e164(Class, params) {
     return new Class({
         type: "string",
@@ -38557,6 +41575,7 @@ function _e164(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _jwt(Class, params) {
     return new Class({
         type: "string",
@@ -38566,6 +41585,7 @@ function _jwt(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _isoDateTime(Class, params) {
     return new Class({
         type: "string",
@@ -38577,6 +41597,7 @@ function _isoDateTime(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _isoDate(Class, params) {
     return new Class({
         type: "string",
@@ -38585,6 +41606,7 @@ function _isoDate(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _isoTime(Class, params) {
     return new Class({
         type: "string",
@@ -38594,6 +41616,7 @@ function _isoTime(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _isoDuration(Class, params) {
     return new Class({
         type: "string",
@@ -38602,23 +41625,27 @@ function _isoDuration(Class, params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _boolean(Class, params) {
     return new Class({
         type: "boolean",
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _unknown(Class) {
     return new Class({
         type: "unknown",
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _never(Class, params) {
     return new Class({
         type: "never",
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _maxLength(maximum, params) {
     const ch = new $ZodCheckMaxLength({
         check: "max_length",
@@ -38627,6 +41654,7 @@ function _maxLength(maximum, params) {
     });
     return ch;
 }
+// @__NO_SIDE_EFFECTS__
 function _minLength(minimum, params) {
     return new $ZodCheckMinLength({
         check: "min_length",
@@ -38634,6 +41662,7 @@ function _minLength(minimum, params) {
         minimum,
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _length(length, params) {
     return new $ZodCheckLengthEquals({
         check: "length_equals",
@@ -38641,6 +41670,7 @@ function _length(length, params) {
         length,
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _regex(pattern, params) {
     return new $ZodCheckRegex({
         check: "string_format",
@@ -38649,6 +41679,7 @@ function _regex(pattern, params) {
         pattern,
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _lowercase(params) {
     return new $ZodCheckLowerCase({
         check: "string_format",
@@ -38656,6 +41687,7 @@ function _lowercase(params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _uppercase(params) {
     return new $ZodCheckUpperCase({
         check: "string_format",
@@ -38663,6 +41695,7 @@ function _uppercase(params) {
         ...normalizeParams(params),
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _includes(includes, params) {
     return new $ZodCheckIncludes({
         check: "string_format",
@@ -38671,6 +41704,7 @@ function _includes(includes, params) {
         includes,
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _startsWith(prefix, params) {
     return new $ZodCheckStartsWith({
         check: "string_format",
@@ -38679,6 +41713,7 @@ function _startsWith(prefix, params) {
         prefix,
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _endsWith(suffix, params) {
     return new $ZodCheckEndsWith({
         check: "string_format",
@@ -38687,6 +41722,7 @@ function _endsWith(suffix, params) {
         suffix,
     });
 }
+// @__NO_SIDE_EFFECTS__
 function _overwrite(tx) {
     return new $ZodCheckOverwrite({
         check: "overwrite",
@@ -38694,25 +41730,31 @@ function _overwrite(tx) {
     });
 }
 // normalize
+// @__NO_SIDE_EFFECTS__
 function _normalize(form) {
     return _overwrite((input) => input.normalize(form));
 }
 // trim
+// @__NO_SIDE_EFFECTS__
 function _trim() {
     return _overwrite((input) => input.trim());
 }
 // toLowerCase
+// @__NO_SIDE_EFFECTS__
 function _toLowerCase() {
     return _overwrite((input) => input.toLowerCase());
 }
 // toUpperCase
+// @__NO_SIDE_EFFECTS__
 function _toUpperCase() {
     return _overwrite((input) => input.toUpperCase());
 }
 // slugify
+// @__NO_SIDE_EFFECTS__
 function _slugify() {
     return _overwrite((input) => slugify(input));
 }
+// @__NO_SIDE_EFFECTS__
 function _array(Class, element, params) {
     return new Class({
         type: "array",
@@ -38724,6 +41766,7 @@ function _array(Class, element, params) {
     });
 }
 // same as _custom but defaults to abort:false
+// @__NO_SIDE_EFFECTS__
 function _refine(Class, fn, _params) {
     const schema = new Class({
         type: "custom",
@@ -38733,6 +41776,7 @@ function _refine(Class, fn, _params) {
     });
     return schema;
 }
+// @__NO_SIDE_EFFECTS__
 function _superRefine(fn) {
     const ch = _check((payload) => {
         payload.addIssue = (issue$1) => {
@@ -38755,6 +41799,7 @@ function _superRefine(fn) {
     });
     return ch;
 }
+// @__NO_SIDE_EFFECTS__
 function _check(fn, params) {
     const ch = new $ZodCheck({
         check: "custom",
@@ -38763,6 +41808,713 @@ function _check(fn, params) {
     ch._zod.check = fn;
     return ch;
 }
+
+// function initializeContext<T extends schemas.$ZodType>(inputs: JSONSchemaGeneratorParams<T>): ToJSONSchemaContext<T> {
+//   return {
+//     processor: inputs.processor,
+//     metadataRegistry: inputs.metadata ?? globalRegistry,
+//     target: inputs.target ?? "draft-2020-12",
+//     unrepresentable: inputs.unrepresentable ?? "throw",
+//   };
+// }
+function initializeContext(params) {
+    // Normalize target: convert old non-hyphenated versions to hyphenated versions
+    let target = params?.target ?? "draft-2020-12";
+    if (target === "draft-4")
+        target = "draft-04";
+    if (target === "draft-7")
+        target = "draft-07";
+    return {
+        processors: params.processors ?? {},
+        metadataRegistry: params?.metadata ?? globalRegistry,
+        target,
+        unrepresentable: params?.unrepresentable ?? "throw",
+        override: params?.override ?? (() => { }),
+        io: params?.io ?? "output",
+        counter: 0,
+        seen: new Map(),
+        cycles: params?.cycles ?? "ref",
+        reused: params?.reused ?? "inline",
+        external: params?.external ?? undefined,
+    };
+}
+function process$1(schema, ctx, _params = { path: [], schemaPath: [] }) {
+    var _a;
+    const def = schema._zod.def;
+    // check for schema in seens
+    const seen = ctx.seen.get(schema);
+    if (seen) {
+        seen.count++;
+        // check if cycle
+        const isCycle = _params.schemaPath.includes(schema);
+        if (isCycle) {
+            seen.cycle = _params.path;
+        }
+        return seen.schema;
+    }
+    // initialize
+    const result = { schema: {}, count: 1, cycle: undefined, path: _params.path };
+    ctx.seen.set(schema, result);
+    // custom method overrides default behavior
+    const overrideSchema = schema._zod.toJSONSchema?.();
+    if (overrideSchema) {
+        result.schema = overrideSchema;
+    }
+    else {
+        const params = {
+            ..._params,
+            schemaPath: [..._params.schemaPath, schema],
+            path: _params.path,
+        };
+        if (schema._zod.processJSONSchema) {
+            schema._zod.processJSONSchema(ctx, result.schema, params);
+        }
+        else {
+            const _json = result.schema;
+            const processor = ctx.processors[def.type];
+            if (!processor) {
+                throw new Error(`[toJSONSchema]: Non-representable type encountered: ${def.type}`);
+            }
+            processor(schema, ctx, _json, params);
+        }
+        const parent = schema._zod.parent;
+        if (parent) {
+            // Also set ref if processor didn't (for inheritance)
+            if (!result.ref)
+                result.ref = parent;
+            process$1(parent, ctx, params);
+            ctx.seen.get(parent).isParent = true;
+        }
+    }
+    // metadata
+    const meta = ctx.metadataRegistry.get(schema);
+    if (meta)
+        Object.assign(result.schema, meta);
+    if (ctx.io === "input" && isTransforming(schema)) {
+        // examples/defaults only apply to output type of pipe
+        delete result.schema.examples;
+        delete result.schema.default;
+    }
+    // set prefault as default
+    if (ctx.io === "input" && result.schema._prefault)
+        (_a = result.schema).default ?? (_a.default = result.schema._prefault);
+    delete result.schema._prefault;
+    // pulling fresh from ctx.seen in case it was overwritten
+    const _result = ctx.seen.get(schema);
+    return _result.schema;
+}
+function extractDefs(ctx, schema
+// params: EmitParams
+) {
+    // iterate over seen map;
+    const root = ctx.seen.get(schema);
+    if (!root)
+        throw new Error("Unprocessed schema. This is a bug in Zod.");
+    // Track ids to detect duplicates across different schemas
+    const idToSchema = new Map();
+    for (const entry of ctx.seen.entries()) {
+        const id = ctx.metadataRegistry.get(entry[0])?.id;
+        if (id) {
+            const existing = idToSchema.get(id);
+            if (existing && existing !== entry[0]) {
+                throw new Error(`Duplicate schema id "${id}" detected during JSON Schema conversion. Two different schemas cannot share the same id when converted together.`);
+            }
+            idToSchema.set(id, entry[0]);
+        }
+    }
+    // returns a ref to the schema
+    // defId will be empty if the ref points to an external schema (or #)
+    const makeURI = (entry) => {
+        // comparing the seen objects because sometimes
+        // multiple schemas map to the same seen object.
+        // e.g. lazy
+        // external is configured
+        const defsSegment = ctx.target === "draft-2020-12" ? "$defs" : "definitions";
+        if (ctx.external) {
+            const externalId = ctx.external.registry.get(entry[0])?.id; // ?? "__shared";// `__schema${ctx.counter++}`;
+            // check if schema is in the external registry
+            const uriGenerator = ctx.external.uri ?? ((id) => id);
+            if (externalId) {
+                return { ref: uriGenerator(externalId) };
+            }
+            // otherwise, add to __shared
+            const id = entry[1].defId ?? entry[1].schema.id ?? `schema${ctx.counter++}`;
+            entry[1].defId = id; // set defId so it will be reused if needed
+            return { defId: id, ref: `${uriGenerator("__shared")}#/${defsSegment}/${id}` };
+        }
+        if (entry[1] === root) {
+            return { ref: "#" };
+        }
+        // self-contained schema
+        const uriPrefix = `#`;
+        const defUriPrefix = `${uriPrefix}/${defsSegment}/`;
+        const defId = entry[1].schema.id ?? `__schema${ctx.counter++}`;
+        return { defId, ref: defUriPrefix + defId };
+    };
+    // stored cached version in `def` property
+    // remove all properties, set $ref
+    const extractToDef = (entry) => {
+        // if the schema is already a reference, do not extract it
+        if (entry[1].schema.$ref) {
+            return;
+        }
+        const seen = entry[1];
+        const { ref, defId } = makeURI(entry);
+        seen.def = { ...seen.schema };
+        // defId won't be set if the schema is a reference to an external schema
+        // or if the schema is the root schema
+        if (defId)
+            seen.defId = defId;
+        // wipe away all properties except $ref
+        const schema = seen.schema;
+        for (const key in schema) {
+            delete schema[key];
+        }
+        schema.$ref = ref;
+    };
+    // throw on cycles
+    // break cycles
+    if (ctx.cycles === "throw") {
+        for (const entry of ctx.seen.entries()) {
+            const seen = entry[1];
+            if (seen.cycle) {
+                throw new Error("Cycle detected: " +
+                    `#/${seen.cycle?.join("/")}/<root>` +
+                    '\n\nSet the `cycles` parameter to `"ref"` to resolve cyclical schemas with defs.');
+            }
+        }
+    }
+    // extract schemas into $defs
+    for (const entry of ctx.seen.entries()) {
+        const seen = entry[1];
+        // convert root schema to # $ref
+        if (schema === entry[0]) {
+            extractToDef(entry); // this has special handling for the root schema
+            continue;
+        }
+        // extract schemas that are in the external registry
+        if (ctx.external) {
+            const ext = ctx.external.registry.get(entry[0])?.id;
+            if (schema !== entry[0] && ext) {
+                extractToDef(entry);
+                continue;
+            }
+        }
+        // extract schemas with `id` meta
+        const id = ctx.metadataRegistry.get(entry[0])?.id;
+        if (id) {
+            extractToDef(entry);
+            continue;
+        }
+        // break cycles
+        if (seen.cycle) {
+            // any
+            extractToDef(entry);
+            continue;
+        }
+        // extract reused schemas
+        if (seen.count > 1) {
+            if (ctx.reused === "ref") {
+                extractToDef(entry);
+                // biome-ignore lint:
+                continue;
+            }
+        }
+    }
+}
+function finalize(ctx, schema) {
+    const root = ctx.seen.get(schema);
+    if (!root)
+        throw new Error("Unprocessed schema. This is a bug in Zod.");
+    // flatten refs - inherit properties from parent schemas
+    const flattenRef = (zodSchema) => {
+        const seen = ctx.seen.get(zodSchema);
+        // already processed
+        if (seen.ref === null)
+            return;
+        const schema = seen.def ?? seen.schema;
+        const _cached = { ...schema };
+        const ref = seen.ref;
+        seen.ref = null; // prevent infinite recursion
+        if (ref) {
+            flattenRef(ref);
+            const refSeen = ctx.seen.get(ref);
+            const refSchema = refSeen.schema;
+            // merge referenced schema into current
+            if (refSchema.$ref && (ctx.target === "draft-07" || ctx.target === "draft-04" || ctx.target === "openapi-3.0")) {
+                // older drafts can't combine $ref with other properties
+                schema.allOf = schema.allOf ?? [];
+                schema.allOf.push(refSchema);
+            }
+            else {
+                Object.assign(schema, refSchema);
+            }
+            // restore child's own properties (child wins)
+            Object.assign(schema, _cached);
+            const isParentRef = zodSchema._zod.parent === ref;
+            // For parent chain, child is a refinement - remove parent-only properties
+            if (isParentRef) {
+                for (const key in schema) {
+                    if (key === "$ref" || key === "allOf")
+                        continue;
+                    if (!(key in _cached)) {
+                        delete schema[key];
+                    }
+                }
+            }
+            // When ref was extracted to $defs, remove properties that match the definition
+            if (refSchema.$ref) {
+                for (const key in schema) {
+                    if (key === "$ref" || key === "allOf")
+                        continue;
+                    if (key in refSeen.def && JSON.stringify(schema[key]) === JSON.stringify(refSeen.def[key])) {
+                        delete schema[key];
+                    }
+                }
+            }
+        }
+        // If parent was extracted (has $ref), propagate $ref to this schema
+        // This handles cases like: readonly().meta({id}).describe()
+        // where processor sets ref to innerType but parent should be referenced
+        const parent = zodSchema._zod.parent;
+        if (parent && parent !== ref) {
+            // Ensure parent is processed first so its def has inherited properties
+            flattenRef(parent);
+            const parentSeen = ctx.seen.get(parent);
+            if (parentSeen?.schema.$ref) {
+                schema.$ref = parentSeen.schema.$ref;
+                // De-duplicate with parent's definition
+                if (parentSeen.def) {
+                    for (const key in schema) {
+                        if (key === "$ref" || key === "allOf")
+                            continue;
+                        if (key in parentSeen.def && JSON.stringify(schema[key]) === JSON.stringify(parentSeen.def[key])) {
+                            delete schema[key];
+                        }
+                    }
+                }
+            }
+        }
+        // execute overrides
+        ctx.override({
+            zodSchema: zodSchema,
+            jsonSchema: schema,
+            path: seen.path ?? [],
+        });
+    };
+    for (const entry of [...ctx.seen.entries()].reverse()) {
+        flattenRef(entry[0]);
+    }
+    const result = {};
+    if (ctx.target === "draft-2020-12") {
+        result.$schema = "https://json-schema.org/draft/2020-12/schema";
+    }
+    else if (ctx.target === "draft-07") {
+        result.$schema = "http://json-schema.org/draft-07/schema#";
+    }
+    else if (ctx.target === "draft-04") {
+        result.$schema = "http://json-schema.org/draft-04/schema#";
+    }
+    else if (ctx.target === "openapi-3.0") ;
+    else ;
+    if (ctx.external?.uri) {
+        const id = ctx.external.registry.get(schema)?.id;
+        if (!id)
+            throw new Error("Schema is missing an `id` property");
+        result.$id = ctx.external.uri(id);
+    }
+    Object.assign(result, root.def ?? root.schema);
+    // build defs object
+    const defs = ctx.external?.defs ?? {};
+    for (const entry of ctx.seen.entries()) {
+        const seen = entry[1];
+        if (seen.def && seen.defId) {
+            defs[seen.defId] = seen.def;
+        }
+    }
+    // set definitions in result
+    if (ctx.external) ;
+    else {
+        if (Object.keys(defs).length > 0) {
+            if (ctx.target === "draft-2020-12") {
+                result.$defs = defs;
+            }
+            else {
+                result.definitions = defs;
+            }
+        }
+    }
+    try {
+        // this "finalizes" this schema and ensures all cycles are removed
+        // each call to finalize() is functionally independent
+        // though the seen map is shared
+        const finalized = JSON.parse(JSON.stringify(result));
+        Object.defineProperty(finalized, "~standard", {
+            value: {
+                ...schema["~standard"],
+                jsonSchema: {
+                    input: createStandardJSONSchemaMethod(schema, "input", ctx.processors),
+                    output: createStandardJSONSchemaMethod(schema, "output", ctx.processors),
+                },
+            },
+            enumerable: false,
+            writable: false,
+        });
+        return finalized;
+    }
+    catch (_err) {
+        throw new Error("Error converting schema to JSON.");
+    }
+}
+function isTransforming(_schema, _ctx) {
+    const ctx = _ctx ?? { seen: new Set() };
+    if (ctx.seen.has(_schema))
+        return false;
+    ctx.seen.add(_schema);
+    const def = _schema._zod.def;
+    if (def.type === "transform")
+        return true;
+    if (def.type === "array")
+        return isTransforming(def.element, ctx);
+    if (def.type === "set")
+        return isTransforming(def.valueType, ctx);
+    if (def.type === "lazy")
+        return isTransforming(def.getter(), ctx);
+    if (def.type === "promise" ||
+        def.type === "optional" ||
+        def.type === "nonoptional" ||
+        def.type === "nullable" ||
+        def.type === "readonly" ||
+        def.type === "default" ||
+        def.type === "prefault") {
+        return isTransforming(def.innerType, ctx);
+    }
+    if (def.type === "intersection") {
+        return isTransforming(def.left, ctx) || isTransforming(def.right, ctx);
+    }
+    if (def.type === "record" || def.type === "map") {
+        return isTransforming(def.keyType, ctx) || isTransforming(def.valueType, ctx);
+    }
+    if (def.type === "pipe") {
+        return isTransforming(def.in, ctx) || isTransforming(def.out, ctx);
+    }
+    if (def.type === "object") {
+        for (const key in def.shape) {
+            if (isTransforming(def.shape[key], ctx))
+                return true;
+        }
+        return false;
+    }
+    if (def.type === "union") {
+        for (const option of def.options) {
+            if (isTransforming(option, ctx))
+                return true;
+        }
+        return false;
+    }
+    if (def.type === "tuple") {
+        for (const item of def.items) {
+            if (isTransforming(item, ctx))
+                return true;
+        }
+        if (def.rest && isTransforming(def.rest, ctx))
+            return true;
+        return false;
+    }
+    return false;
+}
+/**
+ * Creates a toJSONSchema method for a schema instance.
+ * This encapsulates the logic of initializing context, processing, extracting defs, and finalizing.
+ */
+const createToJSONSchemaMethod = (schema, processors = {}) => (params) => {
+    const ctx = initializeContext({ ...params, processors });
+    process$1(schema, ctx);
+    extractDefs(ctx, schema);
+    return finalize(ctx, schema);
+};
+const createStandardJSONSchemaMethod = (schema, io, processors = {}) => (params) => {
+    const { libraryOptions, target } = params ?? {};
+    const ctx = initializeContext({ ...(libraryOptions ?? {}), target, io, processors });
+    process$1(schema, ctx);
+    extractDefs(ctx, schema);
+    return finalize(ctx, schema);
+};
+
+const formatMap = {
+    guid: "uuid",
+    url: "uri",
+    datetime: "date-time",
+    json_string: "json-string",
+    regex: "", // do not set
+};
+// ==================== SIMPLE TYPE PROCESSORS ====================
+const stringProcessor = (schema, ctx, _json, _params) => {
+    const json = _json;
+    json.type = "string";
+    const { minimum, maximum, format, patterns, contentEncoding } = schema._zod
+        .bag;
+    if (typeof minimum === "number")
+        json.minLength = minimum;
+    if (typeof maximum === "number")
+        json.maxLength = maximum;
+    // custom pattern overrides format
+    if (format) {
+        json.format = formatMap[format] ?? format;
+        if (json.format === "")
+            delete json.format; // empty format is not valid
+        // JSON Schema format: "time" requires a full time with offset or Z
+        // z.iso.time() does not include timezone information, so format: "time" should never be used
+        if (format === "time") {
+            delete json.format;
+        }
+    }
+    if (contentEncoding)
+        json.contentEncoding = contentEncoding;
+    if (patterns && patterns.size > 0) {
+        const regexes = [...patterns];
+        if (regexes.length === 1)
+            json.pattern = regexes[0].source;
+        else if (regexes.length > 1) {
+            json.allOf = [
+                ...regexes.map((regex) => ({
+                    ...(ctx.target === "draft-07" || ctx.target === "draft-04" || ctx.target === "openapi-3.0"
+                        ? { type: "string" }
+                        : {}),
+                    pattern: regex.source,
+                })),
+            ];
+        }
+    }
+};
+const booleanProcessor = (_schema, _ctx, json, _params) => {
+    json.type = "boolean";
+};
+const neverProcessor = (_schema, _ctx, json, _params) => {
+    json.not = {};
+};
+const unknownProcessor = (_schema, _ctx, _json, _params) => {
+    // empty schema accepts anything
+};
+const enumProcessor = (schema, _ctx, json, _params) => {
+    const def = schema._zod.def;
+    const values = getEnumValues(def.entries);
+    // Number enums can have both string and number values
+    if (values.every((v) => typeof v === "number"))
+        json.type = "number";
+    if (values.every((v) => typeof v === "string"))
+        json.type = "string";
+    json.enum = values;
+};
+const literalProcessor = (schema, ctx, json, _params) => {
+    const def = schema._zod.def;
+    const vals = [];
+    for (const val of def.values) {
+        if (val === undefined) {
+            if (ctx.unrepresentable === "throw") {
+                throw new Error("Literal `undefined` cannot be represented in JSON Schema");
+            }
+        }
+        else if (typeof val === "bigint") {
+            if (ctx.unrepresentable === "throw") {
+                throw new Error("BigInt literals cannot be represented in JSON Schema");
+            }
+            else {
+                vals.push(Number(val));
+            }
+        }
+        else {
+            vals.push(val);
+        }
+    }
+    if (vals.length === 0) ;
+    else if (vals.length === 1) {
+        const val = vals[0];
+        json.type = val === null ? "null" : typeof val;
+        if (ctx.target === "draft-04" || ctx.target === "openapi-3.0") {
+            json.enum = [val];
+        }
+        else {
+            json.const = val;
+        }
+    }
+    else {
+        if (vals.every((v) => typeof v === "number"))
+            json.type = "number";
+        if (vals.every((v) => typeof v === "string"))
+            json.type = "string";
+        if (vals.every((v) => typeof v === "boolean"))
+            json.type = "boolean";
+        if (vals.every((v) => v === null))
+            json.type = "null";
+        json.enum = vals;
+    }
+};
+const customProcessor = (_schema, ctx, _json, _params) => {
+    if (ctx.unrepresentable === "throw") {
+        throw new Error("Custom types cannot be represented in JSON Schema");
+    }
+};
+const transformProcessor = (_schema, ctx, _json, _params) => {
+    if (ctx.unrepresentable === "throw") {
+        throw new Error("Transforms cannot be represented in JSON Schema");
+    }
+};
+// ==================== COMPOSITE TYPE PROCESSORS ====================
+const arrayProcessor = (schema, ctx, _json, params) => {
+    const json = _json;
+    const def = schema._zod.def;
+    const { minimum, maximum } = schema._zod.bag;
+    if (typeof minimum === "number")
+        json.minItems = minimum;
+    if (typeof maximum === "number")
+        json.maxItems = maximum;
+    json.type = "array";
+    json.items = process$1(def.element, ctx, { ...params, path: [...params.path, "items"] });
+};
+const objectProcessor = (schema, ctx, _json, params) => {
+    const json = _json;
+    const def = schema._zod.def;
+    json.type = "object";
+    json.properties = {};
+    const shape = def.shape;
+    for (const key in shape) {
+        json.properties[key] = process$1(shape[key], ctx, {
+            ...params,
+            path: [...params.path, "properties", key],
+        });
+    }
+    // required keys
+    const allKeys = new Set(Object.keys(shape));
+    const requiredKeys = new Set([...allKeys].filter((key) => {
+        const v = def.shape[key]._zod;
+        if (ctx.io === "input") {
+            return v.optin === undefined;
+        }
+        else {
+            return v.optout === undefined;
+        }
+    }));
+    if (requiredKeys.size > 0) {
+        json.required = Array.from(requiredKeys);
+    }
+    // catchall
+    if (def.catchall?._zod.def.type === "never") {
+        // strict
+        json.additionalProperties = false;
+    }
+    else if (!def.catchall) {
+        // regular
+        if (ctx.io === "output")
+            json.additionalProperties = false;
+    }
+    else if (def.catchall) {
+        json.additionalProperties = process$1(def.catchall, ctx, {
+            ...params,
+            path: [...params.path, "additionalProperties"],
+        });
+    }
+};
+const unionProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    // Exclusive unions (inclusive === false) use oneOf (exactly one match) instead of anyOf (one or more matches)
+    // This includes both z.xor() and discriminated unions
+    const isExclusive = def.inclusive === false;
+    const options = def.options.map((x, i) => process$1(x, ctx, {
+        ...params,
+        path: [...params.path, isExclusive ? "oneOf" : "anyOf", i],
+    }));
+    if (isExclusive) {
+        json.oneOf = options;
+    }
+    else {
+        json.anyOf = options;
+    }
+};
+const intersectionProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    const a = process$1(def.left, ctx, {
+        ...params,
+        path: [...params.path, "allOf", 0],
+    });
+    const b = process$1(def.right, ctx, {
+        ...params,
+        path: [...params.path, "allOf", 1],
+    });
+    const isSimpleIntersection = (val) => "allOf" in val && Object.keys(val).length === 1;
+    const allOf = [
+        ...(isSimpleIntersection(a) ? a.allOf : [a]),
+        ...(isSimpleIntersection(b) ? b.allOf : [b]),
+    ];
+    json.allOf = allOf;
+};
+const nullableProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    const inner = process$1(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    if (ctx.target === "openapi-3.0") {
+        seen.ref = def.innerType;
+        json.nullable = true;
+    }
+    else {
+        json.anyOf = [inner, { type: "null" }];
+    }
+};
+const nonoptionalProcessor = (schema, ctx, _json, params) => {
+    const def = schema._zod.def;
+    process$1(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = def.innerType;
+};
+const defaultProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    process$1(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = def.innerType;
+    json.default = JSON.parse(JSON.stringify(def.defaultValue));
+};
+const prefaultProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    process$1(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = def.innerType;
+    if (ctx.io === "input")
+        json._prefault = JSON.parse(JSON.stringify(def.defaultValue));
+};
+const catchProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    process$1(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = def.innerType;
+    let catchValue;
+    try {
+        catchValue = def.catchValue(undefined);
+    }
+    catch {
+        throw new Error("Dynamic catch values are not supported in JSON Schema");
+    }
+    json.default = catchValue;
+};
+const pipeProcessor = (schema, ctx, _json, params) => {
+    const def = schema._zod.def;
+    const innerType = ctx.io === "input" ? (def.in._zod.def.type === "transform" ? def.out : def.in) : def.out;
+    process$1(innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = innerType;
+};
+const readonlyProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    process$1(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = def.innerType;
+    json.readOnly = true;
+};
+const optionalProcessor = (schema, ctx, _json, params) => {
+    const def = schema._zod.def;
+    process$1(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = def.innerType;
+};
 
 const ZodISODateTime = /*@__PURE__*/ $constructor("ZodISODateTime", (inst, def) => {
     $ZodISODateTime.init(inst, def);
@@ -38854,6 +42606,13 @@ const safeDecodeAsync = /* @__PURE__ */ _safeDecodeAsync(ZodRealError);
 
 const ZodType = /*@__PURE__*/ $constructor("ZodType", (inst, def) => {
     $ZodType.init(inst, def);
+    Object.assign(inst["~standard"], {
+        jsonSchema: {
+            input: createStandardJSONSchemaMethod(inst, "input"),
+            output: createStandardJSONSchemaMethod(inst, "output"),
+        },
+    });
+    inst.toJSONSchema = createToJSONSchemaMethod(inst, {});
     inst.def = def;
     inst.type = def.type;
     Object.defineProperty(inst, "_def", { value: def });
@@ -38864,8 +42623,11 @@ const ZodType = /*@__PURE__*/ $constructor("ZodType", (inst, def) => {
                 ...(def.checks ?? []),
                 ...checks.map((ch) => typeof ch === "function" ? { _zod: { check: ch, def: { check: "custom" }, onattach: [] } } : ch),
             ],
-        }));
+        }), {
+            parent: true,
+        });
     };
+    inst.with = inst.check;
     inst.clone = (def, params) => clone(inst, def, params);
     inst.brand = () => inst;
     inst.register = ((reg, meta) => {
@@ -38893,6 +42655,7 @@ const ZodType = /*@__PURE__*/ $constructor("ZodType", (inst, def) => {
     inst.overwrite = (fn) => inst.check(_overwrite(fn));
     // wrappers
     inst.optional = () => optional(inst);
+    inst.exactOptional = () => exactOptional(inst);
     inst.nullable = () => nullable(inst);
     inst.nullish = () => optional(nullable(inst));
     inst.nonoptional = (params) => nonoptional(inst, params);
@@ -38929,12 +42692,14 @@ const ZodType = /*@__PURE__*/ $constructor("ZodType", (inst, def) => {
     // helpers
     inst.isOptional = () => inst.safeParse(undefined).success;
     inst.isNullable = () => inst.safeParse(null).success;
+    inst.apply = (fn) => fn(inst);
     return inst;
 });
 /** @internal */
 const _ZodString = /*@__PURE__*/ $constructor("_ZodString", (inst, def) => {
     $ZodString.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => stringProcessor(inst, ctx, json);
     const bag = inst._zod.bag;
     inst.format = bag.format ?? null;
     inst.minLength = bag.minimum ?? null;
@@ -39102,6 +42867,7 @@ const ZodJWT = /*@__PURE__*/ $constructor("ZodJWT", (inst, def) => {
 const ZodBoolean = /*@__PURE__*/ $constructor("ZodBoolean", (inst, def) => {
     $ZodBoolean.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => booleanProcessor(inst, ctx, json);
 });
 function boolean(params) {
     return _boolean(ZodBoolean, params);
@@ -39109,6 +42875,7 @@ function boolean(params) {
 const ZodUnknown = /*@__PURE__*/ $constructor("ZodUnknown", (inst, def) => {
     $ZodUnknown.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => unknownProcessor();
 });
 function unknown() {
     return _unknown(ZodUnknown);
@@ -39116,6 +42883,7 @@ function unknown() {
 const ZodNever = /*@__PURE__*/ $constructor("ZodNever", (inst, def) => {
     $ZodNever.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => neverProcessor(inst, ctx, json);
 });
 function never(params) {
     return _never(ZodNever, params);
@@ -39123,6 +42891,7 @@ function never(params) {
 const ZodArray = /*@__PURE__*/ $constructor("ZodArray", (inst, def) => {
     $ZodArray.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => arrayProcessor(inst, ctx, json, params);
     inst.element = def.element;
     inst.min = (minLength, params) => inst.check(_minLength(minLength, params));
     inst.nonempty = (params) => inst.check(_minLength(1, params));
@@ -39136,6 +42905,7 @@ function array(element, params) {
 const ZodObject = /*@__PURE__*/ $constructor("ZodObject", (inst, def) => {
     $ZodObjectJIT.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => objectProcessor(inst, ctx, json, params);
     defineLazy(inst, "shape", () => {
         return def.shape;
     });
@@ -39168,6 +42938,7 @@ function object(shape, params) {
 const ZodUnion = /*@__PURE__*/ $constructor("ZodUnion", (inst, def) => {
     $ZodUnion.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => unionProcessor(inst, ctx, json, params);
     inst.options = def.options;
 });
 function union(options, params) {
@@ -39180,6 +42951,7 @@ function union(options, params) {
 const ZodIntersection = /*@__PURE__*/ $constructor("ZodIntersection", (inst, def) => {
     $ZodIntersection.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => intersectionProcessor(inst, ctx, json, params);
 });
 function intersection(left, right) {
     return new ZodIntersection({
@@ -39191,6 +42963,7 @@ function intersection(left, right) {
 const ZodEnum = /*@__PURE__*/ $constructor("ZodEnum", (inst, def) => {
     $ZodEnum.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => enumProcessor(inst, ctx, json);
     inst.enum = def.entries;
     inst.options = Object.values(def.entries);
     const keys = new Set(Object.keys(def.entries));
@@ -39238,6 +43011,7 @@ function _enum(values, params) {
 const ZodLiteral = /*@__PURE__*/ $constructor("ZodLiteral", (inst, def) => {
     $ZodLiteral.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => literalProcessor(inst, ctx, json);
     inst.values = new Set(def.values);
     Object.defineProperty(inst, "value", {
         get() {
@@ -39258,6 +43032,7 @@ function literal(value, params) {
 const ZodTransform = /*@__PURE__*/ $constructor("ZodTransform", (inst, def) => {
     $ZodTransform.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => transformProcessor(inst, ctx);
     inst._zod.parse = (payload, _ctx) => {
         if (_ctx.direction === "backward") {
             throw new $ZodEncodeError(inst.constructor.name);
@@ -39298,6 +43073,7 @@ function transform(fn) {
 const ZodOptional = /*@__PURE__*/ $constructor("ZodOptional", (inst, def) => {
     $ZodOptional.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => optionalProcessor(inst, ctx, json, params);
     inst.unwrap = () => inst._zod.def.innerType;
 });
 function optional(innerType) {
@@ -39306,9 +43082,22 @@ function optional(innerType) {
         innerType: innerType,
     });
 }
+const ZodExactOptional = /*@__PURE__*/ $constructor("ZodExactOptional", (inst, def) => {
+    $ZodExactOptional.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => optionalProcessor(inst, ctx, json, params);
+    inst.unwrap = () => inst._zod.def.innerType;
+});
+function exactOptional(innerType) {
+    return new ZodExactOptional({
+        type: "optional",
+        innerType: innerType,
+    });
+}
 const ZodNullable = /*@__PURE__*/ $constructor("ZodNullable", (inst, def) => {
     $ZodNullable.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => nullableProcessor(inst, ctx, json, params);
     inst.unwrap = () => inst._zod.def.innerType;
 });
 function nullable(innerType) {
@@ -39320,6 +43109,7 @@ function nullable(innerType) {
 const ZodDefault = /*@__PURE__*/ $constructor("ZodDefault", (inst, def) => {
     $ZodDefault.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => defaultProcessor(inst, ctx, json, params);
     inst.unwrap = () => inst._zod.def.innerType;
     inst.removeDefault = inst.unwrap;
 });
@@ -39335,6 +43125,7 @@ function _default(innerType, defaultValue) {
 const ZodPrefault = /*@__PURE__*/ $constructor("ZodPrefault", (inst, def) => {
     $ZodPrefault.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => prefaultProcessor(inst, ctx, json, params);
     inst.unwrap = () => inst._zod.def.innerType;
 });
 function prefault(innerType, defaultValue) {
@@ -39349,6 +43140,7 @@ function prefault(innerType, defaultValue) {
 const ZodNonOptional = /*@__PURE__*/ $constructor("ZodNonOptional", (inst, def) => {
     $ZodNonOptional.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => nonoptionalProcessor(inst, ctx, json, params);
     inst.unwrap = () => inst._zod.def.innerType;
 });
 function nonoptional(innerType, params) {
@@ -39361,6 +43153,7 @@ function nonoptional(innerType, params) {
 const ZodCatch = /*@__PURE__*/ $constructor("ZodCatch", (inst, def) => {
     $ZodCatch.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => catchProcessor(inst, ctx, json, params);
     inst.unwrap = () => inst._zod.def.innerType;
     inst.removeCatch = inst.unwrap;
 });
@@ -39374,6 +43167,7 @@ function _catch(innerType, catchValue) {
 const ZodPipe = /*@__PURE__*/ $constructor("ZodPipe", (inst, def) => {
     $ZodPipe.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => pipeProcessor(inst, ctx, json, params);
     inst.in = def.in;
     inst.out = def.out;
 });
@@ -39388,6 +43182,7 @@ function pipe(in_, out) {
 const ZodReadonly = /*@__PURE__*/ $constructor("ZodReadonly", (inst, def) => {
     $ZodReadonly.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => readonlyProcessor(inst, ctx, json, params);
     inst.unwrap = () => inst._zod.def.innerType;
 });
 function readonly(innerType) {
@@ -39399,6 +43194,7 @@ function readonly(innerType) {
 const ZodCustom = /*@__PURE__*/ $constructor("ZodCustom", (inst, def) => {
     $ZodCustom.init(inst, def);
     ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => customProcessor(inst, ctx);
 });
 function refine(fn, _params = {}) {
     return _refine(ZodCustom, fn, _params);
@@ -39407,9 +43203,7 @@ function refine(fn, _params = {}) {
 function superRefine(fn) {
     return _superRefine(fn);
 }
-function _instanceof(cls, params = {
-    error: `Input not instance of ${cls.name}`,
-}) {
+function _instanceof(cls, params = {}) {
     const inst = new ZodCustom({
         type: "custom",
         check: "custom",
@@ -39418,6 +43212,18 @@ function _instanceof(cls, params = {
         ...normalizeParams(params),
     });
     inst._zod.bag.Class = cls;
+    // Override check to emit invalid_type instead of custom
+    inst._zod.check = (payload) => {
+        if (!(payload.value instanceof cls)) {
+            payload.issues.push({
+                code: "invalid_type",
+                expected: cls.name,
+                input: payload.value,
+                inst,
+                path: [...(inst._zod.def.path ?? [])],
+            });
+        }
+    };
     return inst;
 }
 
@@ -39528,7 +43334,7 @@ const compile = async (args) => {
     }
     coreExports.info(`The command to run is: ${command}`);
     coreExports.startGroup(`The results for the command ${command}`);
-    child.exec(command, (err, stdout, stderr) => {
+    require$$2.exec(command, (err, stdout, stderr) => {
         let exitCode = 0;
         if (err) {
             switch (err.code) {
@@ -39603,8 +43409,8 @@ object({
 // Copyright 2021-2025 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 async function run() {
-    const policiesDir = coreExports.getInput('policyDir');
-    const testsDir = coreExports.getInput('testDir');
+    const policiesDir = coreExports$1.getInput('policyDir');
+    const testsDir = coreExports$1.getInput('testDir');
     await compile({
         policiesDir: policiesDir,
         testsDir: testsDir
