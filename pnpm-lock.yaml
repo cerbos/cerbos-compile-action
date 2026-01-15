@@ -13,7 +13,7 @@ importers:
         version: 2.0.1
       cerbos-actions-common:
         specifier: github:cerbos/cerbos-actions-common#0.0.24
-        version: https://codeload.github.com/cerbos/cerbos-actions-common/tar.gz/7dc1d8f3d570f1150ec738c2413128c6a0f92f35
+        version: git+https://github.com/cerbos/cerbos-actions-common.git#7dc1d8f3d570f1150ec738c2413128c6a0f92f35
     devDependencies:
       '@eslint/js':
         specifier: 9.39.2
@@ -704,8 +704,8 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
-  cerbos-actions-common@https://codeload.github.com/cerbos/cerbos-actions-common/tar.gz/7dc1d8f3d570f1150ec738c2413128c6a0f92f35:
-    resolution: {tarball: https://codeload.github.com/cerbos/cerbos-actions-common/tar.gz/7dc1d8f3d570f1150ec738c2413128c6a0f92f35}
+  cerbos-actions-common@git+https://github.com/cerbos/cerbos-actions-common.git#7dc1d8f3d570f1150ec738c2413128c6a0f92f35:
+    resolution: {commit: 7dc1d8f3d570f1150ec738c2413128c6a0f92f35, repo: https://github.com/cerbos/cerbos-actions-common.git, type: git}
     version: 0.0.0
     engines: {node: 24.12.0, pnpm: 10.28.0}
 
@@ -1831,7 +1831,7 @@ snapshots:
 
   callsites@3.1.0: {}
 
-  cerbos-actions-common@https://codeload.github.com/cerbos/cerbos-actions-common/tar.gz/7dc1d8f3d570f1150ec738c2413128c6a0f92f35:
+  cerbos-actions-common@git+https://github.com/cerbos/cerbos-actions-common.git#7dc1d8f3d570f1150ec738c2413128c6a0f92f35:
     dependencies:
       '@actions/core': 2.0.2
       '@actions/io': 2.0.0
