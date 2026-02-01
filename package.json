@@ -3,10 +3,10 @@
   "private": true,
   "description": "A GitHub action to compile Cerbos policies and execute policy tests",
   "type": "module",
-  "packageManager": "pnpm@10.28.0+sha512.05df71d1421f21399e053fde567cea34d446fa02c76571441bfc1c7956e98e363088982d940465fd34480d4d90a0668bc12362f8aa88000a64e83d0b0e47be48",
+  "packageManager": "pnpm@10.28.2+sha512.41872f037ad22f7348e3b1debbaf7e867cfd448f2726d9cf74c08f19507c31d2c8e7a11525b983febc2df640b5438dee6023ebb1f84ed43cc2d654d2bc326264",
   "engines": {
-    "node": "24.12.0",
-    "pnpm": "10.28.0"
+    "node": "24.13.0",
+    "pnpm": "10.28.2"
   },
   "scripts": {
     "all:parallel": "concurrently --group --prefix=none",
@@ -32,7 +32,7 @@
   "author": "Cerbos",
   "license": "Apache-2.0",
   "dependencies": {
-    "@actions/core": "2.0.1",
+    "@actions/core": "2.0.3",
     "cerbos-actions-common": "github:cerbos/cerbos-actions-common#0.0.24"
   },
   "devDependencies": {
@@ -40,15 +40,15 @@
     "@rollup/plugin-commonjs": "29.0.0",
     "@rollup/plugin-node-resolve": "16.0.3",
     "@rollup/plugin-typescript": "12.3.0",
-    "@types/node": "24.10.4",
+    "@types/node": "24.10.9",
     "concurrently": "9.2.1",
     "eslint": "9.39.2",
     "glob-bin": "1.0.0",
-    "globals": "17.0.0",
-    "prettier": "3.7.4",
-    "rollup": "4.55.1",
+    "globals": "17.2.0",
+    "prettier": "3.8.1",
+    "rollup": "4.57.0",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.52.0"
+    "typescript-eslint": "8.54.0"
   }
 }
