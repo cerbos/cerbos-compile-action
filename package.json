@@ -33,22 +33,22 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@actions/core": "3.0.0",
-    "cerbos-actions-common": "github:cerbos/cerbos-actions-common#0.0.26"
+    "cerbos-actions-common": "github:cerbos/cerbos-actions-common#0.0.27"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
-    "@rollup/plugin-commonjs": "29.0.0",
+    "@rollup/plugin-commonjs": "29.0.2",
     "@rollup/plugin-node-resolve": "16.0.3",
     "@rollup/plugin-typescript": "12.3.0",
-    "@types/node": "24.11.0",
+    "@types/node": "25.5.2",
     "concurrently": "9.2.1",
-    "eslint": "10.0.2",
+    "eslint": "10.1.0",
     "glob-bin": "1.1.0",
     "globals": "17.4.0",
     "prettier": "3.8.1",
-    "rollup": "4.59.0",
+    "rollup": "4.60.1",
     "tsx": "4.21.0",
-    "typescript": "5.9.3",
-    "typescript-eslint": "8.56.1"
+    "typescript": "6.0.2",
+    "typescript-eslint": "8.58.0"
   }
 }
