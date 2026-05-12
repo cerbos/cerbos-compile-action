@@ -3,10 +3,10 @@
   "private": true,
   "description": "A GitHub action to compile Cerbos policies and execute policy tests",
   "type": "module",
-  "packageManager": "pnpm@10.33.2+sha512.a90faf6feeab71ad6c6e57f94e0fe1a12f5dcc22cd754db40ae9593eb6a3e0b6b12e3540218bb37ae083404b1f2ce6db2a4121e979829b4aff94b99f49da1cf8",
+  "packageManager": "pnpm@10.33.4+sha512.1c67b3b359b2d408119ba1ed289f34b8fc3c6873412bec6fd264fbdc82489e510fcbecb9ce9d22dae7f3b76269d8441046014bdca53b9979cd7a561ad631b800",
   "engines": {
     "node": "24.15.0",
-    "pnpm": "10.33.2"
+    "pnpm": "10.33.4"
   },
   "scripts": {
     "all:parallel": "concurrently --group --prefix=none",
@@ -42,13 +42,13 @@
     "@rollup/plugin-typescript": "12.3.0",
     "@types/node": "25.6.0",
     "concurrently": "9.2.1",
-    "eslint": "10.2.1",
+    "eslint": "10.3.0",
     "glob-bin": "1.1.0",
-    "globals": "17.5.0",
+    "globals": "17.6.0",
     "prettier": "3.8.3",
-    "rollup": "4.60.2",
+    "rollup": "4.60.3",
     "tsx": "4.21.0",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.59.1"
+    "typescript-eslint": "8.59.2"
   }
 }
