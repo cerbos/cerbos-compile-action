@@ -1,3 +1,5 @@
+allowBuilds:
+  esbuild: false
 minimumReleaseAge: 7200 # 5 days
 minimumReleaseAgeExclude:
   - "@cerbos/*"
