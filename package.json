@@ -9,10 +9,11 @@
     "pnpm": "11.17.0"
   },
   "scripts": {
-    "all:parallel": "concurrently --group --prefix=none",
-    "build": "rm -rf dist && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "all:parallel": "pnpm --no-bail --aggregate-output --reporter=append-only --reporter-hide-prefix run",
+    "build": "rm -rf dist && pnpm run build:tsc",
+    "build:tsc": "tsc --project tsconfig.json",
     "eslint:run": "NODE_OPTIONS=--max-old-space-size=3072 eslint --max-warnings=0",
-    "lint": "pnpm run all:parallel 'pnpm:lint:check:*'",
+    "lint": "pnpm run build:tsc && pnpm run all:parallel /^lint:check:/",
     "lint:check:eslint": "pnpm run eslint:run src tests",
     "lint:check:prettier": "prettier --check src tests",
     "lint:fix": "pnpm run lint:fix:eslint && pnpm run lint:fix:prettier",
@@ -41,7 +42,6 @@
     "@rollup/plugin-node-resolve": "16.0.3",
     "@rollup/plugin-typescript": "12.3.0",
     "@types/node": "25.9.5",
-    "concurrently": "9.2.4",
     "eslint": "10.8.0",
     "glob-bin": "1.1.0",
     "globals": "17.8.0",
