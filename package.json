@@ -2,53 +2,52 @@
   "name": "cerbos-compile-action",
   "private": true,
   "description": "A GitHub action to compile Cerbos policies and execute policy tests",
-  "type": "module",
-  "packageManager": "pnpm@12.7.0+sha512.9c56477e360068d6e9dca6a92efb4e46b3dc5a52fcebf3d84d78b9736c0ded589a561621a52f68219a7a39facc63cdc079c3226ef9c9d5f02b79f74e69a807b6",
-  "engines": {
-    "node": "24.21.0",
-    "pnpm": "12.7.0"
-  },
-  "scripts": {
-    "all:parallel": "pnpm --no-bail --aggregate-output --reporter=append-only --reporter-hide-prefix run",
-    "build": "rm -rf dist && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
-    "eslint:run": "NODE_OPTIONS=--max-old-space-size=3072 eslint --max-warnings=0",
-    "lint": "pnpm run all:parallel /^lint:check:/",
-    "lint:check:eslint": "pnpm run eslint:run src tests",
-    "lint:check:prettier": "prettier --check src tests",
-    "lint:fix": "pnpm run lint:fix:eslint && pnpm run lint:fix:prettier",
-    "lint:fix:eslint": "pnpm run eslint:run --fix src tests",
-    "lint:fix:prettier": "prettier --write src tests",
-    "test": "glob-bin -c \"node --import tsx --no-warnings --test\" \"./tests/**/*.test.ts\""
-  },
+  "keywords": [
+    "actions",
+    "compile",
+    "node"
+  ],
+  "license": "Apache-2.0",
+  "author": "Cerbos",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerbos/cerbos-compile-action.git"
   },
-  "keywords": [
-    "actions",
-    "node",
-    "compile"
-  ],
-  "author": "Cerbos",
-  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "all:parallel": "pnpm --no-bail --aggregate-output --reporter=append-only --reporter-hide-prefix run",
+    "build": "rm -rf dist && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "lint": "pnpm run all:parallel /^lint:check:/",
+    "lint:check:oxfmt": "pnpm run oxfmt --check",
+    "lint:check:oxlint": "pnpm run oxlint --deny-warnings --report-unused-disable-directives",
+    "lint:fix": "pnpm run lint:fix:oxlint && pnpm run lint:fix:oxfmt",
+    "lint:fix:oxfmt": "pnpm run oxfmt",
+    "lint:fix:oxlint": "pnpm run oxlint --fix",
+    "oxfmt": "oxfmt",
+    "oxlint": "oxlint --type-aware",
+    "test": "glob-bin -c \"node --import tsx --no-warnings --test\" \"./tests/**/*.test.ts\""
+  },
   "dependencies": {
     "@actions/core": "3.0.1",
     "cerbos-actions-common": "github:cerbos/cerbos-actions-common#0.0.36"
   },
   "devDependencies": {
-    "@eslint/js": "10.0.1",
     "@rollup/plugin-commonjs": "29.0.3",
     "@rollup/plugin-node-resolve": "16.0.3",
     "@rollup/plugin-typescript": "12.3.0",
     "@types/node": "25.9.8",
-    "eslint": "10.11.0",
     "glob-bin": "1.1.0",
-    "globals": "17.12.0",
-    "prettier": "3.9.9",
+    "oxfmt": "^0.71.0",
+    "oxlint": "^1.86.0",
+    "oxlint-tsgolint": "^7.0.2003",
     "rollup": "4.63.5",
     "tslib": "^2.8.1",
     "tsx": "4.23.15",
-    "typescript": "6.0.3",
-    "typescript-eslint": "8.70.1"
-  }
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": "24.21.0",
+    "pnpm": "12.7.0"
+  },
+  "packageManager": "pnpm@12.7.0+sha512.9c56477e360068d6e9dca6a92efb4e46b3dc5a52fcebf3d84d78b9736c0ded589a561621a52f68219a7a39facc63cdc079c3226ef9c9d5f02b79f74e69a807b6"
 }
