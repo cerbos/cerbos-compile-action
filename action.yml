@@ -1,19 +1,19 @@
-name: 'Cerbos Compile Action'
-description: 'Compiles and tests Cerbos policies'
-author: 'Cerbos'
+name: "Cerbos Compile Action"
+description: "Compiles and tests Cerbos policies"
+author: "Cerbos"
 branding:
-  icon: 'package'
-  color: 'orange'
+  icon: "package"
+  color: "orange"
 
 inputs:
   policyDir:
-    description: 'Policy directory'
+    description: "Policy directory"
     required: true
-    default: '/policies'
+    default: "/policies"
 
   testDir:
-    description: 'Test directory'
+    description: "Test directory"
 
 runs:
-  using: 'node24'
-  main: 'dist/index.js'
+  using: "node24"
+  main: "dist/index.js"

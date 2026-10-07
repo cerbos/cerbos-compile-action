@@ -2,29 +2,29 @@ name: SomeResourceTestSuite
 
 principals:
   user_1:
-    id: '1'
+    id: "1"
     roles:
       - USER
 
   user_2:
-    id: '2'
+    id: "2"
     roles:
       - USER
 
 resources:
   some_resource_1:
-    id: '1'
+    id: "1"
     kind: some_resource
     attr:
-      ownerId: '1'
+      ownerId: "1"
 
   some_resource_2:
-    id: '2'
+    id: "2"
     kind: some_resource
     attr:
-      ownerId: '5'
+      ownerId: "5"
       usersWithGetAccess:
-        - '1'
+        - "1"
 
 tests:
   - name: Get some_resource_1

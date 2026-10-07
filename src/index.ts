@@ -1,17 +1,18 @@
 // Copyright 2021-2026 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 
-import * as core from '@actions/core'
-import * as common from 'cerbos-actions-common'
+import * as core from "@actions/core";
+
+import * as common from "cerbos-actions-common";
 
 async function run(): Promise<void> {
-  const policiesDir = core.getInput('policyDir')
-  const testsDir = core.getInput('testDir')
+  const policiesDir = core.getInput("policyDir");
+  const testsDir = core.getInput("testDir");
 
   await common.compile({
     policiesDir: policiesDir,
-    testsDir: testsDir
-  })
+    testsDir: testsDir,
+  });
 }
 
-run()
+await run();

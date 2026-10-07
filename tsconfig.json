@@ -1,16 +1,12 @@
 {
   "compilerOptions": {
-    "lib": [
-      "ES2022"
-    ],
+    "lib": ["ES2022"],
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "target": "ES2022",
     "rootDir": "src",
     "outDir": "./dist",
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     "newLine": "lf",
     "allowSyntheticDefaultImports": true,
     "declaration": false,
@@ -26,12 +22,6 @@
     "strict": true,
     "strictNullChecks": true
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "tests/*.test.ts"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "tests/*.test.ts"]
 }

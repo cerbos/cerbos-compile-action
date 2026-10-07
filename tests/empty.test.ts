@@ -1,3 +1,3 @@
-import {describe} from 'node:test'
+import { describe } from "node:test";
 
-describe('empty', () => {})
+describe("empty", () => {});

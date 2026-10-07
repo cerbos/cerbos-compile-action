@@ -44263,12 +44263,12 @@ object({
 // Copyright 2021-2026 Zenauth Ltd.
 // SPDX-License-Identifier: Apache-2.0
 async function run() {
-    const policiesDir = getInput('policyDir');
-    const testsDir = getInput('testDir');
+    const policiesDir = getInput("policyDir");
+    const testsDir = getInput("testDir");
     await compile({
         policiesDir: policiesDir,
-        testsDir: testsDir
+        testsDir: testsDir,
     });
 }
-run();
+await run();
 //# sourceMappingURL=index.js.map
